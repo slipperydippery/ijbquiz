@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/quiz/start', 'QuizController@start')->name('quiz.start');
+Route::post('/quiz/quizmensen', 'QuizController@storequizmensen')->name('quizmensen.store');
+Route::get('/quiz/quizlocatie', 'QuizController@quizlocatie')->name('quizlocatie.show');
+Route::post('/quiz/quizlocatie', 'QuizController@storequizlocatie')->name('quizlocatie.store');
