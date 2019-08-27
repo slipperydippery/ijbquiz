@@ -8,8 +8,23 @@
 	        </div>
 		</div>
 		<div class="row">
-			<div class="col-md-6 offset-md-3">
-				<img src="/img/kaart_ijmond.png" class="img-fluid" alt="">
+			<div class="col-md-10 offset-md-1">
+				<form id="location" action="{{ route('location.store') }}" method="post" accept-charset="utf-8">
+				    {{ csrf_field() }}
+				    <!-- Hidden location Type Form Input -->
+				    <input type="hidden" id="location" name="location" value="1">
+				        
+					<img id="map" src="/img/kaartijmond.svg" class="img-fluid p-5 clickable" alt="">
+				</form>
+			</div>
+			<div class="col-md-8 offset-md-2">
+				<form action="{{ route('location.store') }}" method="post" accept-charset="utf-8">
+				    {{ csrf_field() }}
+					<!-- Add Submit Field -->
+					<div class="form-group">
+					    <input type="submit" value=" Hier geef ik liever geen antwoord op " class="btn btn-outline-danger form-control" />
+					</div>
+				</form>
 			</div>
 		</div>
 
@@ -19,4 +34,11 @@
 
 
 @section('additional-scripts')
+	<script>
+		var form = document.getElementById("location");
+
+		document.getElementById("map").addEventListener("click", function () {
+		  form.submit();
+		});
+	</script>
 @endsection

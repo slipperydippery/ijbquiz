@@ -10666,3 +10666,7 @@ h1.pagetitle {
   background: rgba(92, 106, 196, 0.3);
 }
 
+.clickable {
+  cursor: pointer;
+}
+
