@@ -18,7 +18,7 @@
 						<input type="range" name="fietsen" min="0" max="10" value="0" class="form-control-range" id="formControlFiets">
 					</div>
 					<div class="form-group py-4">
-						<label for="formControlRange"><h2>Electrische fietsen</h2></label>
+						<label for="formControlRange"><h2>Elektrische fietsen</h2></label>
 						<input type="range" name="electrischefietsen" min="0" max="10" value="0" class="form-control-range" id="formControlOV">
 					</div>
 					<div class="form-group py-4">
@@ -42,7 +42,7 @@
 				        
 					<!-- Add Submit Field -->
 					<div class="form-group">
-					    <input type="submit" value=" Hier geef ik liever geen antwoord op " class="btn btn-outline-danger form-control" />
+					    <input type="submit" value=" Hier geef ik liever geen antwoord op " class="btn btn-outline-danger btn-outline-nooutline form-control" />
 					</div>
 				</form>
 			</div>

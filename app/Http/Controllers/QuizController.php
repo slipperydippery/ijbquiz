@@ -19,7 +19,7 @@ class QuizController extends Controller
 
     public function location()
     {
-    	return (view('quiz.locatie'));
+    	return (view('quiz.location'));
     }
 
     public function storelocation(Request $request)

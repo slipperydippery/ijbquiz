@@ -52,7 +52,7 @@
 				        
 					<!-- Add Submit Field -->
 					<div class="form-group">
-					    <input type="submit" value=" Hier geef ik liever geen antwoord op " class="btn btn-outline-danger form-control" />
+					    <input type="submit" value=" Hier geef ik liever geen antwoord op " class="btn btn-outline-danger btn-outline-nooutline form-control" />
 					</div>
 				</form>
 			</div>

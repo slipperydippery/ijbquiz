@@ -32,3 +32,5 @@ Route::post('/quiz/rushhour', 'QuizController@storerushhour')->name('rushhour.st
 Route::get('/quiz/contactpermission', 'QuizController@contactpermission')->name('contactpermission.show');
 Route::post('/quiz/contactpermission', 'QuizController@storecontactpermission')->name('contactpermission.store');
 Route::get('/quiz/results', 'QuizController@results')->name('results.show');
+
+Route::post('/api/session/updatelocation', 'ApiSessionController@updatelocation');

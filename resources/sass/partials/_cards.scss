@@ -1,0 +1,13 @@
+.answer {
+	// border-width: 2px !important:
+}
+
+.selected-answer {
+	// border-width: 2px !important;
+	border-color: $primary !important;
+	background: rgba($primary, 0.05) !important;
+	box-shadow: 0px 1px 8px rgba(0,0,0,0.3);
+	.answer-title {
+		background: #98dadf;
+	}
+}

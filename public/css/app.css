@@ -10666,7 +10666,21 @@ h1.pagetitle {
   background: rgba(92, 106, 196, 0.3);
 }
 
+.btn-outline-nooutline {
+  border: none;
+}
+
 .clickable {
   cursor: pointer;
+}
+
+.selected-answer {
+  border-color: #5C6AC4 !important;
+  background: rgba(92, 106, 196, 0.05) !important;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.selected-answer .answer-title {
+  background: #98dadf;
 }
 
