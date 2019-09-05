@@ -1928,28 +1928,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: [],
   data: function data() {
     return {
       selectedAnswers: [],
-      hasIJmond: false
+      hasIJmondGETSET: false
     };
   },
   mounted: function mounted() {},
-  computed: {},
+  computed: {
+    hasIJmond: function hasIJmond() {
+      this.hasIJmondGETSET = this.selectedAnswers.length ? true : false;
+      return this.selectedAnswers.length ? true : false;
+    }
+  },
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
       if (this.selectedAnswers.includes(answer)) {
         this.selectedAnswers.splice(this.selectedAnswers.indexOf(answer), 1);
       } else {
-        this.selectedAnswers.push(answer);
-        this.hasIJmond = true;
+        this.selectedAnswers.push(answer); // this.hasIJmond = true;
       }
 
       if (this.selectedAnswers.includes('buiten de regio') && this.selectedAnswers.length == 1) {
-        this.selectedAnswers = [];
-        this.hasIJmond = false;
+        this.selectedAnswers = []; // this.hasIJmond = false;
+
+        this.$forceUpdate();
       }
     },
     isSelectedAnswer: function isSelectedAnswer(answer) {
@@ -65961,135 +65974,143 @@ var render = function() {
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "row flex-grow-1 py-5" }, [
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50 py-2" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "answer position-relative h-100 bg-light border clickable d-flex",
-              class: { "selected-answer": _vm.isSelectedAnswer("beverwijk") },
-              on: {
-                click: function($event) {
-                  return _vm.toggleAnswer("beverwijk")
-                }
-              }
-            },
-            [
-              _c("img", {
-                staticClass: "img-fluid",
-                attrs: { src: "/img/ijmondbeverwijk.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _vm._m(1)
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50 py-2" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "answer position-relative h-100 bg-light border clickable d-flex",
-              class: { "selected-answer": _vm.isSelectedAnswer("velsen") },
-              on: {
-                click: function($event) {
-                  return _vm.toggleAnswer("velsen")
-                }
-              }
-            },
-            [
-              _c("img", {
-                staticClass: "img-fluid",
-                attrs: { src: "/img/ijmondvelsen.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _vm._m(2)
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50 py-2" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "answer position-relative h-100 bg-light border clickable d-flex",
-              class: { "selected-answer": _vm.isSelectedAnswer("heemskerk") },
-              on: {
-                click: function($event) {
-                  return _vm.toggleAnswer("heemskerk")
-                }
-              }
-            },
-            [
-              _c("img", {
-                staticClass: "img-fluid",
-                attrs: { src: "/img/ijmondheemskerk.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _vm._m(3)
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-md-4 h-50 py-2" },
-          [
+      _c("div", { staticClass: "row flex-grow-1" }, [
+        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+          _c("div", { staticClass: "p-2 h-100" }, [
             _c(
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border d-flex",
-                class: {
-                  "selected-answer": _vm.isSelectedAnswer("buiten de regio"),
-                  clickable: _vm.hasIJmond,
-                  faded: !_vm.hasIJmond
-                },
-                attrs: { id: "popover-button-sync" },
+                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                class: { "selected-answer": _vm.isSelectedAnswer("beverwijk") },
                 on: {
                   click: function($event) {
-                    return _vm.toggleAnswer("buiten de regio")
+                    return _vm.toggleAnswer("beverwijk")
                   }
                 }
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/ijmondbuiten.svg", alt: "" }
+                  staticClass: "img-fluid align-self-start",
+                  attrs: { src: "/img/ijmondbeverwijk.svg", alt: "" }
                 }),
                 _vm._v(" "),
-                _vm._m(4)
+                _vm._m(1)
               ]
-            ),
-            _vm._v(" "),
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 h-50" }, [
+          _c("div", { staticClass: "p-2 h-100" }, [
             _c(
-              "b-popover",
+              "div",
               {
-                attrs: {
-                  title: "Alleen in de IJmond",
-                  disabled: _vm.hasIJmond,
-                  target: "popover-button-sync",
-                  triggers: "hover focus",
-                  placement: "top"
-                },
+                staticClass:
+                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                class: { "selected-answer": _vm.isSelectedAnswer("velsen") },
                 on: {
-                  "update:disabled": function($event) {
-                    _vm.hasIJmond = $event
+                  click: function($event) {
+                    return _vm.toggleAnswer("velsen")
                   }
                 }
               },
               [
-                _vm._v(
-                  "\n\t\t\t        Helaas kunnen we alleen informatie bieden voor bedrijven die gevestigd zijn binnen de IJmond.\n\t\t\t\t"
-                )
+                _c("img", {
+                  staticClass: "img-fluid align-self-start",
+                  attrs: { src: "/img/ijmondvelsen.svg", alt: "" }
+                }),
+                _vm._v(" "),
+                _vm._m(2)
               ]
             )
-          ],
-          1
-        )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+          _c("div", { staticClass: "p-2 h-100" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                class: { "selected-answer": _vm.isSelectedAnswer("heemskerk") },
+                on: {
+                  click: function($event) {
+                    return _vm.toggleAnswer("heemskerk")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid align-self-start",
+                  attrs: { src: "/img/ijmondheemskerk.svg", alt: "" }
+                }),
+                _vm._v(" "),
+                _vm._m(3)
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 h-50" }, [
+          _c(
+            "div",
+            { staticClass: "p-2 h-100" },
+            [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "answer position-relative h-100 bg-light border d-flex m-2",
+                  class: {
+                    "selected-answer": _vm.isSelectedAnswer("buiten de regio"),
+                    clickable: _vm.hasIJmond,
+                    faded: !_vm.hasIJmond
+                  },
+                  attrs: { id: "popover-button-sync" },
+                  on: {
+                    click: function($event) {
+                      return _vm.toggleAnswer("buiten de regio")
+                    }
+                  }
+                },
+                [
+                  _c("img", {
+                    staticClass: "img-fluid align-self-start",
+                    attrs: { src: "/img/ijmondbuiten.svg", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _vm._m(4)
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "b-popover",
+                {
+                  attrs: {
+                    title: "Alleen in de IJmond",
+                    disabled: _vm.hasIJmondGETSET,
+                    target: "popover-button-sync",
+                    triggers: "hover focus",
+                    placement: "top"
+                  },
+                  on: {
+                    "update:disabled": function($event) {
+                      _vm.hasIJmondGETSET = $event
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n\t\t\t\t        Helaas kunnen we alleen informatie bieden voor bedrijven die gevestigd zijn binnen de IJmond.\n\t\t\t\t\t"
+                  )
+                ]
+              )
+            ],
+            1
+          )
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row px-5 py-3" }, [
@@ -66182,7 +66203,7 @@ var staticRenderFns = [
         staticClass:
           "answer-title pt-1 text-center w-100 align-self-end position-absolute"
       },
-      [_c("h3", {}, [_vm._v(" Ook vestiging(en) buiten de regio ")])]
+      [_c("h3", {}, [_vm._v(" Vestiging(en) buiten de regio ")])]
     )
   }
 ]
