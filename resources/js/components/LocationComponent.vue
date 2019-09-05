@@ -44,25 +44,45 @@
 			</div>
 			<div class="col-md-4 h-50 py-2">
 				<div 
-					class="answer position-relative h-100 bg-light border clickable d-flex" 
+					class="answer position-relative h-100 bg-light border d-flex" 
 					@click="toggleAnswer('buiten de regio')"
-					:class="{'selected-answer' : isSelectedAnswer('buiten de regio')}"
+					:class="{'selected-answer' : isSelectedAnswer('buiten de regio'), 'clickable' : hasIJmond, 'faded' : ! hasIJmond}"
+					id="popover-button-sync"
 				>
 					<img src="/img/ijmondbuiten.svg" alt="" class="img-fluid">
 					<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
-						<h3 class=""> Vestiging(en) buiten de regio </h3>
+						<h3 class=""> Ook vestiging(en) buiten de regio </h3>
 					</div>
 				</div>
+				<b-popover 
+					title="Alleen in de IJmond" 
+					:disabled.sync="hasIJmond" 
+					target="popover-button-sync" 
+					triggers="hover focus"
+					placement="top"
+				>
+			        Helaas kunnen we alleen informatie bieden voor bedrijven die gevestigd zijn binnen de IJmond.
+				</b-popover>
 			</div>
 		</div>
-		<div class="row d-flex flex-row justify-content-between px-5 py-3">
-			<a href="#"><< Terug</a>
-			<button 
-				class="btn btn-primary"
-				@click="submitAnswers"
-			>
-				Accoord en verder
-			</button>
+		<div class="row px-5 py-3">
+			<div class="col-12 pb-3">
+				<progress-bar
+					:value = "0"
+					:max = "7"
+				>
+				</progress-bar>
+			</div>
+			<div class="col-12 d-flex flex-row justify-content-between">
+
+				<a href="#"><< Terug</a>
+				<button 
+					class="btn btn-primary"
+					@click="submitAnswers"
+				>
+					Accoord en verder
+				</button>
+			</div>
 		</div>
 
 	</div>
@@ -76,6 +96,7 @@
         data() {
             return {
             	selectedAnswers: [],
+            	hasIJmond: false,
             }
         },
 
@@ -91,6 +112,11 @@
         			this.selectedAnswers.splice(this.selectedAnswers.indexOf(answer), 1);
         		} else {
 	        		this.selectedAnswers.push(answer);
+	        		this.hasIJmond = true;
+        		}
+        		if(this.selectedAnswers.includes('buiten de regio') && (this.selectedAnswers.length == 1)) {
+        			this.selectedAnswers = []
+        			this.hasIJmond = false;
         		}
         	},
 

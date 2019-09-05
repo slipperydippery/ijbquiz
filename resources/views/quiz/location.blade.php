@@ -5,7 +5,5 @@
 	</location-component>
 @stop
 
-
-
 @section('additional-scripts')
 @endsection
