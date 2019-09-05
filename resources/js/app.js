@@ -26,6 +26,8 @@ Vue.use(BootstrapVue);
 // Quiz Components
 Vue.component('location-component', require('./components/LocationComponent.vue').default);
 Vue.component('locationtype-component', require('./components/LocationtypeComponent.vue').default);
+Vue.component('employeecount-component', require('./components/EmployeecountComponent.vue').default);
+Vue.component('employeeorigin-component', require('./components/EmployeeOriginComponent.vue').default);
 
 // Components
 Vue.component('progress-bar', require('./components/ProgressBar.vue').default);

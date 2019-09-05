@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class QuizController extends Controller
 {
-    public function start()
+    public function employeecount()
     {
-    	return view('quiz.start');
+    	return view('quiz.employeecount');
     }
 
     public function storepeople(Request $request)
@@ -36,17 +36,17 @@ class QuizController extends Controller
     public function storelocationtype(Request $request)
     {
         $request->session()->put('locationtype', $request->locationtype);
-        return redirect()->route('employeeorigion.show');
+        return redirect()->route('employeeorigin.show');
     }
 
-    public function employeeorigion()
+    public function employeeorigin()
     {
-        return view('quiz.employeeorigion');
+        return view('quiz.employeeorigin');
     }
 
     public function storeemployeeorigion(Request $request)
     {
-        $request->session()->put('employeeorigion', $request->employeeorigion);
+        $request->session()->put('employeeorigin', $request->employeeorigin);
         return redirect()->route('employeemobility.show');
     }
 

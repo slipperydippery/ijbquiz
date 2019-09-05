@@ -14,9 +14,6 @@
         @endif
     </title>
 
-    <!-- Scripts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <!-- Styles -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -35,6 +32,36 @@
 </head>
 
 <body class="h-100">
+    <div class="sessiondataviewer">
+        @if ($location = Session::get('location'))
+            <b>location:</b>
+            <ul>
+                @foreach($location as $place)
+                    <li>{{ $place }}</li>
+                @endforeach
+            </ul>
+        @endif
+        @if ($locationtype = Session::get('locationtype'))
+            <b>locationtype:</b>
+            <ul>
+                @foreach($locationtype as $place)
+                    <li>{{ $place }}</li>
+                @endforeach
+            </ul>
+        @endif
+        @if ($employeecount = Session::get('employeecount'))
+            <b>employeecount:</b><br>
+            {{ $employeecount }} <br>
+        @endif
+        @if ($employeeorigin = Session::get('employeeorigin'))
+            <b>employeeorigin:</b>
+            <ul>
+                @foreach($employeeorigin as $distance => $percentage)
+                    <li>{{ $distance }}: {{ $percentage }}</li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
     <main id="app" class="h-100">
         @yield('content')
     </main>

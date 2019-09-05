@@ -8,7 +8,25 @@ class ApiSessionController extends Controller
 {
     public function updatelocation(Request $request)
     {
-    	$request->session()->put('location', 'stuff');
+    	$request->session()->put('location', $request->location);
     	return $request->location;
+    }
+
+    public function updatelocationtype(Request $request)
+    {
+    	$request->session()->put('locationtype', $request->locationtype);
+    	return $request->locationtype;
+    }
+
+    public function updateemployeecount(Request $request)
+    {
+    	$request->session()->put('employeecount', $request->employeecount);
+    	return $request->employeecount;
+    }	
+
+    public function updateemployeeorigin(Request $request)
+    {
+    	$request->session()->put('employeeorigin', $request->employeeorigin);
+    	return $request->employeeorigin;
     }
 }

@@ -2,7 +2,7 @@
 	<div class="container-fluid d-flex flex-column h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-                <h1 class="pagetitle d-inline px-5"> Is het bedrijf gevestigd op of in een: </h1>
+            <h1 class="pagetitle d-inline px-5"> Hoeveel mensen werken er in dit bedrijf: </h1>
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
@@ -10,12 +10,12 @@
 				<div class="p-2 h-100">
 					<div 
 						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
-						@click="toggleAnswer('Bedrijventerrein')"
-						:class="{'selected-answer' : isSelectedAnswer('Bedrijventerrein')}"
+						@click="toggleAnswer('1-10')"
+						:class="{'selected-answer' : isSelectedAnswer('1-10')}"
 					>
 						<img src="/img/ijmondbeverwijk.svg" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
-								<h3 class=""> Bedrijventerrein </h3>
+								<h3 class=""> Wij zijn net een familie: 1-10 personen </h3>
 						</div>
 					</div>
 				</div>
@@ -24,12 +24,12 @@
 				<div class="p-2 h-100">
 					<div 
 						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
-						@click="toggleAnswer('centrum / winkelgebied')"
-						:class="{'selected-answer' : isSelectedAnswer('centrum / winkelgebied')}"
+						@click="toggleAnswer('11-50')"
+						:class="{'selected-answer' : isSelectedAnswer('11-50')}"
 					>
 						<img src="/img/ijmondvelsen.svg" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
-							<h3 class=""> Centrum/winkelgebied </h3>
+							<h3 class=""> We zijn klein, maar fijn: 11-50 personen </h3>
 						</div>
 					</div>
 				</div>
@@ -38,12 +38,26 @@
 				<div class="p-2 h-100">
 					<div 
 						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
-						@click="toggleAnswer('recreatiegebied')"
-						:class="{'selected-answer' : isSelectedAnswer('recreatiegebied')}"
+						@click="toggleAnswer('51-250')"
+						:class="{'selected-answer' : isSelectedAnswer('51-250')}"
 					>
 						<img src="/img/ijmondheemskerk.svg" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
-								<h3 class=""> Recreatiegebied </h3>
+								<h3 class=""> Wij horen nog bij het MKB: 51-250 personen </h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 h-50">
+				<div class="p-2 h-100">
+					<div 
+						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+						@click="toggleAnswer('250+')"
+						:class="{'selected-answer' : isSelectedAnswer('250+')}"
+					>
+						<img src="/img/ijmondheemskerk.svg" alt="" class="img-fluid align-self-start">
+						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+								<h3 class=""> We zijn met veel: > 250 personen </h3>
 						</div>
 					</div>
 				</div>
@@ -52,7 +66,7 @@
 		<div class="row px-5 py-3">
 			<div class="col-12 pb-3">
 				<progress-bar
-					:value = "1"
+					:value = "2"
 					:max = "7"
 				>
 				</progress-bar>
@@ -79,7 +93,7 @@
 
         data() {
             return {
-            	selectedAnswers: [],
+            	selectedAnswers: '',
             }
         },
 
@@ -92,14 +106,14 @@
         methods: {
         	toggleAnswer(answer) {
         		if (this.selectedAnswers.includes(answer)) {
-        			this.selectedAnswers.splice(this.selectedAnswers.indexOf(answer), 1);
+        			this.selectedAnswers = '';
         		} else {
-	        		this.selectedAnswers.push(answer);
+	        		this.selectedAnswers = answer;
         		}
         	},
 
         	isSelectedAnswer(answer) {
-        		if(this.selectedAnswers.includes(answer)) {
+        		if(this.selectedAnswers == answer) {
         			return true;
         		}
         		return false;
@@ -107,11 +121,11 @@
 
         	submitAnswers() {
         		var home = this;
-        		axios.post('/api/session/updatelocationtype', {
-        			locationtype: home.selectedAnswers
+        		axios.post('/api/session/updateemployeecount', {
+        			employeecount: home.selectedAnswers
         		})
         		.then( (response) => {
-        			window.location.href = '/quiz/employeecount'
+        			window.location.href = '/quiz/employeeorigin'
         		} )
         	}
         }

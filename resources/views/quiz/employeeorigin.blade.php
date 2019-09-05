@@ -1,8 +1,8 @@
 @extends('layouts.question')
 
 @section('content')
-	<locationtype-component>
-	</locationtype-component>
+	<employeeorigin-component>
+	</employeeorigin-component>
 @stop
 
 @section('additional-scripts')

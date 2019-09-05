@@ -10647,6 +10647,7 @@ a.text-dark:focus {
 html,
 body,
 main {
+  background: #FFFFFF;
   height: 100%;
 }
 
@@ -10663,20 +10664,20 @@ h4 {
 
 h1.pagetitle {
   font-size: 5vw;
-  background: rgba(92, 106, 196, 0.3);
 }
 
 .btn-outline-nooutline {
   border: none;
 }
 
-.clickable {
-  cursor: pointer;
-}
-
 .answer {
   border-radius: 0.5rem;
   margin: 0 1rem;
+  overflow: hidden;
+}
+
+.answer .answer-title {
+  background: #f8f9fa;
 }
 
 .selected-answer {
@@ -10686,10 +10687,22 @@ h1.pagetitle {
 }
 
 .selected-answer .answer-title {
-  background: #98dadf;
+  background: #a7aedf;
 }
 
 .faded {
   opacity: 0.5;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
+.sessiondataviewer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+
+/*# sourceMappingURL=app.css.map*/
