@@ -29,4 +29,16 @@ class ApiSessionController extends Controller
     	$request->session()->put('employeeorigin', $request->employeeorigin);
     	return $request->employeeorigin;
     }
+
+    public function updateemployeemobility(Request $request)
+    {
+        $request->session()->put('employeemobility', $request->employeemobility);
+        return $request->employeemobility;
+    }
+
+    public function updateinhousemobility(Request $request)
+    {
+        $request->session()->put('inhousemobility', $request->inhousemobility);
+        return $request->inhousemobility;
+    }
 }

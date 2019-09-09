@@ -61,6 +61,22 @@
                 @endforeach
             </ul>
         @endif
+        @if ($employeemobility = Session::get('employeemobility'))
+            <b>employeemobility:</b>
+            <ul>
+                @foreach($employeemobility as $method => $percentage)
+                    <li>{{ $method }}: {{ $percentage }}</li>
+                @endforeach
+            </ul>
+        @endif
+        @if ($inhousemobility = Session::get('inhousemobility'))
+            <b>inhousemobility:</b>
+            <ul>
+                @foreach($inhousemobility as $mobility => $percentage)
+                    <li>{{ $mobility }}: {{ $percentage }}</li>
+                @endforeach
+            </ul>
+        @endif
     </div>
     <main id="app" class="h-100">
         @yield('content')

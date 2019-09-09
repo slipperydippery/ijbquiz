@@ -28,6 +28,8 @@ Vue.component('location-component', require('./components/LocationComponent.vue'
 Vue.component('locationtype-component', require('./components/LocationtypeComponent.vue').default);
 Vue.component('employeecount-component', require('./components/EmployeecountComponent.vue').default);
 Vue.component('employeeorigin-component', require('./components/EmployeeOriginComponent.vue').default);
+Vue.component('employeemobility-component', require('./components/EmployeemobilityComponent.vue').default);
+Vue.component('inhousemobility-component', require('./components/InhousemobilityComponent.vue').default);
 
 // Components
 Vue.component('progress-bar', require('./components/ProgressBar.vue').default);
