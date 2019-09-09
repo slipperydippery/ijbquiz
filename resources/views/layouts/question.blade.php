@@ -73,6 +73,7 @@
             <b>inhousemobility:</b>
             <ul>
                 @foreach($inhousemobility as $mobility => $percentage)
+                
                     <li>{{ $mobility }}: {{ $percentage }}</li>
                 @endforeach
             </ul>
