@@ -1,7 +1,9 @@
 @extends('layouts.question')
 
 @section('content')
-	<location-component>
+	<location-component
+		:session=" {{ json_encode(Session::all()) }} "
+	>
 	</location-component>
 @stop
 

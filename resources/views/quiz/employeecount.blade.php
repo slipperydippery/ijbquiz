@@ -1,7 +1,9 @@
 @extends('layouts.question')
 
 @section('content')
-	<employeecount-component>
+	<employeecount-component
+		:session=" {{ json_encode(Session::all()) }} "
+	>
 	</employeecount-component>
 @stop
 

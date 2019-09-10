@@ -89,6 +89,7 @@
 <script>
     export default {
         props: [
+        	'session'
         ],
 
         data() {
@@ -98,6 +99,7 @@
         },
 
         mounted() {
+        	this.selectedAnswers = this.session.electricmobility ? this.session.electricmobility : ''
         },
 
         computed: {

@@ -1,7 +1,9 @@
 @extends('layouts.question')
 
 @section('content')
-	<inhousemobility-component>
+	<inhousemobility-component
+		:session=" {{ json_encode(Session::all()) }} "
+	>
 	</inhousemobility-component>
 @stop
 

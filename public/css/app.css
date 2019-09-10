@@ -10704,9 +10704,10 @@ h1.pagetitle {
 
 .range-percentage {
   position: absolute;
+  padding: 0 1rem;
   top: 0;
   width: 100%;
-  text-align: center;
+  text-align: right;
   font-size: 1.5rem;
 }
 

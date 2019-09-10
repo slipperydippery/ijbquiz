@@ -1927,13 +1927,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: [],
+  props: ['session'],
   data: function data() {
     return {
       selectedAnswers: ''
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.selectedAnswers = this.session.electricmobility ? this.session.electricmobility : '';
+  },
   computed: {},
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
@@ -2050,7 +2052,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: [],
+  props: ['session'],
   data: function data() {
     return {
       percentages: {
@@ -2061,7 +2063,9 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.percentages = this.session.employeeorigin ? this.session.employeeorigin : '';
+  },
   computed: {
     totalPercentage: function totalPercentage() {
       return parseInt(this.percentages.uptofive) + parseInt(this.percentages.fivetoten) + parseInt(this.percentages.eleventotwenty) + parseInt(this.percentages.morethantwenty);
@@ -2196,13 +2200,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: [],
+  props: ['session'],
   data: function data() {
     return {
       selectedAnswers: ''
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.selectedAnswers = this.session.employeecount ? this.session.employeecount : '';
+  },
   computed: {},
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
@@ -2314,7 +2320,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: [],
+  props: ['session'],
   data: function data() {
     return {
       percentages: {
@@ -2324,7 +2330,9 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.percentages = this.session.employeemobility ? this.session.employeemobility : '';
+  },
   computed: {
     totalPercentage: function totalPercentage() {
       return parseInt(this.percentages.fiets) + parseInt(this.percentages.openbaarvervoer) + parseInt(this.percentages.auto);
@@ -2445,13 +2453,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: [],
+  props: ['session'],
   data: function data() {
     return {
       selectedAnswers: []
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.selectedAnswers = this.session.inhousemobility ? this.session.inhousemobility : '';
+  },
   computed: {},
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
@@ -2592,14 +2602,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: [],
+  props: ['session'],
   data: function data() {
     return {
       selectedAnswers: [],
       hasIJmondGETSET: false
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.selectedAnswers = this.session.location ? this.session.location : '';
+  },
   computed: {
     hasIJmond: function hasIJmond() {
       this.hasIJmondGETSET = this.selectedAnswers.length ? true : false;
@@ -2727,13 +2739,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: [],
+  props: ['session'],
   data: function data() {
     return {
       selectedAnswers: []
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.selectedAnswers = this.session.locationtype ? this.session.locationtype : '';
+  },
   computed: {},
   methods: {
     toggleAnswer: function toggleAnswer(answer) {

@@ -99,6 +99,7 @@
 <script>
     export default {
         props: [
+        	'session'
         ],
 
         data() {
@@ -109,6 +110,7 @@
         },
 
         mounted() {
+        	this.selectedAnswers = this.session.location ? this.session.location : ''
         },
 
         computed: {

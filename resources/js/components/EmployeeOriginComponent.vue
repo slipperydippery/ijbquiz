@@ -75,6 +75,7 @@
 <script>
     export default {
         props: [
+        	'session'
         ],
 
         data() {
@@ -89,6 +90,7 @@
         },
 
         mounted() {
+        	this.percentages = this.session.employeeorigin ? this.session.employeeorigin : ''
         },
 
         computed: {

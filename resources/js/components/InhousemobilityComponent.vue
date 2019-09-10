@@ -75,6 +75,7 @@
 <script>
     export default {
         props: [
+        	'session'
         ],
 
         data() {
@@ -84,6 +85,7 @@
         },
 
         mounted() {
+        	this.selectedAnswers = this.session.inhousemobility ? this.session.inhousemobility : ''
         },
 
         computed: {

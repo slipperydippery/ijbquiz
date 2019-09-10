@@ -70,6 +70,7 @@
 <script>
     export default {
         props: [
+        	'session'
         ],
 
         data() {
@@ -83,6 +84,7 @@
         },
 
         mounted() {
+        	this.percentages = this.session.employeemobility ? this.session.employeemobility : ''
         },
 
         computed: {
