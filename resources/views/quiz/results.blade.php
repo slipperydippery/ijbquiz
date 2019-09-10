@@ -77,7 +77,7 @@
 			</div>
 		</div>
 		<div class="row">
-	        <div class="col-12">
+	        <div class="col-8 offset-md-2">
 				<div class="jumbotron">
 					<h1 class="display-4">Laat ons je helpen</h1>
 					<p class="lead">Mag Ronald Vierkant, mobiliteitsmakelaar voor de IJmond, contact met je opnemen? Dan sturen we de resultaten uit deze scan alvast aan hem door.</p>
