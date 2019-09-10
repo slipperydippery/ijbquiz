@@ -32,7 +32,7 @@
 </head>
 
 <body class="h-100">
-    <div class="sessiondataviewer">
+    <div class="sessiondataviewer" style="display:none;">
         @if ($location = Session::get('location'))
             <b>location:</b>
             <ul>
