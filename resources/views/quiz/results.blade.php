@@ -3,13 +3,13 @@
 @section('content')
 	<div class="container-fluid d-flex flex-column h-100 p-5">
 		<div class="row">
-	        <div class="col-md-8 offset-md-2 text-center pb-4">
+	        <div class="col-12 text-center pb-4">
                 <h1 class="pagetitle d-inline px-5"> Resultaten</h1>
                 <p>IJmond Bereikbaar denkt graag met je mee welke slimme en duurzame oplossingen bij jouw bedrijf toegepast kunnen worden: meer mensen op de fiets, slimme stimulering, schoner rijden. Gebaseerd op jouw situatie hebben we een aantal relevante links voor je verzameld. </p>
 	        </div>
 		</div>
 		<div class="row">
-			<div class="col-8 offset-md-2">
+			<div class="col-12">
 				<div class="card-columns">
 				  <div class="card">
 				    <img src="https://dummyimage.com/600x400/e3e3e3/616161.png" class="card-img-top" alt="...">
@@ -77,7 +77,7 @@
 			</div>
 		</div>
 		<div class="row">
-	        <div class="col-md-8 offset-md-2">
+	        <div class="col-12">
 				<div class="jumbotron">
 					<h1 class="display-4">Laat ons je helpen</h1>
 					<p class="lead">Mag Ronald Vierkant, mobiliteitsmakelaar voor de IJmond, contact met je opnemen? Dan sturen we de resultaten uit deze scan alvast aan hem door.</p>
@@ -100,7 +100,7 @@
 	        </div>
 		</div>
 		<div class="row p-5">
-			<div class="col-md-8 offset-md-2">
+			<div class="col-12">
                 <h2 class="pagetitle d-inline px-5">  </h2>
             </div>
 	
