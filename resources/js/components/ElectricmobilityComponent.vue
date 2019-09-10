@@ -2,7 +2,7 @@
 	<div class="container-fluid d-flex flex-column h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-            <h1 class="pagetitle d-inline px-5"> Hoeveel mensen werken er in dit bedrijf: </h1>
+            <h1 class="pagetitle d-inline px-5"> Rijden jullie al elektrisch? </h1>
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
@@ -10,12 +10,12 @@
 				<div class="p-2 h-100">
 					<div 
 						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
-						@click="toggleAnswer('1-10')"
-						:class="{'selected-answer' : isSelectedAnswer('1-10')}"
+						@click="toggleAnswer('ebike')"
+						:class="{'selected-answer' : isSelectedAnswer('ebike')}"
 					>
-						<img src="/img/quiznet-een-familie.png" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizebike.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
-								<h3 class=""> Wij zijn net een familie: 1-10 personen </h3>
+								<h3 class=""> Er komen medewerkers op de e-bike, als je dat bedoelt </h3>
 						</div>
 					</div>
 				</div>
@@ -24,12 +24,12 @@
 				<div class="p-2 h-100">
 					<div 
 						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
-						@click="toggleAnswer('11-50')"
-						:class="{'selected-answer' : isSelectedAnswer('11-50')}"
+						@click="toggleAnswer('electrischeauto')"
+						:class="{'selected-answer' : isSelectedAnswer('electrischeauto')}"
 					>
-						<img src="/img/quizkleinmaarfijn.png" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizeauto.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
-							<h3 class=""> We zijn klein, maar fijn: 11-50 personen </h3>
+							<h3 class=""> Een enkeling heeft een elektrische auto </h3>
 						</div>
 					</div>
 				</div>
@@ -38,12 +38,12 @@
 				<div class="p-2 h-100">
 					<div 
 						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
-						@click="toggleAnswer('51-250')"
-						:class="{'selected-answer' : isSelectedAnswer('51-250')}"
+						@click="toggleAnswer('poolautos')"
+						:class="{'selected-answer' : isSelectedAnswer('poolautos')}"
 					>
-						<img src="/img/quizmkb.png" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizelectrischepoolautos.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
-								<h3 class=""> Wij horen nog bij het MKB: 51-250 personen </h3>
+								<h3 class=""> Jazeker, we stimuleren dat en ook onze poolauto’s zijn elektrisch </h3>
 						</div>
 					</div>
 				</div>
@@ -52,12 +52,12 @@
 				<div class="p-2 h-100">
 					<div 
 						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
-						@click="toggleAnswer('250+')"
-						:class="{'selected-answer' : isSelectedAnswer('250+')}"
+						@click="toggleAnswer('nognietecht')"
+						:class="{'selected-answer' : isSelectedAnswer('nognietecht')}"
 					>
-						<img src="/img/quizveel.png" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizneenogniet.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
-								<h3 class=""> We zijn met veel: > 250 personen </h3>
+								<h3 class=""> Nog niet echt, maar we willen dat wel meer gaan doen </h3>
 						</div>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 		<div class="row px-5 py-3">
 			<div class="col-12 pb-3">
 				<progress-bar
-					:value = "2"
+					:value = "6"
 					:max = "7"
 				>
 				</progress-bar>
@@ -121,16 +121,16 @@
 
         	submitAnswers() {
         		var home = this;
-        		axios.post('/api/session/updateemployeecount', {
-        			employeecount: home.selectedAnswers
+        		axios.post('/api/session/updateelectricmobility', {
+        			electricmobility: home.selectedAnswers
         		})
         		.then( (response) => {
-        			window.location.href = '/quiz/employeeorigin'
+        			window.location.href = '/quiz/electricmobility'
         		} )
         	},
 
         	goBack() {
-        		window.location.href = '/quiz/locationtype';
+        		window.location.href = '/quiz/inhousemobility';
         	}
         }
     }

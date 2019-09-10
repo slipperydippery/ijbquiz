@@ -1829,6 +1829,143 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ElectricmobilityComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ElectricmobilityComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: [],
+  data: function data() {
+    return {
+      selectedAnswers: ''
+    };
+  },
+  mounted: function mounted() {},
+  computed: {},
+  methods: {
+    toggleAnswer: function toggleAnswer(answer) {
+      if (this.selectedAnswers.includes(answer)) {
+        this.selectedAnswers = '';
+      } else {
+        this.selectedAnswers = answer;
+      }
+    },
+    isSelectedAnswer: function isSelectedAnswer(answer) {
+      if (this.selectedAnswers == answer) {
+        return true;
+      }
+
+      return false;
+    },
+    submitAnswers: function submitAnswers() {
+      var home = this;
+      axios.post('/api/session/updateelectricmobility', {
+        electricmobility: home.selectedAnswers
+      }).then(function (response) {
+        window.location.href = '/quiz/electricmobility';
+      });
+    },
+    goBack: function goBack() {
+      window.location.href = '/quiz/inhousemobility';
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EmployeeOriginComponent.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EmployeeOriginComponent.vue?vue&type=script&lang=js& ***!
@@ -1952,6 +2089,9 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         window.location.href = '/quiz/employeemobility';
       });
+    },
+    goBack: function goBack() {
+      window.location.href = '/quiz/employeecount';
     }
   }
 });
@@ -2086,6 +2226,9 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         window.location.href = '/quiz/employeeorigin';
       });
+    },
+    goBack: function goBack() {
+      window.location.href = '/quiz/locationtype';
     }
   }
 });
@@ -2212,6 +2355,9 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         window.location.href = '/quiz/inhousemobility';
       });
+    },
+    goBack: function goBack() {
+      window.location.href = '/quiz/employeeorigin';
     }
   }
 });
@@ -2330,8 +2476,11 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/api/session/updateinhousemobility', {
         inhousemobility: home.selectedAnswers
       }).then(function (response) {
-        window.location.href = '/quiz/inhousemobility';
+        window.location.href = '/quiz/electricmobility';
       });
+    },
+    goBack: function goBack() {
+      window.location.href = '/quiz/employeemobility';
     }
   }
 });
@@ -2488,6 +2637,9 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         window.location.href = '/quiz/locationtype';
       });
+    },
+    goBack: function goBack() {
+      window.location.href = '/';
     }
   }
 });
@@ -2608,6 +2760,9 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         window.location.href = '/quiz/employeecount';
       });
+    },
+    goBack: function goBack() {
+      window.location.href = '/quiz/location';
     }
   }
 });
@@ -66582,6 +66737,262 @@ var e=function(){return(e=Object.assign||function(e){for(var t,r=1,s=arguments.l
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ElectricmobilityComponent.vue?vue&type=template&id=1849c5ba&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ElectricmobilityComponent.vue?vue&type=template&id=1849c5ba& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container-fluid d-flex flex-column h-100" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "row flex-grow-1" }, [
+        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+          _c("div", { staticClass: "p-2 h-100" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                class: { "selected-answer": _vm.isSelectedAnswer("ebike") },
+                on: {
+                  click: function($event) {
+                    return _vm.toggleAnswer("ebike")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid align-self-start",
+                  attrs: { src: "/img/quizebike.png", alt: "" }
+                }),
+                _vm._v(" "),
+                _vm._m(1)
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 h-50" }, [
+          _c("div", { staticClass: "p-2 h-100" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                class: {
+                  "selected-answer": _vm.isSelectedAnswer("electrischeauto")
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.toggleAnswer("electrischeauto")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid align-self-start",
+                  attrs: { src: "/img/quizeauto.png", alt: "" }
+                }),
+                _vm._v(" "),
+                _vm._m(2)
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+          _c("div", { staticClass: "p-2 h-100" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                class: { "selected-answer": _vm.isSelectedAnswer("poolautos") },
+                on: {
+                  click: function($event) {
+                    return _vm.toggleAnswer("poolautos")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid align-self-start",
+                  attrs: { src: "/img/quizelectrischepoolautos.png", alt: "" }
+                }),
+                _vm._v(" "),
+                _vm._m(3)
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 h-50" }, [
+          _c("div", { staticClass: "p-2 h-100" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                class: {
+                  "selected-answer": _vm.isSelectedAnswer("nognietecht")
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.toggleAnswer("nognietecht")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid align-self-start",
+                  attrs: { src: "/img/quizneenogniet.png", alt: "" }
+                }),
+                _vm._v(" "),
+                _vm._m(4)
+              ]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row px-5 py-3" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 pb-3" },
+          [_c("progress-bar", { attrs: { value: 6, max: 7 } })],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-12 d-flex flex-row justify-content-between" },
+          [
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.goBack()
+                  }
+                }
+              },
+              [_vm._v("<< Terug")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                on: { click: _vm.submitAnswers }
+              },
+              [_vm._v("\n\t\t\t\t\tAccoord en verder\n\t\t\t\t")]
+            )
+          ]
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 text-center w-100" }, [
+        _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
+          _vm._v(" Rijden jullie al elektrisch? ")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
+      },
+      [
+        _c("h3", {}, [
+          _vm._v(" Er komen medewerkers op de e-bike, als je dat bedoelt ")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
+      },
+      [_c("h3", {}, [_vm._v(" Een enkeling heeft een elektrische auto ")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
+      },
+      [
+        _c("h3", {}, [
+          _vm._v(
+            " Jazeker, we stimuleren dat en ook onze poolauto’s zijn elektrisch "
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
+      },
+      [
+        _c("h3", {}, [
+          _vm._v(" Nog niet echt, maar we willen dat wel meer gaan doen ")
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EmployeeOriginComponent.vue?vue&type=template&id=44d22a64&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EmployeeOriginComponent.vue?vue&type=template&id=44d22a64& ***!
@@ -66762,7 +67173,18 @@ var render = function() {
           "div",
           { staticClass: "col-12 d-flex flex-row justify-content-between" },
           [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("<< Terug")]),
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.goBack()
+                  }
+                }
+              },
+              [_vm._v("<< Terug")]
+            ),
             _vm._v(" "),
             _c(
               "button",
@@ -66869,7 +67291,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondbeverwijk.svg", alt: "" }
+                  attrs: { src: "/img/quiznet-een-familie.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(1)
@@ -66895,7 +67317,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondvelsen.svg", alt: "" }
+                  attrs: { src: "/img/quizkleinmaarfijn.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(2)
@@ -66921,7 +67343,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondheemskerk.svg", alt: "" }
+                  attrs: { src: "/img/quizmkb.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(3)
@@ -66947,7 +67369,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondheemskerk.svg", alt: "" }
+                  attrs: { src: "/img/quizveel.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(4)
@@ -66969,7 +67391,18 @@ var render = function() {
           "div",
           { staticClass: "col-12 d-flex flex-row justify-content-between" },
           [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("<< Terug")]),
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.goBack()
+                  }
+                }
+              },
+              [_vm._v("<< Terug")]
+            ),
             _vm._v(" "),
             _c(
               "button",
@@ -67209,7 +67642,18 @@ var render = function() {
           "div",
           { staticClass: "col-12 d-flex flex-row justify-content-between" },
           [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("<< Terug")]),
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.goBack()
+                  }
+                }
+              },
+              [_vm._v("<< Terug")]
+            ),
             _vm._v(" "),
             _c(
               "button",
@@ -67314,7 +67758,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondbeverwijk.svg", alt: "" }
+                  attrs: { src: "/img/quizpoolautos.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(1)
@@ -67342,7 +67786,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondvelsen.svg", alt: "" }
+                  attrs: { src: "/img/quizbestelbusjes.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(2)
@@ -67370,7 +67814,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondheemskerk.svg", alt: "" }
+                  attrs: { src: "/img/quizvrachtwagen.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(3)
@@ -67392,7 +67836,18 @@ var render = function() {
           "div",
           { staticClass: "col-12 d-flex flex-row justify-content-between" },
           [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("<< Terug")]),
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.goBack()
+                  }
+                }
+              },
+              [_vm._v("<< Terug")]
+            ),
             _vm._v(" "),
             _c(
               "button",
@@ -67522,7 +67977,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondbeverwijk.svg", alt: "" }
+                  attrs: { src: "/img/quizbeverwijk.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(1)
@@ -67548,7 +68003,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondvelsen.svg", alt: "" }
+                  attrs: { src: "/img/quizvelsen.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(2)
@@ -67574,7 +68029,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondheemskerk.svg", alt: "" }
+                  attrs: { src: "/img/quizheemskerk.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(3)
@@ -67608,7 +68063,7 @@ var render = function() {
                 [
                   _c("img", {
                     staticClass: "img-fluid align-self-start",
-                    attrs: { src: "/img/ijmondbuiten.svg", alt: "" }
+                    attrs: { src: "/img/quizbuitenderegio.png", alt: "" }
                   }),
                   _vm._v(" "),
                   _vm._m(4)
@@ -67655,7 +68110,18 @@ var render = function() {
           "div",
           { staticClass: "col-12 d-flex flex-row justify-content-between" },
           [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("<< Terug")]),
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.goBack()
+                  }
+                }
+              },
+              [_vm._v("<< Terug")]
+            ),
             _vm._v(" "),
             _c(
               "button",
@@ -67784,7 +68250,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondbeverwijk.svg", alt: "" }
+                  attrs: { src: "/img/quizbedrijventerrein.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(1)
@@ -67814,7 +68280,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondvelsen.svg", alt: "" }
+                  attrs: { src: "/img/quizcentrumwinkelgebied.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(2)
@@ -67842,7 +68308,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass: "img-fluid align-self-start",
-                  attrs: { src: "/img/ijmondheemskerk.svg", alt: "" }
+                  attrs: { src: "/img/quizrecreatiegebied.png", alt: "" }
                 }),
                 _vm._v(" "),
                 _vm._m(3)
@@ -67864,7 +68330,18 @@ var render = function() {
           "div",
           { staticClass: "col-12 d-flex flex-row justify-content-between" },
           [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("<< Terug")]),
+            _c(
+              "a",
+              {
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.goBack()
+                  }
+                }
+              },
+              [_vm._v("<< Terug")]
+            ),
             _vm._v(" "),
             _c(
               "button",
@@ -80141,7 +80618,8 @@ Vue.component('locationtype-component', __webpack_require__(/*! ./components/Loc
 Vue.component('employeecount-component', __webpack_require__(/*! ./components/EmployeecountComponent.vue */ "./resources/js/components/EmployeecountComponent.vue")["default"]);
 Vue.component('employeeorigin-component', __webpack_require__(/*! ./components/EmployeeOriginComponent.vue */ "./resources/js/components/EmployeeOriginComponent.vue")["default"]);
 Vue.component('employeemobility-component', __webpack_require__(/*! ./components/EmployeemobilityComponent.vue */ "./resources/js/components/EmployeemobilityComponent.vue")["default"]);
-Vue.component('inhousemobility-component', __webpack_require__(/*! ./components/InhousemobilityComponent.vue */ "./resources/js/components/InhousemobilityComponent.vue")["default"]); // Components
+Vue.component('inhousemobility-component', __webpack_require__(/*! ./components/InhousemobilityComponent.vue */ "./resources/js/components/InhousemobilityComponent.vue")["default"]);
+Vue.component('electricmobility-component', __webpack_require__(/*! ./components/ElectricmobilityComponent.vue */ "./resources/js/components/ElectricmobilityComponent.vue")["default"]); // Components
 
 Vue.component('progress-bar', __webpack_require__(/*! ./components/ProgressBar.vue */ "./resources/js/components/ProgressBar.vue")["default"]);
 /**
@@ -80211,6 +80689,75 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/ElectricmobilityComponent.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/ElectricmobilityComponent.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ElectricmobilityComponent_vue_vue_type_template_id_1849c5ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ElectricmobilityComponent.vue?vue&type=template&id=1849c5ba& */ "./resources/js/components/ElectricmobilityComponent.vue?vue&type=template&id=1849c5ba&");
+/* harmony import */ var _ElectricmobilityComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ElectricmobilityComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ElectricmobilityComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ElectricmobilityComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ElectricmobilityComponent_vue_vue_type_template_id_1849c5ba___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ElectricmobilityComponent_vue_vue_type_template_id_1849c5ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ElectricmobilityComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ElectricmobilityComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/ElectricmobilityComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ElectricmobilityComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ElectricmobilityComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ElectricmobilityComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ElectricmobilityComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ElectricmobilityComponent.vue?vue&type=template&id=1849c5ba&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/ElectricmobilityComponent.vue?vue&type=template&id=1849c5ba& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ElectricmobilityComponent_vue_vue_type_template_id_1849c5ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ElectricmobilityComponent.vue?vue&type=template&id=1849c5ba& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ElectricmobilityComponent.vue?vue&type=template&id=1849c5ba&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ElectricmobilityComponent_vue_vue_type_template_id_1849c5ba___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ElectricmobilityComponent_vue_vue_type_template_id_1849c5ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

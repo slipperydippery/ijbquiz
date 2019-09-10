@@ -13,7 +13,7 @@
 						@click="toggleAnswer('beverwijk')"
 						:class="{'selected-answer' : isSelectedAnswer('beverwijk')}"
 					>
-						<img src="/img/ijmondbeverwijk.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizbeverwijk.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 								<h3 class=""> Gemeente Beverwijk </h3>
 						</div>
@@ -27,7 +27,7 @@
 						@click="toggleAnswer('velsen')"
 						:class="{'selected-answer' : isSelectedAnswer('velsen')}"
 					>
-						<img src="/img/ijmondvelsen.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizvelsen.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 							<h3 class=""> Gemeente Velsen </h3>
 						</div>
@@ -41,7 +41,7 @@
 						@click="toggleAnswer('heemskerk')"
 						:class="{'selected-answer' : isSelectedAnswer('heemskerk')}"
 					>
-						<img src="/img/ijmondheemskerk.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizheemskerk.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 								<h3 class=""> Gemeente Heemskerk </h3>
 						</div>
@@ -56,7 +56,7 @@
 						:class="{'selected-answer' : isSelectedAnswer('buiten de regio'), 'clickable' : hasIJmond, 'faded' : ! hasIJmond}"
 						id="popover-button-sync"
 					>
-						<img src="/img/ijmondbuiten.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizbuitenderegio.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 							<h3 class=""> Vestiging(en) buiten de regio </h3>
 						</div>
@@ -83,7 +83,7 @@
 			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
 
-				<a href="#"><< Terug</a>
+				<a href="#" @click="goBack()"><< Terug</a>
 				<button 
 					class="btn btn-primary"
 					@click="submitAnswers"
@@ -148,6 +148,10 @@
         		.then( (response) => {
         			window.location.href = '/quiz/locationtype'
         		} )
+        	},
+
+        	goBack() {
+        		window.location.href = '/';
         	}
         }
     }

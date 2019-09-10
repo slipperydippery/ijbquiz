@@ -6,15 +6,14 @@ use Illuminate\Http\Request;
 
 class QuizController extends Controller
 {
+    public function start()
+    {
+        return view('quiz.start');
+    }
+
     public function employeecount()
     {
     	return view('quiz.employeecount');
-    }
-
-    public function storepeople(Request $request)
-    {
-    	$request->session()->put('people', $request->people);
-    	return redirect()->route('location.show');
     }
 
     public function location()
@@ -22,21 +21,9 @@ class QuizController extends Controller
     	return (view('quiz.location'));
     }
 
-    public function storelocation(Request $request)
-    {
-        $request->session()->put('location', $request->location);
-        return redirect()->route('locationtype.show');
-    }
-
     public function locationtype()
     {
         return view('quiz.locationtype');
-    }
-
-    public function storelocationtype(Request $request)
-    {
-        $request->session()->put('locationtype', $request->locationtype);
-        return redirect()->route('employeeorigin.show');
     }
 
     public function employeeorigin()
@@ -44,21 +31,9 @@ class QuizController extends Controller
         return view('quiz.employeeorigin');
     }
 
-    public function storeemployeeorigion(Request $request)
-    {
-        $request->session()->put('employeeorigin', $request->employeeorigin);
-        return redirect()->route('employeemobility.show');
-    }
-
     public function employeemobility()
     {
         return view('quiz.employeemobility');
-    }
-
-    public function storeemployeemobility(Request $request)
-    {
-        $request->session()->put('employeemobility', $request->employeemobility);
-        return redirect()->route('inhousemobility.show');
     }
 
     public function inhousemobility()
@@ -66,32 +41,14 @@ class QuizController extends Controller
         return view('quiz.inhousemobility');
     }
 
-    public function storeinhousemobility(Request $request)
+    public function electricmobility()
     {
-        $request->session()->put('inhousemobility', $request->inhousemobility);
-        return redirect()->route('rushhour.show');
-    }
-
-    public function rushhour()
-    {
-        return view('quiz.rushhour');
-    }
-
-    public function storerushhour(Request $request)
-    {
-        $request->session()->put('rushhour', $request->rushhour);
-        return redirect()->route('contactpermission.show');
+        return view('quiz.electricmobility');
     }
 
     public function contactpermission()
     {
         return view('quiz.contactpermission');
-    }
-
-    public function storecontactpermission(Request $request)
-    {
-        $request->session()->put('contactpermission', $request->contactpermission);
-        return redirect()->route('results.show');
     }
 
     public function results()

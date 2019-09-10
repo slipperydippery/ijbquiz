@@ -41,4 +41,10 @@ class ApiSessionController extends Controller
         $request->session()->put('inhousemobility', $request->inhousemobility);
         return $request->inhousemobility;
     }
+
+    public function updateelectricmobility(Request $request)
+    {
+        $request->session()->put('electricmobility', $request->electricmobility);
+        return $request->electricmobility;
+    }
 }

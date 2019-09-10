@@ -30,6 +30,7 @@ Vue.component('employeecount-component', require('./components/EmployeecountComp
 Vue.component('employeeorigin-component', require('./components/EmployeeOriginComponent.vue').default);
 Vue.component('employeemobility-component', require('./components/EmployeemobilityComponent.vue').default);
 Vue.component('inhousemobility-component', require('./components/InhousemobilityComponent.vue').default);
+Vue.component('electricmobility-component', require('./components/ElectricmobilityComponent.vue').default);
 
 // Components
 Vue.component('progress-bar', require('./components/ProgressBar.vue').default);

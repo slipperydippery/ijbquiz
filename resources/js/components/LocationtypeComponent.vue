@@ -13,7 +13,7 @@
 						@click="toggleAnswer('Bedrijventerrein')"
 						:class="{'selected-answer' : isSelectedAnswer('Bedrijventerrein')}"
 					>
-						<img src="/img/ijmondbeverwijk.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizbedrijventerrein.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 								<h3 class=""> Bedrijventerrein </h3>
 						</div>
@@ -27,7 +27,7 @@
 						@click="toggleAnswer('centrum / winkelgebied')"
 						:class="{'selected-answer' : isSelectedAnswer('centrum / winkelgebied')}"
 					>
-						<img src="/img/ijmondvelsen.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizcentrumwinkelgebied.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 							<h3 class=""> Centrum/winkelgebied </h3>
 						</div>
@@ -41,7 +41,7 @@
 						@click="toggleAnswer('recreatiegebied')"
 						:class="{'selected-answer' : isSelectedAnswer('recreatiegebied')}"
 					>
-						<img src="/img/ijmondheemskerk.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizrecreatiegebied.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 								<h3 class=""> Recreatiegebied </h3>
 						</div>
@@ -59,7 +59,7 @@
 			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
 
-				<a href="#"><< Terug</a>
+				<a href="#" @click="goBack()"><< Terug</a>
 				<button 
 					class="btn btn-primary"
 					@click="submitAnswers"
@@ -113,6 +113,10 @@
         		.then( (response) => {
         			window.location.href = '/quiz/employeecount'
         		} )
+        	},
+
+        	goBack() {
+        		window.location.href = '/quiz/location';
         	}
         }
     }

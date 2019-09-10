@@ -59,7 +59,7 @@
 			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
 
-				<a href="#"><< Terug</a>
+				<a href="#" @click="goBack()"><< Terug</a>
 				<button 
 					class="btn btn-primary"
 					@click="submitAnswers"
@@ -124,6 +124,10 @@
         		.then( (response) => {
         			window.location.href = '/quiz/employeemobility'
         		} )
+        	},
+
+        	goBack() {
+        		window.location.href = '/quiz/employeecount';
         	}
         }
     }

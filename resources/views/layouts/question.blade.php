@@ -78,6 +78,10 @@
                 @endforeach
             </ul>
         @endif
+        @if ($electricmobility = Session::get('electricmobility'))
+            <b>electricmobility:</b>
+                {{ $electricmobility }} <br>
+        @endif
     </div>
     <main id="app" class="h-100">
         @yield('content')

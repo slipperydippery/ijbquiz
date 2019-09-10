@@ -13,7 +13,7 @@
 						@click="toggleAnswer('poolautos')"
 						:class="{'selected-answer' : isSelectedAnswer('poolautos')}"
 					>
-						<img src="/img/ijmondbeverwijk.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizpoolautos.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 								<h3 class=""> We hebben poolauto’s (personenauto’s) om naar afspraken te gaan </h3>
 						</div>
@@ -27,7 +27,7 @@
 						@click="toggleAnswer('bestelbusjes')"
 						:class="{'selected-answer' : isSelectedAnswer('bestelbusjes')}"
 					>
-						<img src="/img/ijmondvelsen.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizbestelbusjes.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 							<h3 class=""> We hebben bestelbusjes om onze klanten te bezoeken of onze producten mee te bezorgen </h3>
 						</div>
@@ -41,7 +41,7 @@
 						@click="toggleAnswer('vrachtwagens')"
 						:class="{'selected-answer' : isSelectedAnswer('vrachtwagens')}"
 					>
-						<img src="/img/ijmondheemskerk.svg" alt="" class="img-fluid align-self-start">
+						<img src="/img/quizvrachtwagen.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
 								<h3 class=""> We rijden de regio in en uit met vrachtwagens </h3>
 						</div>
@@ -59,9 +59,9 @@
 			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
 
-				<a href="#"><< Terug</a>
+				<a href="#" @click="goBack()"><< Terug</a>
 				<button 
-					class="btn btn-primary"
+						class="btn btn-primary"
 					@click="submitAnswers"
 				>
 					Accoord en verder
@@ -111,8 +111,12 @@
         			inhousemobility: home.selectedAnswers
         		})
         		.then( (response) => {
-        			window.location.href = '/quiz/inhousemobility'
+        			window.location.href = '/quiz/electricmobility'
         		} )
+        	},
+
+        	goBack() {
+        		window.location.href = '/quiz/employeemobility';
         	}
         }
     }
