@@ -4,7 +4,8 @@
 	<div class="container-fluid d-flex flex-column h-100 p-5">
 		<div class="row">
 	        <div class="col-md-8 offset-md-2 text-center pb-4">
-                <h1 class="pagetitle d-inline px-5"> Dat was het alweer! </h1>
+                <h1 class="pagetitle d-inline px-5"> Resultaten</h1>
+                <p>IJmond Bereikbaar denkt graag met je mee welke slimme en duurzame oplossingen bij jouw bedrijf toegepast kunnen worden: meer mensen op de fiets, slimme stimulering, schoner rijden. Gebaseerd op jouw situatie hebben we een aantal relevante links voor je verzameld. </p>
 	        </div>
 		</div>
 		<div class="row">
@@ -100,16 +101,9 @@
 		</div>
 		<div class="row p-5">
 			<div class="col-md-8 offset-md-2">
-                <h2 class="pagetitle d-inline px-5"> Duidelijke informatie zeg! IJmond Bereikbaar denkt graag met je mee welke slimme en duurzame oplossingen bij jouw bedrijf toegepast kunnen worden: meer mensen op de fiets, slimme stimulering, schoner rijden. </h2>
+                <h2 class="pagetitle d-inline px-5">  </h2>
             </div>
-			<div class="col-md-4 offset-md-2">
-				<h3>Uw resultaten</h3>
-				<img src="/img/resultaten.png" alt="" class="img-fluid">
-			</div>
-			<div class="col-md-4">
-				<h3>Relevante informatie</h3>
-				<img src="/img/folders.png" alt="" class="img-fluid">
-			</div>
+	
 		</div>
 
 	</div>
