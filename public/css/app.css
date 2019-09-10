@@ -10674,6 +10674,10 @@ h1.pagetitle {
   font-size: 5vw;
 }
 
+h2.pagetitle {
+  font-size: 2vw;
+}
+
 .btn-outline-nooutline {
   border: none;
 }

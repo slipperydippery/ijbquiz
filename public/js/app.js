@@ -1957,7 +1957,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/api/session/updateelectricmobility', {
         electricmobility: home.selectedAnswers
       }).then(function (response) {
-        window.location.href = '/quiz/electricmobility';
+        window.location.href = '/quiz/results';
       });
     },
     goBack: function goBack() {

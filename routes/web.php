@@ -23,6 +23,8 @@ Route::get('/quiz/employeemobility', 'QuizController@employeemobility')->name('e
 Route::get('/quiz/inhousemobility', 'QuizController@inhousemobility')->name('inhousemobility.show');
 Route::get('/quiz/electricmobility', 'QuizController@electricmobility')->name('electricmobility.show');
 
+Route::get('/quiz/results', 'QuizController@results')->name('results.show');
+
 Route::post('/api/session/updatelocation', 'ApiSessionController@updatelocation');
 Route::post('/api/session/updatelocationtype', 'ApiSessionController@updatelocationtype');
 Route::post('/api/session/updateemployeecount', 'ApiSessionController@updateemployeecount');
@@ -38,6 +40,5 @@ Route::post('/api/session/updateelectricmobility', 'ApiSessionController@updatee
 // Route::post('/quiz/rushhour', 'QuizController@storerushhour')->name('rushhour.store');
 // Route::get('/quiz/contactpermission', 'QuizController@contactpermission')->name('contactpermission.show');
 // Route::post('/quiz/contactpermission', 'QuizController@storecontactpermission')->name('contactpermission.store');
-// Route::get('/quiz/results', 'QuizController@results')->name('results.show');
 
 

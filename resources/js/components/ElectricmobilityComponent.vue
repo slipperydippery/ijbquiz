@@ -127,7 +127,7 @@
         			electricmobility: home.selectedAnswers
         		})
         		.then( (response) => {
-        			window.location.href = '/quiz/electricmobility'
+        			window.location.href = '/quiz/results'
         		} )
         	},
 
