@@ -6,25 +6,25 @@
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
-			<div class="col-8 offset-md-2 p-2 border">
-				<label for="range-2"> <h4>Bijna om de hoek: 5-10km</h4> </label>
+			<div class="col-8 offset-md-2 p-2">
+				<label for="range-2"> <h4>Bijna om de hoek: 5-10km </h4> </label>
+				<div class="range-percentage">{{ percentages.uptofive }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.uptofive" type="range" min="0" max="100" step="10"></b-form-input>
-			    <div class="mt-2 text-center"> <h5>{{ percentages.uptofive }} %</h5></div>
 			</div>
-			<div class="col-8 offset-md-2 p-2 border">
+			<div class="col-8 offset-md-2 p-2">
 				<label for="range-2"> <h4>Lekker dichtbij: 5-10km</h4> </label>
+				<div class="range-percentage">{{ percentages.fivetoten }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.fivetoten" type="range" min="0" max="100" step="10"></b-form-input>
-			    <div class="mt-2 text-center"> <h5>{{ percentages.fivetoten }} %</h5></div>
 			</div>
-			<div class="col-8 offset-md-2 p-2 border">
+			<div class="col-8 offset-md-2 p-2">
 				<label for="range-2"><h4>Wel wat verder weg: 11-20km</h4></label>
+				<div class="range-percentage">{{ percentages.eleventotwenty }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.eleventotwenty" type="range" min="0" max="100" step="10"></b-form-input>
-			    <div class="mt-2 text-center"> <h5>{{ percentages.eleventotwenty }} %</h5></div>
 			</div>
-			<div class="col-8 offset-md-2 p-2 border">
+			<div class="col-8 offset-md-2 p-2">
 				<label for="range-2"><h4>Een flink eind: >20km</h4></label>
+				<div class="range-percentage">{{ percentages.morethantwenty }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.morethantwenty" type="range" min="0" max="100" step="10"></b-form-input>
-			    <div class="mt-2 text-center"> <h5>{{ percentages.morethantwenty }} %</h5></div>
 			</div>
 			<div 
 				class="col-8 offset-md-2 p-2 text-center"

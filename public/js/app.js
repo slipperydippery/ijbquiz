@@ -2313,9 +2313,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: [],
   data: function data() {
@@ -67017,9 +67014,13 @@ var render = function() {
       _c("div", { staticClass: "row flex-grow-1" }, [
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2 border" },
+          { staticClass: "col-8 offset-md-2 p-2" },
           [
             _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "range-percentage" }, [
+              _vm._v(_vm._s(_vm.percentages.uptofive) + " %")
+            ]),
             _vm._v(" "),
             _c("b-form-input", {
               attrs: {
@@ -67036,20 +67037,20 @@ var render = function() {
                 },
                 expression: "percentages.uptofive"
               }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-2 text-center" }, [
-              _c("h5", [_vm._v(_vm._s(_vm.percentages.uptofive) + " %")])
-            ])
+            })
           ],
           1
         ),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2 border" },
+          { staticClass: "col-8 offset-md-2 p-2" },
           [
             _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "range-percentage" }, [
+              _vm._v(_vm._s(_vm.percentages.fivetoten) + " %")
+            ]),
             _vm._v(" "),
             _c("b-form-input", {
               attrs: {
@@ -67066,20 +67067,20 @@ var render = function() {
                 },
                 expression: "percentages.fivetoten"
               }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-2 text-center" }, [
-              _c("h5", [_vm._v(_vm._s(_vm.percentages.fivetoten) + " %")])
-            ])
+            })
           ],
           1
         ),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2 border" },
+          { staticClass: "col-8 offset-md-2 p-2" },
           [
             _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "range-percentage" }, [
+              _vm._v(_vm._s(_vm.percentages.eleventotwenty) + " %")
+            ]),
             _vm._v(" "),
             _c("b-form-input", {
               attrs: {
@@ -67096,20 +67097,20 @@ var render = function() {
                 },
                 expression: "percentages.eleventotwenty"
               }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-2 text-center" }, [
-              _c("h5", [_vm._v(_vm._s(_vm.percentages.eleventotwenty) + " %")])
-            ])
+            })
           ],
           1
         ),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2 border" },
+          { staticClass: "col-8 offset-md-2 p-2" },
           [
             _vm._m(4),
+            _vm._v(" "),
+            _c("div", { staticClass: "range-percentage" }, [
+              _vm._v(_vm._s(_vm.percentages.morethantwenty) + " %")
+            ]),
             _vm._v(" "),
             _c("b-form-input", {
               attrs: {
@@ -67126,11 +67127,7 @@ var render = function() {
                 },
                 expression: "percentages.morethantwenty"
               }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-2 text-center" }, [
-              _c("h5", [_vm._v(_vm._s(_vm.percentages.morethantwenty) + " %")])
-            ])
+            })
           ],
           1
         ),
@@ -67218,7 +67215,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Bijna om de hoek: 5-10km")])
+      _c("h4", [_vm._v("Bijna om de hoek: 5-10km ")])
     ])
   },
   function() {
@@ -67514,9 +67511,13 @@ var render = function() {
       _c("div", { staticClass: "row flex-grow-1" }, [
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2 border" },
+          { staticClass: "col-8 offset-md-2 p-2" },
           [
             _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "range-percentage" }, [
+              _vm._v(_vm._s(_vm.percentages.fiets) + " %")
+            ]),
             _vm._v(" "),
             _c("b-form-input", {
               attrs: {
@@ -67533,20 +67534,20 @@ var render = function() {
                 },
                 expression: "percentages.fiets"
               }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-2 text-center" }, [
-              _c("h5", [_vm._v(_vm._s(_vm.percentages.fiets) + " %")])
-            ])
+            })
           ],
           1
         ),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2 border" },
+          { staticClass: "col-8 offset-md-2 p-2" },
           [
             _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "range-percentage" }, [
+              _vm._v(_vm._s(_vm.percentages.openbaarvervoer) + " %")
+            ]),
             _vm._v(" "),
             _c("b-form-input", {
               attrs: {
@@ -67563,20 +67564,20 @@ var render = function() {
                 },
                 expression: "percentages.openbaarvervoer"
               }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-2 text-center" }, [
-              _c("h5", [_vm._v(_vm._s(_vm.percentages.openbaarvervoer) + " %")])
-            ])
+            })
           ],
           1
         ),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2 border" },
+          { staticClass: "col-8 offset-md-2 p-2" },
           [
             _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "range-percentage" }, [
+              _vm._v(_vm._s(_vm.percentages.auto) + " %")
+            ]),
             _vm._v(" "),
             _c("b-form-input", {
               attrs: {
@@ -67593,16 +67594,10 @@ var render = function() {
                 },
                 expression: "percentages.auto"
               }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-2 text-center" }, [
-              _c("h5", [_vm._v(_vm._s(_vm.percentages.auto) + " %")])
-            ])
+            })
           ],
           1
         ),
-        _vm._v(" "),
-        _vm._m(4),
         _vm._v(" "),
         _c(
           "div",
@@ -67705,12 +67700,6 @@ var staticRenderFns = [
     return _c("label", { attrs: { for: "range-2" } }, [
       _c("h4", [_vm._v("Met de auto")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-8 offset-md-2" }, [_c("br"), _c("br")])
   }
 ]
 render._withStripped = true

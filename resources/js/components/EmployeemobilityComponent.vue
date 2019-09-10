@@ -6,23 +6,20 @@
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
-			<div class="col-8 offset-md-2 p-2 border">
+			<div class="col-8 offset-md-2 p-2">
 				<label for="range-2"> <h4>Supergezond op de fiets</h4> </label>
+				<div class="range-percentage">{{ percentages.fiets }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.fiets" type="range" min="0" max="100" step="10"></b-form-input>
-			    <div class="mt-2 text-center"> <h5>{{ percentages.fiets }} %</h5></div>
 			</div>
-			<div class="col-8 offset-md-2 p-2 border">
+			<div class="col-8 offset-md-2 p-2">
 				<label for="range-2"> <h4>Met het openbaar vervoer of met bedrijfsvervoer</h4> </label>
+				<div class="range-percentage">{{ percentages.openbaarvervoer }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.openbaarvervoer" type="range" min="0" max="100" step="10"></b-form-input>
-			    <div class="mt-2 text-center"> <h5>{{ percentages.openbaarvervoer }} %</h5></div>
 			</div>
-			<div class="col-8 offset-md-2 p-2 border">
+			<div class="col-8 offset-md-2 p-2">
 				<label for="range-2"><h4>Met de auto</h4></label>
+				<div class="range-percentage">{{ percentages.auto }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.auto" type="range" min="0" max="100" step="10"></b-form-input>
-			    <div class="mt-2 text-center"> <h5>{{ percentages.auto }} %</h5></div>
-			</div>
-			<div class="col-8 offset-md-2">
-				<br><br>
 			</div>
 			<div 
 				class="col-8 offset-md-2 p-2 text-center"
