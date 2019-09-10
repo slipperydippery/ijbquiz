@@ -110,7 +110,7 @@
         },
 
         mounted() {
-        	this.selectedAnswers = this.session.location ? this.session.location : ''
+        	this.selectedAnswers = this.session.location ? this.session.location : []
         },
 
         computed: {

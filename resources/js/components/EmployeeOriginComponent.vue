@@ -45,7 +45,7 @@
 					variant="danger"
 					v-if="totalPercentage > 100"
 				>
-					<h2>Totaal: {{ totalPercentage }}</h2>
+					<h2>Totaal: {{ totalPercentage }}%</h2>
 				</b-alert>
 			</div>
 		</div>
@@ -90,7 +90,12 @@
         },
 
         mounted() {
-        	this.percentages = this.session.employeeorigin ? this.session.employeeorigin : ''
+        	this.percentages = this.session.employeeorigin ? this.session.employeeorigin : {
+            		'uptofive' : 0,
+            		'fivetoten' : 0,
+            		'eleventotwenty' : 0,
+            		'morethantwenty' : 0,
+            	}
         },
 
         computed: {

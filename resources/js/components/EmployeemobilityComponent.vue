@@ -40,7 +40,7 @@
 					variant="danger"
 					v-if="totalPercentage > 100"
 				>
-					<h2>Totaal: {{ totalPercentage }}</h2>
+					<h2>Totaal: {{ totalPercentage }}%</h2>
 				</b-alert>
 			</div>
 		</div>
@@ -84,7 +84,11 @@
         },
 
         mounted() {
-        	this.percentages = this.session.employeemobility ? this.session.employeemobility : ''
+        	this.percentages = this.session.employeemobility ? this.session.employeemobility : {
+            		'fiets' : 0,
+            		'openbaarvervoer' : 0,
+            		'auto' : 0,
+            	}
         },
 
         computed: {

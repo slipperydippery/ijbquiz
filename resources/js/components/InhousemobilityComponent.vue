@@ -85,7 +85,7 @@
         },
 
         mounted() {
-        	this.selectedAnswers = this.session.inhousemobility ? this.session.inhousemobility : ''
+        	this.selectedAnswers = this.session.inhousemobility ? this.session.inhousemobility : []
         },
 
         computed: {

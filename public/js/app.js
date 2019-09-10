@@ -2064,7 +2064,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.percentages = this.session.employeeorigin ? this.session.employeeorigin : '';
+    this.percentages = this.session.employeeorigin ? this.session.employeeorigin : {
+      'uptofive': 0,
+      'fivetoten': 0,
+      'eleventotwenty': 0,
+      'morethantwenty': 0
+    };
   },
   computed: {
     totalPercentage: function totalPercentage() {
@@ -2331,7 +2336,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.percentages = this.session.employeemobility ? this.session.employeemobility : '';
+    this.percentages = this.session.employeemobility ? this.session.employeemobility : {
+      'fiets': 0,
+      'openbaarvervoer': 0,
+      'auto': 0
+    };
   },
   computed: {
     totalPercentage: function totalPercentage() {
@@ -2460,7 +2469,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.selectedAnswers = this.session.inhousemobility ? this.session.inhousemobility : '';
+    this.selectedAnswers = this.session.inhousemobility ? this.session.inhousemobility : [];
   },
   computed: {},
   methods: {
@@ -2610,7 +2619,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.selectedAnswers = this.session.location ? this.session.location : '';
+    this.selectedAnswers = this.session.location ? this.session.location : [];
   },
   computed: {
     hasIJmond: function hasIJmond() {
@@ -2746,7 +2755,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.selectedAnswers = this.session.locationtype ? this.session.locationtype : '';
+    this.selectedAnswers = this.session.locationtype ? this.session.locationtype : [];
   },
   computed: {},
   methods: {
@@ -67164,7 +67173,9 @@ var render = function() {
             _vm._v(" "),
             _vm.totalPercentage > 100
               ? _c("b-alert", { attrs: { show: "", variant: "danger" } }, [
-                  _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
+                  _c("h2", [
+                    _vm._v("Totaal: " + _vm._s(_vm.totalPercentage) + "%")
+                  ])
                 ])
               : _vm._e()
           ],
@@ -67631,7 +67642,9 @@ var render = function() {
             _vm._v(" "),
             _vm.totalPercentage > 100
               ? _c("b-alert", { attrs: { show: "", variant: "danger" } }, [
-                  _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
+                  _c("h2", [
+                    _vm._v("Totaal: " + _vm._s(_vm.totalPercentage) + "%")
+                  ])
                 ])
               : _vm._e()
           ],

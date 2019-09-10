@@ -85,7 +85,7 @@
         },
 
         mounted() {
-        	this.selectedAnswers = this.session.locationtype ? this.session.locationtype : ''
+        	this.selectedAnswers = this.session.locationtype ? this.session.locationtype : []
         },
 
         computed: {
