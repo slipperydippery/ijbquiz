@@ -1,22 +1,8 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-@import "partials/themecolors";
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-// Layout
-@import 'partials/layout';
-@import 'partials/typography';
-@import 'partials/buttons';
-@import 'partials/cards';
-@import 'partials/range';
-
-@import 'partials/elements';
-
-// Dev
-@import 'partials/sessiondataviewer';

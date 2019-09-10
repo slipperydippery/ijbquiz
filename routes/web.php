@@ -11,6 +11,8 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', 'QuizController@start');
 
 Route::get('/quiz/start', 'QuizController@start')->name('quiz.start');
@@ -40,5 +42,7 @@ Route::post('/api/session/updateelectricmobility', 'ApiSessionController@updatee
 // Route::post('/quiz/rushhour', 'QuizController@storerushhour')->name('rushhour.store');
 // Route::get('/quiz/contactpermission', 'QuizController@contactpermission')->name('contactpermission.show');
 // Route::post('/quiz/contactpermission', 'QuizController@storecontactpermission')->name('contactpermission.store');
+
+
 
 
