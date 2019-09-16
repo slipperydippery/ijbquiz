@@ -35,6 +35,11 @@ Route::post('/api/session/updateemployeemobility', 'ApiSessionController@updatee
 Route::post('/api/session/updateinhousemobility', 'ApiSessionController@updateinhousemobility');
 Route::post('/api/session/updateelectricmobility', 'ApiSessionController@updateelectricmobility');
 
+Route::get('/admin/measures', 'AdminController@measures')->name('admin.measures');
+
+Route::get('/api/answeroption/{answeroption}/measure', 'ApiAnsweroptionMeasureController@index');
+Route::post('/api/answeroption/{answeroption}/measure', 'ApiAnsweroptionMeasureController@store');
+
 // Route::post('/api/session/updateinhousemobilitytype', 'ApiSessionController@updateinhousemobilitytype');
 // Route::post('/quiz/employeemobility', 'QuizController@storeemployeemobility')->name('employeemobility.store');
 // Route::post('/quiz/inhousemobility', 'QuizController@storeinhousemobility')->name('inhousemobility.store');

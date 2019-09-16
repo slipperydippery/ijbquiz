@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
+use App\Question;
+use App\Loggedsession;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
@@ -53,6 +56,29 @@ class QuizController extends Controller
 
     public function results()
     {
-        return view('quiz.results');
+        // return session()->all();
+        $loggedsession = Loggedsession::create([
+            'token' => session()->get('_token'),
+        ]);
+        foreach (Question::get() as $question) {
+            foreach ($question->answeroptions as $answeroption) {
+                $qslug = $question->slug;
+                $aoslug = $answeroption->slug;
+                if(is_array(session()->get($qslug))){
+                    $selected = in_array($aoslug, session()->get($qslug)) ? 1 : 0;
+                } else {
+                    $selected = (session()->get($qslug) == $aoslug) ? 1 : 0;
+                }
+                $answer = Answer::create([
+                    'answeroption_id' => $answeroption->id,
+                    'loggedsession_id' => $loggedsession->id,
+                    'selected' => $selected
+                ]);
+            }
+        }
+
+        $questions = Question::with('answeroptions.measures')->get();
+        $loggedsession = Loggedsession::with('answers.answeroption.question')->find($loggedsession->id);
+        return view('quiz.results', compact('questions', 'loggedsession'));
     }
 }

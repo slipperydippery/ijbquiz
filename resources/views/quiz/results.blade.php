@@ -10,6 +10,13 @@
 		</div>
 		<div class="row">
 			<div class="col-12">
+				@foreach ($loggedsession->answers as $answer)
+					{{ $answer->answeroption->name }} - {{ $answer->selected }} <br>
+				@endforeach
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
 				<div class="card-columns">
 				  <div class="card">
 				    <img src="https://dummyimage.com/600x400/e3e3e3/616161.png" class="card-img-top" alt="...">

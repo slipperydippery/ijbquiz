@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLinkMeasureTable extends Migration
+class CreateLoggedsessionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateLinkMeasureTable extends Migration
      */
     public function up()
     {
-        Schema::create('link_measure', function (Blueprint $table) {
+        Schema::create('loggedsessions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('token');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateLinkMeasureTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('link_measure');
+        Schema::dropIfExists('loggedsessions');
     }
 }

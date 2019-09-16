@@ -33,6 +33,9 @@ Vue.component('electricmobility-component', require('./components/Electricmobili
 // Components
 Vue.component('progress-bar', require('./components/ProgressBar.vue').default);
 
+// Admin
+Vue.component('manage-measures', require('./components/ManageMeasures.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

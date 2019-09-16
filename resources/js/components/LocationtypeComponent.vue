@@ -10,8 +10,8 @@
 				<div class="p-2 h-100">
 					<div 
 						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
-						@click="toggleAnswer('Bedrijventerrein')"
-						:class="{'selected-answer' : isSelectedAnswer('Bedrijventerrein')}"
+						@click="toggleAnswer('bedrijventerrein')"
+						:class="{'selected-answer' : isSelectedAnswer('bedrijventerrein')}"
 					>
 						<img src="/img/quizbedrijventerrein.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
