@@ -17,6 +17,7 @@ class CreateMeasuresTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description')->nullable();
+            $table->string('link');
             $table->string('code');
             $table->timestamps();
         });

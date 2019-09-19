@@ -35,6 +35,8 @@ Vue.component('progress-bar', require('./components/ProgressBar.vue').default);
 
 // Admin
 Vue.component('manage-measures', require('./components/ManageMeasures.vue').default);
+Vue.component('create-measure', require('./components/CreateMeasure.vue').default);
+Vue.component('edit-measure', require('./components/EditMeasure.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

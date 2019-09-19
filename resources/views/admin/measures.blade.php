@@ -9,19 +9,39 @@
 	        </div>
 		</div>
 		<div class="row">
+			<div class="col-8 offset-md-2 border shadow mb-4">
+				<create-measure
+					:questions= " {{ json_encode($questions) }}  "
+				>
+				</create-measure>
+			</div>
+		</div>
+		<div class="row">
 			@foreach ($questions as $question)
 				<div class="col-12">
-					<h2>{{ $question->name }}</h2>
+					<h2 class="pt-5 text-primary">{{ $question->name }}</h2>
 					@foreach ($question->answeroptions as $answeroption)
-						<div class="row border p-2 m-2">
-							<div class="col-4">
-								<h3>{{ $answeroption->name }}</h3>
+						<div class="row border p-2">
+							<div class="col-12">
+								<h4 class="text-muted">{{ $answeroption->name }}</h4>
 							</div>
-							<div class="col-8">
-								<manage-measures
-									:answeroption_id=" {{ $answeroption->id }} "
-								>
-								</manage-measures>
+							<div class="col-12">
+								@foreach ($answeroption->measures as $measure)
+									<div class="row border">
+										<div class="col-2">
+											<strong>{{ $measure->name }}</strong>
+										</div>
+										<div class="col-6">
+											{{ $measure->description }}
+										</div>
+										<div class="col-2">
+											<a href=" {{ $measure->link }} ">{{  $measure->link }}</a>
+										</div>
+										<div class="col-2">
+											<a href=" {{ route('measure.edit', $measure) }} " class="btn btn-outline-info btn-block"> Bewerk link </a>
+										</div>
+									</div>
+								@endforeach
 							</div>
 						</div>
 					@endforeach

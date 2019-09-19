@@ -6,6 +6,7 @@ use App\Answer;
 use App\Measure;
 use App\Question;
 use App\Answeroption;
+use App\Selectedmeasure;
 use Illuminate\Database\Eloquent\Model;
 
 class Answeroption extends Model
@@ -23,5 +24,10 @@ class Answeroption extends Model
     public function answers()
     {
     	return $this->hasMany(Answer::class);
+    }
+
+    public function selectedmeasures()
+    {
+        return $this->belongsToMany(Selectedmeasure::class);
     }
 }
