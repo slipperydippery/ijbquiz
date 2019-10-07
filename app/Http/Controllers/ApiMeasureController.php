@@ -103,6 +103,6 @@ class ApiMeasureController extends Controller
      */
     public function destroy(Measure $measure)
     {
-        //
+        $measure->delete();
     }
 }

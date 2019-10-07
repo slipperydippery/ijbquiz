@@ -4,8 +4,7 @@
 	<div class="container-fluid d-flex flex-column h-100 p-5">
 		<div class="row">
 	        <div class="col-12 text-center pb-4">
-                <h1 class="pagetitle d-inline px-5"> Admin</h1>
-                <p>Admin!</p>
+                <h1 class="pagetitle d-inline px-5"> Bewerk Links </h1>
 	        </div>
 		</div>
 		<div class="row">
@@ -17,6 +16,7 @@
 			</div>
 		</div>
 		<div class="row">
+			<h2 class="text-center width-100 pt-5"> Bestaande links per factor: </h2>
 			@foreach ($questions as $question)
 				<div class="col-12">
 					<h2 class="pt-5 text-primary">{{ $question->name }}</h2>

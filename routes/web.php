@@ -38,6 +38,7 @@ Route::post('/api/session/updateelectricmobility', 'ApiSessionController@updatee
 Route::resource('measure', 'MeasureController');
 Route::post('/api/measure', 'ApiMeasureController@store');
 Route::patch('/api/measure/{measure}', 'ApiMeasureController@update');
+Route::delete('/api/measure/{measure}', 'ApiMeasureController@destroy');
 
 Route::get('/api/answeroption/{answeroption}/measure', 'ApiAnsweroptionMeasureController@index');
 Route::post('/api/answeroption/{answeroption}/measure', 'ApiAnsweroptionMeasureController@store');

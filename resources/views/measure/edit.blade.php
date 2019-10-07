@@ -5,7 +5,6 @@
 		<div class="row">
 	        <div class="col-12 text-center pb-4">
                 <h1 class="pagetitle d-inline px-5"> Bewerk Link</h1>
-                <p> {{ $measure->name }} </p>
 	        </div>
 		</div>
 		<div class="row">

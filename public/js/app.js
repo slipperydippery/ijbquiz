@@ -1970,36 +1970,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['questions', 'measure'],
   data: function data() {
-    return {};
+    return {
+      localmeasure: {}
+    };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    this.localmeasure = this.measure;
+  },
   computed: {},
   methods: {
     isChecked: function isChecked(answeroption) {
-      return this.measure.answeroptions.map(function (answeroption) {
+      return this.localmeasure.answeroptions.map(function (answeroption) {
         return answeroption.id;
       }).includes(answeroption.id) ? true : false;
     },
     toggleAnsweroption: function toggleAnsweroption(answeroption) {
       if (this.isChecked(answeroption)) {
-        this.measure.answeroptions.splice(this.measure.answeroptions.map(function (answeroption) {
+        this.localmeasure.answeroptions.splice(this.localmeasure.answeroptions.map(function (answeroption) {
           return answeroption.id;
         }).indexOf(answeroption.id), 1);
         this.$forceUpdate();
         return;
       }
 
-      this.measure.answeroptions.push(answeroption);
+      this.localmeasure.answeroptions.push(answeroption);
       this.$forceUpdate();
     },
     updateMeasure: function updateMeasure() {
       var home = this;
-      axios.patch('/api/measure/' + this.measure.id, {
-        measure: home.measure
+      axios.patch('/api/measure/' + this.localmeasure.id, {
+        measure: home.localmeasure
       }).then(function (response) {
+        window.location.href = '/measure';
+      });
+    },
+    deleteMeasure: function deleteMeasure() {
+      var home = this;
+      axios["delete"]('/api/measure/' + this.localmeasure.id).then(function (response) {
         window.location.href = '/measure';
       });
     }
@@ -67173,9 +67184,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("form", [
-    _c("h2", { staticClass: "text-center width-100 p-2" }, [
-      _vm._v("Voeg een link toe")
-    ]),
+    _c("h2", {
+      staticClass: "text-center width-100 p-2",
+      domProps: { innerHTML: _vm._s(_vm.localmeasure.name) }
+    }),
     _vm._v(" "),
     _c("div", { staticClass: "form-group" }, [
       _c("label", { attrs: { for: "exampleFormControlInput1" } }, [
@@ -67187,8 +67199,8 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.measure.name,
-            expression: "measure.name"
+            value: _vm.localmeasure.name,
+            expression: "localmeasure.name"
           }
         ],
         staticClass: "form-control",
@@ -67197,13 +67209,13 @@ var render = function() {
           id: "exampleFormControlInput1",
           placeholder: ""
         },
-        domProps: { value: _vm.measure.name },
+        domProps: { value: _vm.localmeasure.name },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.$set(_vm.measure, "name", $event.target.value)
+            _vm.$set(_vm.localmeasure, "name", $event.target.value)
           }
         }
       })
@@ -67219,19 +67231,19 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.measure.description,
-            expression: "measure.description"
+            value: _vm.localmeasure.description,
+            expression: "localmeasure.description"
           }
         ],
         staticClass: "form-control",
         attrs: { id: "exampleFormControlTextarea1", rows: "3" },
-        domProps: { value: _vm.measure.description },
+        domProps: { value: _vm.localmeasure.description },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.$set(_vm.measure, "description", $event.target.value)
+            _vm.$set(_vm.localmeasure, "description", $event.target.value)
           }
         }
       })
@@ -67247,8 +67259,8 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model",
-            value: _vm.measure.link,
-            expression: "measure.link"
+            value: _vm.localmeasure.link,
+            expression: "localmeasure.link"
           }
         ],
         staticClass: "form-control",
@@ -67257,13 +67269,13 @@ var render = function() {
           id: "exampleFormControlInput1",
           placeholder: ""
         },
-        domProps: { value: _vm.measure.link },
+        domProps: { value: _vm.localmeasure.link },
         on: {
           input: function($event) {
             if ($event.target.composing) {
               return
             }
-            _vm.$set(_vm.measure, "link", $event.target.value)
+            _vm.$set(_vm.localmeasure, "link", $event.target.value)
           }
         }
       })
@@ -67275,59 +67287,70 @@ var render = function() {
       "div",
       { staticClass: "card-columns" },
       _vm._l(_vm.questions, function(question) {
-        return _c(
-          "div",
-          { staticClass: "card", attrs: { index: "question.id" } },
-          [
-            _c(
+        return _vm.localmeasure.answeroptions
+          ? _c(
               "div",
-              { staticClass: "card-body" },
+              { staticClass: "card", attrs: { index: "question.id" } },
               [
-                _c("h5", { staticClass: "card-title" }, [
-                  _vm._v(" " + _vm._s(question.name) + " ")
-                ]),
-                _vm._v(" "),
-                _vm._l(question.answeroptions, function(answeroption) {
-                  return _c(
-                    "span",
-                    {
-                      staticClass:
-                        "border rounded-pill d-block px-3 mb-2 clickable",
-                      class: {
-                        "bg-primary text-white font-weight-light border-primary": _vm.isChecked(
-                          answeroption
-                        )
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.toggleAnsweroption(answeroption)
-                        }
-                      }
-                    },
-                    [
-                      _vm._v(
-                        " \n\t\t\t\t\t" +
-                          _vm._s(answeroption.name) +
-                          " \n\t\t\t\t"
+                _c(
+                  "div",
+                  { staticClass: "card-body" },
+                  [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v(" " + _vm._s(question.name) + " ")
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(question.answeroptions, function(answeroption) {
+                      return _c(
+                        "span",
+                        {
+                          staticClass:
+                            "border rounded-pill d-block px-3 mb-2 clickable",
+                          class: {
+                            "bg-primary text-white font-weight-light border-primary": _vm.isChecked(
+                              answeroption
+                            )
+                          },
+                          on: {
+                            click: function($event) {
+                              return _vm.toggleAnsweroption(answeroption)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            " \n\t\t\t\t\t" +
+                              _vm._s(answeroption.name) +
+                              " \n\t\t\t\t"
+                          )
+                        ]
                       )
-                    ]
-                  )
-                })
-              ],
-              2
+                    })
+                  ],
+                  2
+                )
+              ]
             )
-          ]
-        )
+          : _vm._e()
       }),
       0
     ),
     _vm._v(" "),
     _c("div", { staticClass: "form-group row" }, [
-      _c("div", { staticClass: "col-sm-10" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
         _c(
           "a",
           { staticClass: "btn btn-primary", on: { click: _vm.updateMeasure } },
           [_vm._v(" Sla wijzigingen op ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-outline-danger float-right",
+            on: { click: _vm.deleteMeasure }
+          },
+          [_vm._v("Verwijder link")]
         )
       ])
     ])

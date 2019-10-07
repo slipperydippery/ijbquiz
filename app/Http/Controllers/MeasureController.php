@@ -8,6 +8,14 @@ use Illuminate\Http\Request;
 
 class MeasureController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware = [
+
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      *
