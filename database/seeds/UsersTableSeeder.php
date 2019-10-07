@@ -25,13 +25,13 @@ class UsersTableSeeder extends Seeder
         ]);
         $user_maarten->save();
 
-        user_suus = new User([
+        $user_suus = new User([
             'name' => 'Susanne',
             'email' => 'susanne@embav.nl',
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('password'),
             'admin' => true,
         ]);
-        user_suus->save();
+        $user_suus->save();
     }
 }
