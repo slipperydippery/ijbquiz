@@ -11,9 +11,7 @@ class MeasureController extends Controller
 
     public function __construct()
     {
-        $this->middleware = [
-
-        ];
+        $this->middleware('auth');
     }
 
     /**
@@ -24,7 +22,10 @@ class MeasureController extends Controller
     public function index()
     {
         $questions = Question::with('answeroptions')->get();
-        return view('admin.measures', compact('questions'));
+        $measures = Measure::with( array( 'answeroptions' => function( $query ) {
+            $query->orderBy('id', 'ASC');
+        }))->get();
+        return view('admin.measures', compact('questions','measures'));
     }
 
     /**
