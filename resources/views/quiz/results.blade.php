@@ -5,7 +5,7 @@
 		<div class="row">
 	        <div class="col-12 text-center pb-4">
                 <h1 class="pagetitle d-inline px-5"> Resultaten</h1>
-                <p>IJmond Bereikbaar denkt graag met je mee welke slimme en duurzame oplossingen bij jouw bedrijf toegepast kunnen worden: meer mensen op de fiets, slimme stimulering, schoner rijden. Gebaseerd op jouw situatie hebben we een aantal relevante links voor je verzameld. </p>
+                <p>Gebaseerd op jouw antwoorden hebben we de volgende informatie voor je verzameld:</p>
 	        </div>
 		</div>
 		<div class="row">
@@ -56,7 +56,7 @@
 			<div class="col-12">
                 <h2 class="pagetitle d-inline px-5">  </h2>
             </div>
-	
+
 		</div>
 
 	</div>

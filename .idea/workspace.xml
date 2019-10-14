@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26f87542-da1b-494d-931e-b674911fac19" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AnsweroptionTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AnsweroptionTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quiz/results.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quiz/results.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +164,8 @@
       <option name="presentableId" value="Default" />
       <updated>1570439150178</updated>
       <workItem from="1570439152105" duration="7848000" />
-      <workItem from="1570456148945" duration="206000" />
+      <workItem from="1570456148945" duration="655000" />
+      <workItem from="1570525241721" duration="1496000" />
     </task>
     <servers />
   </component>

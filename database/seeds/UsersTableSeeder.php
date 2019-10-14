@@ -33,5 +33,14 @@ class UsersTableSeeder extends Seeder
             'admin' => true,
         ]);
         $user_suus->save();
+
+        $user_suus = new User([
+            'name' => 'Astrid',
+            'email' => 'ahaak@odijmond.nl',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('ijmondco2neutraal'),
+            'admin' => true,
+        ]);
+        $user_suus->save();
     }
 }

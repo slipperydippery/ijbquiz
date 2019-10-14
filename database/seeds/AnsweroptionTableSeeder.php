@@ -36,7 +36,7 @@ class AnsweroptionTableSeeder extends Seeder
         $answer_heems->save();
 
         $answer_buiten = new Answeroption([
-            'name' => 'Buten de regio',
+            'name' => 'Buiten de regio',
             'slug' => 'buiten de regio',
             'question_id' => 1,
         ]);
