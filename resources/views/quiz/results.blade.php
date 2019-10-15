@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container-fluid d-flex flex-column h-100 p-5">
+	<div class="container-fluid d-flex flex-column h-100 px-5">
 		<div class="row">
 	        <div class="col-12 text-center pb-4">
                 <h1 class="pagetitle d-inline px-5"> Resultaten</h1>
-                <p>Gebaseerd op jouw antwoorden hebben we de volgende informatie voor je verzameld:</p>
+	            <p class="text-muted">Gebaseerd op jouw antwoorden hebben we de volgende informatie voor je verzameld:</p>
 	        </div>
 		</div>
 		<div class="row">
@@ -18,9 +18,14 @@
 									<h2 class="card-title"> {{ $selectedmeasure->measure->name }} </h2>
 									<p class="card-text"> {{ $selectedmeasure->measure->description }} </p>
 
-									@foreach ($selectedmeasure->answeroptions as $answeroption)
-										<p class="card-text"><small class="text-muted"> {{ $answeroption->name }} </small></p>
-									@endforeach
+									<p class="text-small"><u>Gebaseerd op jouw antwoorden:</u></p>
+									<ul>
+										@foreach ($selectedmeasure->answeroptions as $answeroption)
+											<li>
+												<span class="text-muted"> {{ $answeroption->name }} </span>
+											</li>
+										@endforeach
+									</ul>
 									<a href=" {{ url($selectedmeasure->measure->link) }} " target="_black" class="stretched-link"> {{ $selectedmeasure->measure->link }} </a>
 								</div>
 							</div>

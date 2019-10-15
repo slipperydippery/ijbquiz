@@ -64,7 +64,7 @@
 					class="btn btn-primary"
 					@click="submitAnswers"
 				>
-					Accoord en verder
+					Akkoord en verder
 				</button>
 			</div>
 		</div>

@@ -3,6 +3,7 @@
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
                 <h1 class="pagetitle d-inline px-5"> Is het bedrijf gevestigd op of in een: </h1>
+                <p class="text-muted"><em>Meerdere antwoorden mogelijk</em></p>
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
@@ -64,7 +65,7 @@
 					class="btn btn-primary"
 					@click="submitAnswers"
 				>
-					Accoord en verder
+					Akkoord en verder
 				</button>
 			</div>
 		</div>

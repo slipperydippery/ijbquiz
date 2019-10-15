@@ -2655,6 +2655,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2706,6 +2707,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2867,6 +2869,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -67854,7 +67857,7 @@ var render = function() {
                 staticClass: "btn btn-primary",
                 on: { click: _vm.submitAnswers }
               },
-              [_vm._v("\n\t\t\t\t\tAccoord en verder\n\t\t\t\t")]
+              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
             )
           ]
         )
@@ -68511,7 +68514,7 @@ var render = function() {
                 staticClass: "btn btn-primary",
                 on: { click: _vm.submitAnswers }
               },
-              [_vm._v("\n\t\t\t\t\tAccoord en verder\n\t\t\t\t")]
+              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
             )
           ]
         )
@@ -68528,6 +68531,10 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
         _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
           _vm._v(" Hebben jullie bedrijfsauto’s? ")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-muted" }, [
+          _c("em", [_vm._v("Meerdere antwoorden mogelijk")])
         ])
       ])
     ])
@@ -68785,7 +68792,7 @@ var render = function() {
                 staticClass: "btn btn-primary",
                 on: { click: _vm.submitAnswers }
               },
-              [_vm._v("\n\t\t\t\t\tAccoord en verder\n\t\t\t\t")]
+              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
             )
           ]
         )
@@ -68802,6 +68809,10 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
         _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
           _vm._v(" Waar is uw bedrijf gevestigd? ")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-muted" }, [
+          _c("em", [_vm._v("Meerdere antwoorden mogelijk")])
         ])
       ])
     ])
@@ -69005,7 +69016,7 @@ var render = function() {
                 staticClass: "btn btn-primary",
                 on: { click: _vm.submitAnswers }
               },
-              [_vm._v("\n\t\t\t\t\tAccoord en verder\n\t\t\t\t")]
+              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
             )
           ]
         )
@@ -69022,6 +69033,10 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
         _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
           _vm._v(" Is het bedrijf gevestigd op of in een: ")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-muted" }, [
+          _c("em", [_vm._v("Meerdere antwoorden mogelijk")])
         ])
       ])
     ])

@@ -10659,6 +10659,10 @@ p {
   font-size: 1.2vw;
 }
 
+p.text-small {
+  font-size: 0.8vw;
+}
+
 h1,
 h2,
 h3,
