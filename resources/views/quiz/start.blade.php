@@ -8,7 +8,7 @@
 
 
 
-				<a href=" {{ route('location.show') }} " class="btn btn-primary btn-lg btn-block"> Start de quiz </a>
+				<a href=" {{ route('location.show') }} " class="btn btn-primary btn-lg btn-block"> Start de quickscan </a>
 	        </div>
 	    </div>
 	</div>
