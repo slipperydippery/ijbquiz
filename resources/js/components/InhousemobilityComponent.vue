@@ -58,7 +58,7 @@
 					>
 						<img src="/img/quizneenogniet.png" alt="" class="img-fluid align-self-start">
 						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
-								<h3 class=""> Nog niet echt, maar we willen dat wel meer gaan doen </h3>
+								<h3 class=""> Nee, die hebben we nog niet </h3>
 						</div>
 					</div>
 				</div>

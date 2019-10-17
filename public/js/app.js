@@ -68847,11 +68847,7 @@ var staticRenderFns = [
         staticClass:
           "answer-title pt-1 text-center w-100 align-self-end position-absolute"
       },
-      [
-        _c("h3", {}, [
-          _vm._v(" Nog niet echt, maar we willen dat wel meer gaan doen ")
-        ])
-      ]
+      [_c("h3", {}, [_vm._v(" Nee, die hebben we nog niet ")])]
     )
   }
 ]
