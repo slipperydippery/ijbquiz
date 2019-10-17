@@ -2120,6 +2120,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2171,6 +2172,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2449,6 +2451,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -67562,7 +67570,7 @@ var render = function() {
                 staticClass: "btn btn-primary",
                 on: { click: _vm.submitAnswers }
               },
-              [_vm._v("\n\t\t\t\t\tAccoord en verder\n\t\t\t\t")]
+              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
             )
           ]
         )
@@ -67579,6 +67587,10 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
         _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
           _vm._v(" Rijden jullie al elektrisch? ")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-muted" }, [
+          _c("em", [_vm._v(" Je kunt meer dan 1 antwoord aanklikken. ")])
         ])
       ])
     ])
@@ -67873,7 +67885,11 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
         _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
-          _vm._v(" Hoe ver wonen de medewerkers van het bedrijf? ")
+          _vm._v(" Hoe ver wonen de medewerkers bij het bedrijf vandaan? ")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-muted" }, [
+          _c("em", [_vm._v(" Maak in totaal 100%. ")])
         ])
       ])
     ])
@@ -68244,6 +68260,36 @@ var render = function() {
             _vm._m(3),
             _vm._v(" "),
             _c("div", { staticClass: "range-percentage" }, [
+              _vm._v(_vm._s(_vm.percentages.bedrijfsvervoer) + " %")
+            ]),
+            _vm._v(" "),
+            _c("b-form-input", {
+              attrs: {
+                id: "range-2",
+                type: "range",
+                min: "0",
+                max: "100",
+                step: "10"
+              },
+              model: {
+                value: _vm.percentages.openbaarvervoer,
+                callback: function($$v) {
+                  _vm.$set(_vm.percentages, "openbaarvervoer", $$v)
+                },
+                expression: "percentages.openbaarvervoer"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "col-8 offset-md-2 p-2" },
+          [
+            _vm._m(4),
+            _vm._v(" "),
+            _c("div", { staticClass: "range-percentage" }, [
               _vm._v(_vm._s(_vm.percentages.auto) + " %")
             ]),
             _vm._v(" "),
@@ -68326,7 +68372,7 @@ var render = function() {
                 staticClass: "btn btn-primary",
                 on: { click: _vm.submitAnswers }
               },
-              [_vm._v("\n\t\t\t\t\tAccoord en verder\n\t\t\t\t")]
+              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
             )
           ]
         )
@@ -68343,6 +68389,10 @@ var staticRenderFns = [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
         _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
           _vm._v(" Hoe komen de medewerkers naar het werk? ")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-muted" }, [
+          _c("em", [_vm._v(" Maak in totaal 100%. ")])
         ])
       ])
     ])
@@ -68360,7 +68410,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Met het openbaar vervoer of met bedrijfsvervoer")])
+      _c("h4", [_vm._v("Met het openbaar vervoer")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { attrs: { for: "range-2" } }, [
+      _c("h4", [_vm._v("Met georganiseerd bedrijfsvervoer")])
     ])
   },
   function() {
@@ -68534,7 +68592,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "text-muted" }, [
-          _c("em", [_vm._v("Meerdere antwoorden mogelijk")])
+          _c("em", [_vm._v(" Je kunt meer dan 1 antwoord aanklikken. ")])
         ])
       ])
     ])
@@ -68808,11 +68866,15 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
         _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
-          _vm._v(" Waar is uw bedrijf gevestigd? ")
+          _vm._v(" Waar is je bedrijf gevestigd? ")
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "text-muted" }, [
-          _c("em", [_vm._v("Meerdere antwoorden mogelijk")])
+          _c("em", [
+            _vm._v(
+              " Zijn er meerdere vestigingen in verschillende gemeenten, dan kun je dat ook aangeven. "
+            )
+          ])
         ])
       ])
     ])

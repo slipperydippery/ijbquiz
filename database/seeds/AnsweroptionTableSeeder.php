@@ -150,6 +150,15 @@ class AnsweroptionTableSeeder extends Seeder
         $answer_openbaar->save();
 
 
+        $answer_bedrijfsvervoer = new Answeroption([
+            'name' => 'Met georganiseerd bedrijfsvervoer',
+            'slug' => 'bedrijfsvervoer',
+            'question_id' => 5,
+            'minimum' => 1,
+        ]);
+        $answer_bedrijfsvervoer->save();
+
+
         $answer_auto = new Answeroption([
             'name' => 'Met de auto',
             'slug' => 'auto',

@@ -2,7 +2,8 @@
 	<div class="container-fluid d-flex flex-column h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-                <h1 class="pagetitle d-inline px-5"> Hoe ver wonen de medewerkers van het bedrijf? </h1>
+                <h1 class="pagetitle d-inline px-5"> Hoe ver wonen de medewerkers bij het bedrijf vandaan? </h1>
+                <p class="text-muted"><em> Maak in totaal 100%. </em></p>
 	        </div>
 		</div>
 		<div class="row flex-grow-1">

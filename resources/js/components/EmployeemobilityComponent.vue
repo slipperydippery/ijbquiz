@@ -3,6 +3,7 @@
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
                 <h1 class="pagetitle d-inline px-5"> Hoe komen de medewerkers naar het werk? </h1>
+                <p class="text-muted"><em> Maak in totaal 100%. </em></p>
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
@@ -12,8 +13,13 @@
 			    <b-form-input id="range-2" v-model="percentages.fiets" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div class="col-8 offset-md-2 p-2">
-				<label for="range-2"> <h4>Met het openbaar vervoer of met bedrijfsvervoer</h4> </label>
+				<label for="range-2"> <h4>Met het openbaar vervoer</h4> </label>
 				<div class="range-percentage">{{ percentages.openbaarvervoer }} %</div>
+			    <b-form-input id="range-2" v-model="percentages.openbaarvervoer" type="range" min="0" max="100" step="10"></b-form-input>
+			</div>
+			<div class="col-8 offset-md-2 p-2">
+				<label for="range-2"> <h4>Met georganiseerd bedrijfsvervoer</h4> </label>
+				<div class="range-percentage">{{ percentages.bedrijfsvervoer }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.openbaarvervoer" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div class="col-8 offset-md-2 p-2">
@@ -59,7 +65,7 @@
 					class="btn btn-primary"
 					@click="submitAnswers"
 				>
-					Accoord en verder
+					Akkoord en verder
 				</button>
 			</div>
 		</div>
