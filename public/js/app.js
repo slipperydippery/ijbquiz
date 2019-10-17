@@ -2547,7 +2547,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     totalPercentage: function totalPercentage() {
-      return parseInt(this.percentages.fiets) + parseInt(this.percentages.openbaarvervoer) + parseInt(this.percentages.auto);
+      return parseInt(this.percentages.fiets) + parseInt(this.percentages.openbaarvervoer) + parseInt(this.percentages.bedrijfsvervoer) + parseInt(this.percentages.auto);
     }
   },
   methods: {

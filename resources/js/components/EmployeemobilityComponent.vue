@@ -102,6 +102,7 @@
         	totalPercentage() {
         		return parseInt(this.percentages.fiets) + 
         				parseInt(this.percentages.openbaarvervoer) + 
+        				parseInt(this.percentages.bedrijfsvervoer) + 
         				parseInt(this.percentages.auto);
         	}
         },
