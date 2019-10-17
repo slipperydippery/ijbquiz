@@ -80,7 +80,11 @@
         @endif
         @if ($electricmobility = Session::get('electricmobility'))
             <b>electricmobility:</b>
-                {{ $electricmobility }} <br>
+            <ul>
+                @foreach($electricmobility as $mobilitymethod)
+                    <li>{{ $mobilitymethod }}</li>
+                @endforeach
+            </ul>
         @endif
     </div>
     <main id="app" class="h-100">

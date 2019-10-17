@@ -2125,23 +2125,35 @@ __webpack_require__.r(__webpack_exports__);
   props: ['session'],
   data: function data() {
     return {
-      selectedAnswers: ''
+      selectedAnswers: []
     };
   },
   mounted: function mounted() {
-    this.selectedAnswers = this.session.electricmobility ? this.session.electricmobility : '';
+    this.selectedAnswers = this.session.electricmobility ? this.session.electricmobility : [];
   },
   computed: {},
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
+      if (this.selectedAnswers.includes('nognietecht')) {
+        this.selectedAnswers.splice(this.selectedAnswers.indexOf('nognietecht'), 1);
+      }
+
       if (this.selectedAnswers.includes(answer)) {
-        this.selectedAnswers = '';
+        this.selectedAnswers.splice(this.selectedAnswers.indexOf(answer), 1);
       } else {
-        this.selectedAnswers = answer;
+        this.selectedAnswers.push(answer);
+      }
+    },
+    toggleAnswerNone: function toggleAnswerNone(answer) {
+      if (!this.selectedAnswers.includes(answer)) {
+        this.selectedAnswers = [];
+        this.selectedAnswers.push(answer);
+      } else {
+        this.selectedAnswers = [];
       }
     },
     isSelectedAnswer: function isSelectedAnswer(answer) {
-      if (this.selectedAnswers == answer) {
+      if (this.selectedAnswers.includes(answer)) {
         return true;
       }
 
@@ -67523,7 +67535,7 @@ var render = function() {
                 },
                 on: {
                   click: function($event) {
-                    return _vm.toggleAnswer("nognietecht")
+                    return _vm.toggleAnswerNone("nognietecht")
                   }
                 }
               },

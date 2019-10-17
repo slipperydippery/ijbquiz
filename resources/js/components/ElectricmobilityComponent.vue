@@ -53,7 +53,7 @@
 				<div class="p-2 h-100">
 					<div 
 						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
-						@click="toggleAnswer('nognietecht')"
+						@click="toggleAnswerNone('nognietecht')"
 						:class="{'selected-answer' : isSelectedAnswer('nognietecht')}"
 					>
 						<img src="/img/quizneenogniet.png" alt="" class="img-fluid align-self-start">
@@ -95,12 +95,12 @@
 
         data() {
             return {
-            	selectedAnswers: '',
+            	selectedAnswers: [],
             }
         },
 
         mounted() {
-        	this.selectedAnswers = this.session.electricmobility ? this.session.electricmobility : ''
+        	this.selectedAnswers = this.session.electricmobility ? this.session.electricmobility : []
         },
 
         computed: {
@@ -108,15 +108,27 @@
 
         methods: {
         	toggleAnswer(answer) {
+        		if(this.selectedAnswers.includes('nognietecht')){
+        			this.selectedAnswers.splice(this.selectedAnswers.indexOf('nognietecht'), 1);
+        		}
         		if (this.selectedAnswers.includes(answer)) {
-        			this.selectedAnswers = '';
+        			this.selectedAnswers.splice(this.selectedAnswers.indexOf(answer), 1);
         		} else {
-	        		this.selectedAnswers = answer;
+	        		this.selectedAnswers.push(answer);
+        		}
+        	},
+
+        	toggleAnswerNone(answer) {
+        		if (! this.selectedAnswers.includes(answer)) {
+	        		this.selectedAnswers = []
+	        		this.selectedAnswers.push(answer);
+        		} else {
+	        		this.selectedAnswers = []
         		}
         	},
 
         	isSelectedAnswer(answer) {
-        		if(this.selectedAnswers == answer) {
+        		if(this.selectedAnswers.includes(answer)) {
         			return true;
         		}
         		return false;
