@@ -4,7 +4,7 @@
 	<div class="container-fluid d-flex flex-column h-100 px-5">
 		<div class="row">
 	        <div class="col-12 text-center pb-4">
-                <h1 class="pagetitle d-inline px-5"> Alsjeblieft! </h1>
+                <h1 class="pagetitle d-inline px-5"> Deze informatie is interessant voor jou </h1>
 	            <p class="text-muted"> IJmond Bereikbaar denkt graag met je mee welke slimme en duurzame mobiliteitsoplossingen bij jouw bedrijf mogelijk zijn. Op basis van je antwoorden hebben we relevante informatie voor je op een rijtje gezet. </p>
 	        </div>
 		</div>
