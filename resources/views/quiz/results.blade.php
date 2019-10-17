@@ -14,6 +14,9 @@
 					@foreach ($selectedmeasures as $selectedmeasure)
 						@if ($selectedmeasure->selectcount > 0)
 							<div class="card">
+								<div class="card-header bg-primary text-white">
+									Lees dit eens:
+								</div>
 								<div class="card-body">
 									<h2 class="card-title"> {{ $selectedmeasure->measure->name }} </h2>
 									<p class="card-text"> {{ $selectedmeasure->measure->description }} </p>
@@ -35,8 +38,8 @@
 			</div>
 		</div>
 		<div class="row">
-	        <div class="col-8 offset-md-2">
-				<div class="jumbotron">
+	        <div class="col-12">
+				<div class="jumbotron py-3">
 					<h1 class="display-4"> Meer weten?  </h1>
 					<p class="lead">
 						 Maak vrijblijvend een afspraak met onze mobiliteitsmakelaar Ronald Vierkant: <a href="tel:06-50050995">06-50050995</a> email: <a href="mailto:rvierkant@odijmond.nl">rvierkant@odijmond.nl</a>
