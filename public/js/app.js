@@ -2541,6 +2541,7 @@ __webpack_require__.r(__webpack_exports__);
     this.percentages = this.session.employeemobility ? this.session.employeemobility : {
       'fiets': 0,
       'openbaarvervoer': 0,
+      'bedrijfsvervoer': 0,
       'auto': 0
     };
   },
@@ -68272,11 +68273,11 @@ var render = function() {
                 step: "10"
               },
               model: {
-                value: _vm.percentages.openbaarvervoer,
+                value: _vm.percentages.bedrijfsvervoer,
                 callback: function($$v) {
-                  _vm.$set(_vm.percentages, "openbaarvervoer", $$v)
+                  _vm.$set(_vm.percentages, "bedrijfsvervoer", $$v)
                 },
-                expression: "percentages.openbaarvervoer"
+                expression: "percentages.bedrijfsvervoer"
               }
             })
           ],

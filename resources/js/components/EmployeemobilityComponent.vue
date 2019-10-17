@@ -20,7 +20,7 @@
 			<div class="col-8 offset-md-2 p-2">
 				<label for="range-2"> <h4>Met georganiseerd bedrijfsvervoer</h4> </label>
 				<div class="range-percentage">{{ percentages.bedrijfsvervoer }} %</div>
-			    <b-form-input id="range-2" v-model="percentages.openbaarvervoer" type="range" min="0" max="100" step="10"></b-form-input>
+			    <b-form-input id="range-2" v-model="percentages.bedrijfsvervoer" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div class="col-8 offset-md-2 p-2">
 				<label for="range-2"><h4>Met de auto</h4></label>
@@ -93,6 +93,7 @@
         	this.percentages = this.session.employeemobility ? this.session.employeemobility : {
             		'fiets' : 0,
             		'openbaarvervoer' : 0,
+            		'bedrijfsvervoer': 0,
             		'auto' : 0,
             	}
         },
