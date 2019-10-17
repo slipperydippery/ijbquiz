@@ -49,6 +49,20 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-md-4 h-50">
+				<div class="p-2 h-100">
+					<div 
+						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+						@click="toggleAnswerNone('nee')"
+						:class="{'selected-answer' : isSelectedAnswer('nee')}"
+					>
+						<img src="/img/quizneenogniet.png" alt="" class="img-fluid align-self-start">
+						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+								<h3 class=""> Nog niet echt, maar we willen dat wel meer gaan doen </h3>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="row px-5 py-3">
 			<div class="col-12 pb-3">
@@ -102,10 +116,22 @@
 
         methods: {
         	toggleAnswer(answer) {
+        		if(this.selectedAnswers.includes('nee')){
+        			this.selectedAnswers.splice(this.selectedAnswers.indexOf('nee'), 1);
+        		}
         		if (this.selectedAnswers.includes(answer)) {
         			this.selectedAnswers.splice(this.selectedAnswers.indexOf(answer), 1);
         		} else {
 	        		this.selectedAnswers.push(answer);
+        		}
+        	},
+
+        	toggleAnswerNone(answer) {
+        		if (! this.selectedAnswers.includes(answer)) {
+	        		this.selectedAnswers = []
+	        		this.selectedAnswers.push(answer);
+        		} else {
+	        		this.selectedAnswers = []
         		}
         	},
 

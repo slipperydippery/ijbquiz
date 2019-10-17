@@ -2717,6 +2717,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2734,10 +2748,22 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
+      if (this.selectedAnswers.includes('nee')) {
+        this.selectedAnswers.splice(this.selectedAnswers.indexOf('nee'), 1);
+      }
+
       if (this.selectedAnswers.includes(answer)) {
         this.selectedAnswers.splice(this.selectedAnswers.indexOf(answer), 1);
       } else {
         this.selectedAnswers.push(answer);
+      }
+    },
+    toggleAnswerNone: function toggleAnswerNone(answer) {
+      if (!this.selectedAnswers.includes(answer)) {
+        this.selectedAnswers = [];
+        this.selectedAnswers.push(answer);
+      } else {
+        this.selectedAnswers = [];
       }
     },
     isSelectedAnswer: function isSelectedAnswer(answer) {
@@ -68660,6 +68686,32 @@ var render = function() {
               ]
             )
           ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4 h-50" }, [
+          _c("div", { staticClass: "p-2 h-100" }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                class: { "selected-answer": _vm.isSelectedAnswer("nee") },
+                on: {
+                  click: function($event) {
+                    return _vm.toggleAnswerNone("nee")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid align-self-start",
+                  attrs: { src: "/img/quizneenogniet.png", alt: "" }
+                }),
+                _vm._v(" "),
+                _vm._m(4)
+              ]
+            )
+          ])
         ])
       ]),
       _vm._v(" "),
@@ -68781,6 +68833,23 @@ var staticRenderFns = [
       [
         _c("h3", {}, [
           _vm._v(" We rijden de regio in en uit met vrachtwagens ")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
+      },
+      [
+        _c("h3", {}, [
+          _vm._v(" Nog niet echt, maar we willen dat wel meer gaan doen ")
         ])
       ]
     )
