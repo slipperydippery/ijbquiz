@@ -61,12 +61,17 @@
 			<div class="col-12 d-flex flex-row justify-content-between">
 
 				<a href="#" @click="goBack()"><< Terug</a>
-				<button 
-					class="btn btn-primary"
-					@click="submitAnswers"
-				>
-					Akkoord en verder
-				</button>
+
+				<span>
+					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'</em></span>
+					<button 
+						class="btn btn-primary"
+						:disabled="noAnswerSelected"
+						@click="submitAnswers"
+					>
+						Verder
+					</button>
+				</span>
 			</div>
 		</div>
 
@@ -100,6 +105,10 @@
         },
 
         computed: {
+        	noAnswerSelected() {
+        		return this.totalPercentage != 100;
+        	},
+        	
         	totalPercentage() {
         		return parseInt(this.percentages.uptofive) + 
         				parseInt(this.percentages.fivetoten) + 

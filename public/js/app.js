@@ -2121,6 +2121,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2131,7 +2136,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.selectedAnswers = this.session.electricmobility ? this.session.electricmobility : [];
   },
-  computed: {},
+  computed: {
+    noAnswerSelected: function noAnswerSelected() {
+      return this.selectedAnswers.length == 0;
+    }
+  },
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
       if (this.selectedAnswers.includes('nognietecht')) {
@@ -2259,6 +2268,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2280,6 +2294,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
+    noAnswerSelected: function noAnswerSelected() {
+      return this.totalPercentage != 100;
+    },
     totalPercentage: function totalPercentage() {
       return parseInt(this.percentages.uptofive) + parseInt(this.percentages.fivetoten) + parseInt(this.percentages.eleventotwenty) + parseInt(this.percentages.morethantwenty);
     }
@@ -2412,6 +2429,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2422,7 +2444,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.selectedAnswers = this.session.employeecount ? this.session.employeecount : '';
   },
-  computed: {},
+  computed: {
+    noAnswerSelected: function noAnswerSelected() {
+      return this.selectedAnswers == '';
+    }
+  },
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
       if (this.selectedAnswers.includes(answer)) {
@@ -2538,6 +2564,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2545,6 +2576,7 @@ __webpack_require__.r(__webpack_exports__);
       percentages: {
         'fiets': 0,
         'openbaarvervoer': 0,
+        'bedrijfsvervoer': 0,
         'auto': 0
       }
     };
@@ -2558,6 +2590,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
+    noAnswerSelected: function noAnswerSelected() {
+      return this.totalPercentage != 100;
+    },
     totalPercentage: function totalPercentage() {
       return parseInt(this.percentages.fiets) + parseInt(this.percentages.openbaarvervoer) + parseInt(this.percentages.bedrijfsvervoer) + parseInt(this.percentages.auto);
     }
@@ -2677,6 +2712,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2687,7 +2727,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.selectedAnswers = this.session.inhousemobility ? this.session.inhousemobility : [];
   },
-  computed: {},
+  computed: {
+    noAnswerSelected: function noAnswerSelected() {
+      return this.selectedAnswers.length == 0;
+    }
+  },
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
       if (this.selectedAnswers.includes(answer)) {
@@ -2827,6 +2871,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2839,6 +2888,9 @@ __webpack_require__.r(__webpack_exports__);
     this.selectedAnswers = this.session.location ? this.session.location : [];
   },
   computed: {
+    noAnswerSelected: function noAnswerSelected() {
+      return this.selectedAnswers.length == 0;
+    },
     hasIJmond: function hasIJmond() {
       this.hasIJmondGETSET = this.selectedAnswers.length ? true : false;
       return this.selectedAnswers.length ? true : false;
@@ -2965,6 +3017,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2975,7 +3032,11 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.selectedAnswers = this.session.locationtype ? this.session.locationtype : [];
   },
-  computed: {},
+  computed: {
+    noAnswerSelected: function noAnswerSelected() {
+      return this.selectedAnswers.length == 0;
+    }
+  },
   methods: {
     toggleAnswer: function toggleAnswer(answer) {
       if (this.selectedAnswers.includes(answer)) {
@@ -67577,14 +67638,25 @@ var render = function() {
               [_vm._v("<< Terug")]
             ),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                on: { click: _vm.submitAnswers }
-              },
-              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
-            )
+            _c("span", [
+              _vm.noAnswerSelected
+                ? _c("span", { staticClass: "mx-4" }, [
+                    _c("em", [
+                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { disabled: _vm.noAnswerSelected },
+                  on: { click: _vm.submitAnswers }
+                },
+                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+              )
+            ])
           ]
         )
       ])
@@ -67876,14 +67948,27 @@ var render = function() {
               [_vm._v("<< Terug")]
             ),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                on: { click: _vm.submitAnswers }
-              },
-              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
-            )
+            _c("span", [
+              _vm.noAnswerSelected
+                ? _c("span", { staticClass: "mx-4" }, [
+                    _c("em", [
+                      _vm._v(
+                        "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
+                      )
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { disabled: _vm.noAnswerSelected },
+                  on: { click: _vm.submitAnswers }
+                },
+                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+              )
+            ])
           ]
         )
       ])
@@ -68098,14 +68183,25 @@ var render = function() {
               [_vm._v("<< Terug")]
             ),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                on: { click: _vm.submitAnswers }
-              },
-              [_vm._v("\n\t\t\t\t\tAccoord en verder\n\t\t\t\t")]
-            )
+            _c("span", [
+              _vm.noAnswerSelected
+                ? _c("span", { staticClass: "mx-4" }, [
+                    _c("em", [
+                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { disabled: _vm.noAnswerSelected },
+                  on: { click: _vm.submitAnswers }
+                },
+                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+              )
+            ])
           ]
         )
       ])
@@ -68379,14 +68475,27 @@ var render = function() {
               [_vm._v("<< Terug")]
             ),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                on: { click: _vm.submitAnswers }
-              },
-              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
-            )
+            _c("span", [
+              _vm.noAnswerSelected
+                ? _c("span", { staticClass: "mx-4" }, [
+                    _c("em", [
+                      _vm._v(
+                        "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
+                      )
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { disabled: _vm.noAnswerSelected },
+                  on: { click: _vm.submitAnswers }
+                },
+                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+              )
+            ])
           ]
         )
       ])
@@ -68579,14 +68688,25 @@ var render = function() {
               [_vm._v("<< Terug")]
             ),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                on: { click: _vm.submitAnswers }
-              },
-              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
-            )
+            _c("span", [
+              _vm.noAnswerSelected
+                ? _c("span", { staticClass: "mx-4" }, [
+                    _c("em", [
+                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { disabled: _vm.noAnswerSelected },
+                  on: { click: _vm.submitAnswers }
+                },
+                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+              )
+            ])
           ]
         )
       ])
@@ -68857,14 +68977,25 @@ var render = function() {
               [_vm._v("<< Terug")]
             ),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                on: { click: _vm.submitAnswers }
-              },
-              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
-            )
+            _c("span", [
+              _vm.noAnswerSelected
+                ? _c("span", { staticClass: "mx-4" }, [
+                    _c("em", [
+                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { disabled: _vm.noAnswerSelected },
+                  on: { click: _vm.submitAnswers }
+                },
+                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+              )
+            ])
           ]
         )
       ])
@@ -69085,14 +69216,25 @@ var render = function() {
               [_vm._v("<< Terug")]
             ),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                on: { click: _vm.submitAnswers }
-              },
-              [_vm._v("\n\t\t\t\t\tAkkoord en verder\n\t\t\t\t")]
-            )
+            _c("span", [
+              _vm.noAnswerSelected
+                ? _c("span", { staticClass: "mx-4" }, [
+                    _c("em", [
+                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { disabled: _vm.noAnswerSelected },
+                  on: { click: _vm.submitAnswers }
+                },
+                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+              )
+            ])
           ]
         )
       ])
