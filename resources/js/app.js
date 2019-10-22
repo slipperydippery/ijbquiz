@@ -6,6 +6,10 @@
 
 require('./bootstrap');
 
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+import 'intersection-observer' // Optional
+
 window.Vue = require('vue');
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue);
