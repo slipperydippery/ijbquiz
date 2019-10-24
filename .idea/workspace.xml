@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3114ee37-cbad-4049-8e79-7c4ffb8d9c3f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/EmployeeOriginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EmployeeOriginComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/EmployeemobilityComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EmployeemobilityComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/partials/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/partials/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/partials/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/partials/_layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/question.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quiz/start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quiz/start.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +157,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571919831889</updated>
-      <workItem from="1571919833422" duration="1645000" />
+      <workItem from="1571919833422" duration="1975000" />
     </task>
     <servers />
   </component>

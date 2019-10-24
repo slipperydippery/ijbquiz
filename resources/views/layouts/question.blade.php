@@ -73,7 +73,7 @@
             <b>inhousemobility:</b>
             <ul>
                 @foreach($inhousemobility as $mobility => $percentage)
-                
+
                     <li>{{ $mobility }}: {{ $percentage }}</li>
                 @endforeach
             </ul>
@@ -87,13 +87,13 @@
             </ul>
         @endif
     </div>
-    <main id="app" class="h-100">
+    <main id="app" class="h-650">
         @yield('content')
     </main>
 
     <!-- Additional Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    
+
     <script>
         $(function () {
           $('[data-toggle="popover"]').popover()

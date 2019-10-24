@@ -1,7 +1,7 @@
 @extends('layouts.question')
 
 @section('content')
-	<div class="container-fluid d-flex flex-column h-100">
+	<div class="container-fluid d-flex flex-column h-100" >
 		<div class="row">
 	        <div class="col-8 offset-md-2 text-center w-100" id="opener">
 				<h1 class="py-5 display-3">Welkom bij de quickscan</h1>
