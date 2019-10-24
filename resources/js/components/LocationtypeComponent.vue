@@ -1,5 +1,5 @@
 <template>
-	<div class="container-fluid d-flex flex-column h-100">
+	<div class="container-fluid h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
                 <h1 class="pagetitle d-inline px-5"> Is het bedrijf gevestigd op of in een: </h1>

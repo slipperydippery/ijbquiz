@@ -83373,212 +83373,208 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-fluid d-flex flex-column h-100" },
-    [
-      _vm._m(0),
+  return _c("div", { staticClass: "container-fluid h-100" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row flex-grow-1" }, [
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2" },
+        [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "range-percentage" }, [
+            _vm._v(_vm._s(_vm.percentages.uptofive) + " %")
+          ]),
+          _vm._v(" "),
+          _c("b-form-input", {
+            attrs: {
+              id: "range-2",
+              type: "range",
+              min: "0",
+              max: "100",
+              step: "10"
+            },
+            model: {
+              value: _vm.percentages.uptofive,
+              callback: function($$v) {
+                _vm.$set(_vm.percentages, "uptofive", $$v)
+              },
+              expression: "percentages.uptofive"
+            }
+          })
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "row flex-grow-1" }, [
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2" },
-          [
-            _vm._m(1),
-            _vm._v(" "),
-            _c("div", { staticClass: "range-percentage" }, [
-              _vm._v(_vm._s(_vm.percentages.uptofive) + " %")
-            ]),
-            _vm._v(" "),
-            _c("b-form-input", {
-              attrs: {
-                id: "range-2",
-                type: "range",
-                min: "0",
-                max: "100",
-                step: "10"
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2" },
+        [
+          _vm._m(2),
+          _vm._v(" "),
+          _c("div", { staticClass: "range-percentage" }, [
+            _vm._v(_vm._s(_vm.percentages.fivetoten) + " %")
+          ]),
+          _vm._v(" "),
+          _c("b-form-input", {
+            attrs: {
+              id: "range-2",
+              type: "range",
+              min: "0",
+              max: "100",
+              step: "10"
+            },
+            model: {
+              value: _vm.percentages.fivetoten,
+              callback: function($$v) {
+                _vm.$set(_vm.percentages, "fivetoten", $$v)
               },
-              model: {
-                value: _vm.percentages.uptofive,
-                callback: function($$v) {
-                  _vm.$set(_vm.percentages, "uptofive", $$v)
-                },
-                expression: "percentages.uptofive"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2" },
-          [
-            _vm._m(2),
-            _vm._v(" "),
-            _c("div", { staticClass: "range-percentage" }, [
-              _vm._v(_vm._s(_vm.percentages.fivetoten) + " %")
-            ]),
-            _vm._v(" "),
-            _c("b-form-input", {
-              attrs: {
-                id: "range-2",
-                type: "range",
-                min: "0",
-                max: "100",
-                step: "10"
-              },
-              model: {
-                value: _vm.percentages.fivetoten,
-                callback: function($$v) {
-                  _vm.$set(_vm.percentages, "fivetoten", $$v)
-                },
-                expression: "percentages.fivetoten"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2" },
-          [
-            _vm._m(3),
-            _vm._v(" "),
-            _c("div", { staticClass: "range-percentage" }, [
-              _vm._v(_vm._s(_vm.percentages.eleventotwenty) + " %")
-            ]),
-            _vm._v(" "),
-            _c("b-form-input", {
-              attrs: {
-                id: "range-2",
-                type: "range",
-                min: "0",
-                max: "100",
-                step: "10"
-              },
-              model: {
-                value: _vm.percentages.eleventotwenty,
-                callback: function($$v) {
-                  _vm.$set(_vm.percentages, "eleventotwenty", $$v)
-                },
-                expression: "percentages.eleventotwenty"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2" },
-          [
-            _vm._m(4),
-            _vm._v(" "),
-            _c("div", { staticClass: "range-percentage" }, [
-              _vm._v(_vm._s(_vm.percentages.morethantwenty) + " %")
-            ]),
-            _vm._v(" "),
-            _c("b-form-input", {
-              attrs: {
-                id: "range-2",
-                type: "range",
-                min: "0",
-                max: "100",
-                step: "10"
-              },
-              model: {
-                value: _vm.percentages.morethantwenty,
-                callback: function($$v) {
-                  _vm.$set(_vm.percentages, "morethantwenty", $$v)
-                },
-                expression: "percentages.morethantwenty"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2 text-center" },
-          [
-            _vm.totalPercentage < 100
-              ? _c("b-alert", { attrs: { show: "", variant: "primary" } }, [
-                  _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.totalPercentage == 100
-              ? _c("b-alert", { attrs: { show: "", variant: "success" } }, [
-                  _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.totalPercentage > 100
-              ? _c("b-alert", { attrs: { show: "", variant: "danger" } }, [
-                  _c("h2", [
-                    _vm._v("Totaal: " + _vm._s(_vm.totalPercentage) + "%")
-                  ])
-                ])
-              : _vm._e()
-          ],
-          1
-        )
-      ]),
+              expression: "percentages.fivetoten"
+            }
+          })
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "row px-5 py-3" }, [
-        _c(
-          "div",
-          { staticClass: "col-12 pb-3" },
-          [_c("progress-bar", { attrs: { value: 3, max: 7 } })],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 d-flex flex-row justify-content-between" },
-          [
-            _c(
-              "a",
-              {
-                attrs: { href: "#" },
-                on: {
-                  click: function($event) {
-                    return _vm.goBack()
-                  }
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2" },
+        [
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "range-percentage" }, [
+            _vm._v(_vm._s(_vm.percentages.eleventotwenty) + " %")
+          ]),
+          _vm._v(" "),
+          _c("b-form-input", {
+            attrs: {
+              id: "range-2",
+              type: "range",
+              min: "0",
+              max: "100",
+              step: "10"
+            },
+            model: {
+              value: _vm.percentages.eleventotwenty,
+              callback: function($$v) {
+                _vm.$set(_vm.percentages, "eleventotwenty", $$v)
+              },
+              expression: "percentages.eleventotwenty"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2" },
+        [
+          _vm._m(4),
+          _vm._v(" "),
+          _c("div", { staticClass: "range-percentage" }, [
+            _vm._v(_vm._s(_vm.percentages.morethantwenty) + " %")
+          ]),
+          _vm._v(" "),
+          _c("b-form-input", {
+            attrs: {
+              id: "range-2",
+              type: "range",
+              min: "0",
+              max: "100",
+              step: "10"
+            },
+            model: {
+              value: _vm.percentages.morethantwenty,
+              callback: function($$v) {
+                _vm.$set(_vm.percentages, "morethantwenty", $$v)
+              },
+              expression: "percentages.morethantwenty"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2 text-center" },
+        [
+          _vm.totalPercentage < 100
+            ? _c("b-alert", { attrs: { show: "", variant: "primary" } }, [
+                _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.totalPercentage == 100
+            ? _c("b-alert", { attrs: { show: "", variant: "success" } }, [
+                _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.totalPercentage > 100
+            ? _c("b-alert", { attrs: { show: "", variant: "danger" } }, [
+                _c("h2", [
+                  _vm._v("Totaal: " + _vm._s(_vm.totalPercentage) + "%")
+                ])
+              ])
+            : _vm._e()
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row px-5 py-3" }, [
+      _c(
+        "div",
+        { staticClass: "col-12 pb-3" },
+        [_c("progress-bar", { attrs: { value: 3, max: 7 } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 d-flex flex-row justify-content-between" },
+        [
+          _c(
+            "a",
+            {
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.goBack()
                 }
-              },
-              [_vm._v("<< Terug")]
-            ),
-            _vm._v(" "),
-            _c("span", [
-              _vm.noAnswerSelected
-                ? _c("span", { staticClass: "mx-4" }, [
-                    _c("em", [
-                      _vm._v(
-                        "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
-                      )
-                    ])
+              }
+            },
+            [_vm._v("<< Terug")]
+          ),
+          _vm._v(" "),
+          _c("span", [
+            _vm.noAnswerSelected
+              ? _c("span", { staticClass: "mx-4" }, [
+                  _c("em", [
+                    _vm._v(
+                      "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
+                    )
                   ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { disabled: _vm.noAnswerSelected },
-                  on: { click: _vm.submitAnswers }
-                },
-                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
-              )
-            ])
-          ]
-        )
-      ])
-    ]
-  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { disabled: _vm.noAnswerSelected },
+                on: { click: _vm.submitAnswers }
+              },
+              [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -83651,167 +83647,163 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-fluid d-flex flex-column h-100" },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "row flex-grow-1" }, [
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("1-10") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("1-10")
-                  }
+  return _c("div", { staticClass: "container-fluid h-100" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row flex-grow-1" }, [
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("1-10") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("1-10")
                 }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quiznet-een-familie.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(1)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("11-50") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("11-50")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizkleinmaarfijn.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(2)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("51-250") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("51-250")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizmkb.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(3)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("250+") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("250+")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizveel.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(4)
-              ]
-            )
-          ])
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quiznet-een-familie.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row px-5 py-3" }, [
-        _c(
-          "div",
-          { staticClass: "col-12 pb-3" },
-          [_c("progress-bar", { attrs: { value: 2, max: 7 } })],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 d-flex flex-row justify-content-between" },
-          [
-            _c(
-              "a",
-              {
-                attrs: { href: "#" },
-                on: {
-                  click: function($event) {
-                    return _vm.goBack()
-                  }
+      _c("div", { staticClass: "col-md-4 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("11-50") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("11-50")
                 }
-              },
-              [_vm._v("<< Terug")]
-            ),
-            _vm._v(" "),
-            _c("span", [
-              _vm.noAnswerSelected
-                ? _c("span", { staticClass: "mx-4" }, [
-                    _c("em", [
-                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                    ])
-                  ])
-                : _vm._e(),
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizkleinmaarfijn.png", alt: "" }
+              }),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { disabled: _vm.noAnswerSelected },
-                  on: { click: _vm.submitAnswers }
-                },
-                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
-              )
-            ])
-          ]
-        )
+              _vm._m(2)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("51-250") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("51-250")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizmkb.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(3)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("250+") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("250+")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizveel.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(4)
+            ]
+          )
+        ])
       ])
-    ]
-  )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row px-5 py-3" }, [
+      _c(
+        "div",
+        { staticClass: "col-12 pb-3" },
+        [_c("progress-bar", { attrs: { value: 2, max: 7 } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 d-flex flex-row justify-content-between" },
+        [
+          _c(
+            "a",
+            {
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.goBack()
+                }
+              }
+            },
+            [_vm._v("<< Terug")]
+          ),
+          _vm._v(" "),
+          _c("span", [
+            _vm.noAnswerSelected
+              ? _c("span", { staticClass: "mx-4" }, [
+                  _c("em", [
+                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { disabled: _vm.noAnswerSelected },
+                on: { click: _vm.submitAnswers }
+              },
+              [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -83888,212 +83880,208 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-fluid d-flex flex-column h-100" },
-    [
-      _vm._m(0),
+  return _c("div", { staticClass: "container-fluid h-100" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row flex-grow-1" }, [
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2" },
+        [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "range-percentage" }, [
+            _vm._v(_vm._s(_vm.percentages.fiets) + " %")
+          ]),
+          _vm._v(" "),
+          _c("b-form-input", {
+            attrs: {
+              id: "range-2",
+              type: "range",
+              min: "0",
+              max: "100",
+              step: "10"
+            },
+            model: {
+              value: _vm.percentages.fiets,
+              callback: function($$v) {
+                _vm.$set(_vm.percentages, "fiets", $$v)
+              },
+              expression: "percentages.fiets"
+            }
+          })
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "row flex-grow-1" }, [
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2" },
-          [
-            _vm._m(1),
-            _vm._v(" "),
-            _c("div", { staticClass: "range-percentage" }, [
-              _vm._v(_vm._s(_vm.percentages.fiets) + " %")
-            ]),
-            _vm._v(" "),
-            _c("b-form-input", {
-              attrs: {
-                id: "range-2",
-                type: "range",
-                min: "0",
-                max: "100",
-                step: "10"
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2" },
+        [
+          _vm._m(2),
+          _vm._v(" "),
+          _c("div", { staticClass: "range-percentage" }, [
+            _vm._v(_vm._s(_vm.percentages.openbaarvervoer) + " %")
+          ]),
+          _vm._v(" "),
+          _c("b-form-input", {
+            attrs: {
+              id: "range-2",
+              type: "range",
+              min: "0",
+              max: "100",
+              step: "10"
+            },
+            model: {
+              value: _vm.percentages.openbaarvervoer,
+              callback: function($$v) {
+                _vm.$set(_vm.percentages, "openbaarvervoer", $$v)
               },
-              model: {
-                value: _vm.percentages.fiets,
-                callback: function($$v) {
-                  _vm.$set(_vm.percentages, "fiets", $$v)
-                },
-                expression: "percentages.fiets"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2" },
-          [
-            _vm._m(2),
-            _vm._v(" "),
-            _c("div", { staticClass: "range-percentage" }, [
-              _vm._v(_vm._s(_vm.percentages.openbaarvervoer) + " %")
-            ]),
-            _vm._v(" "),
-            _c("b-form-input", {
-              attrs: {
-                id: "range-2",
-                type: "range",
-                min: "0",
-                max: "100",
-                step: "10"
-              },
-              model: {
-                value: _vm.percentages.openbaarvervoer,
-                callback: function($$v) {
-                  _vm.$set(_vm.percentages, "openbaarvervoer", $$v)
-                },
-                expression: "percentages.openbaarvervoer"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2" },
-          [
-            _vm._m(3),
-            _vm._v(" "),
-            _c("div", { staticClass: "range-percentage" }, [
-              _vm._v(_vm._s(_vm.percentages.bedrijfsvervoer) + " %")
-            ]),
-            _vm._v(" "),
-            _c("b-form-input", {
-              attrs: {
-                id: "range-2",
-                type: "range",
-                min: "0",
-                max: "100",
-                step: "10"
-              },
-              model: {
-                value: _vm.percentages.bedrijfsvervoer,
-                callback: function($$v) {
-                  _vm.$set(_vm.percentages, "bedrijfsvervoer", $$v)
-                },
-                expression: "percentages.bedrijfsvervoer"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2" },
-          [
-            _vm._m(4),
-            _vm._v(" "),
-            _c("div", { staticClass: "range-percentage" }, [
-              _vm._v(_vm._s(_vm.percentages.auto) + " %")
-            ]),
-            _vm._v(" "),
-            _c("b-form-input", {
-              attrs: {
-                id: "range-2",
-                type: "range",
-                min: "0",
-                max: "100",
-                step: "10"
-              },
-              model: {
-                value: _vm.percentages.auto,
-                callback: function($$v) {
-                  _vm.$set(_vm.percentages, "auto", $$v)
-                },
-                expression: "percentages.auto"
-              }
-            })
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-8 offset-2 p-2 text-center" },
-          [
-            _vm.totalPercentage < 100
-              ? _c("b-alert", { attrs: { show: "", variant: "primary" } }, [
-                  _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.totalPercentage == 100
-              ? _c("b-alert", { attrs: { show: "", variant: "success" } }, [
-                  _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.totalPercentage > 100
-              ? _c("b-alert", { attrs: { show: "", variant: "danger" } }, [
-                  _c("h2", [
-                    _vm._v("Totaal: " + _vm._s(_vm.totalPercentage) + "%")
-                  ])
-                ])
-              : _vm._e()
-          ],
-          1
-        )
-      ]),
+              expression: "percentages.openbaarvervoer"
+            }
+          })
+        ],
+        1
+      ),
       _vm._v(" "),
-      _c("div", { staticClass: "row px-5 py-3" }, [
-        _c(
-          "div",
-          { staticClass: "col-12 pb-3" },
-          [_c("progress-bar", { attrs: { value: 4, max: 7 } })],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 d-flex flex-row justify-content-between" },
-          [
-            _c(
-              "a",
-              {
-                attrs: { href: "#" },
-                on: {
-                  click: function($event) {
-                    return _vm.goBack()
-                  }
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2" },
+        [
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "range-percentage" }, [
+            _vm._v(_vm._s(_vm.percentages.bedrijfsvervoer) + " %")
+          ]),
+          _vm._v(" "),
+          _c("b-form-input", {
+            attrs: {
+              id: "range-2",
+              type: "range",
+              min: "0",
+              max: "100",
+              step: "10"
+            },
+            model: {
+              value: _vm.percentages.bedrijfsvervoer,
+              callback: function($$v) {
+                _vm.$set(_vm.percentages, "bedrijfsvervoer", $$v)
+              },
+              expression: "percentages.bedrijfsvervoer"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2" },
+        [
+          _vm._m(4),
+          _vm._v(" "),
+          _c("div", { staticClass: "range-percentage" }, [
+            _vm._v(_vm._s(_vm.percentages.auto) + " %")
+          ]),
+          _vm._v(" "),
+          _c("b-form-input", {
+            attrs: {
+              id: "range-2",
+              type: "range",
+              min: "0",
+              max: "100",
+              step: "10"
+            },
+            model: {
+              value: _vm.percentages.auto,
+              callback: function($$v) {
+                _vm.$set(_vm.percentages, "auto", $$v)
+              },
+              expression: "percentages.auto"
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-8 offset-2 p-2 text-center" },
+        [
+          _vm.totalPercentage < 100
+            ? _c("b-alert", { attrs: { show: "", variant: "primary" } }, [
+                _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.totalPercentage == 100
+            ? _c("b-alert", { attrs: { show: "", variant: "success" } }, [
+                _c("h2", [_vm._v("Totaal: " + _vm._s(_vm.totalPercentage))])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.totalPercentage > 100
+            ? _c("b-alert", { attrs: { show: "", variant: "danger" } }, [
+                _c("h2", [
+                  _vm._v("Totaal: " + _vm._s(_vm.totalPercentage) + "%")
+                ])
+              ])
+            : _vm._e()
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row px-5 py-3" }, [
+      _c(
+        "div",
+        { staticClass: "col-12 pb-3" },
+        [_c("progress-bar", { attrs: { value: 4, max: 7 } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 d-flex flex-row justify-content-between" },
+        [
+          _c(
+            "a",
+            {
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.goBack()
                 }
-              },
-              [_vm._v("<< Terug")]
-            ),
-            _vm._v(" "),
-            _c("span", [
-              _vm.noAnswerSelected
-                ? _c("span", { staticClass: "mx-4" }, [
-                    _c("em", [
-                      _vm._v(
-                        "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
-                      )
-                    ])
+              }
+            },
+            [_vm._v("<< Terug")]
+          ),
+          _vm._v(" "),
+          _c("span", [
+            _vm.noAnswerSelected
+              ? _c("span", { staticClass: "mx-4" }, [
+                  _c("em", [
+                    _vm._v(
+                      "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
+                    )
                   ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { disabled: _vm.noAnswerSelected },
-                  on: { click: _vm.submitAnswers }
-                },
-                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
-              )
-            ])
-          ]
-        )
-      ])
-    ]
-  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { disabled: _vm.noAnswerSelected },
+                on: { click: _vm.submitAnswers }
+              },
+              [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -84166,171 +84154,167 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-fluid d-flex flex-column h-100" },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "row flex-grow-1" }, [
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("poolautos") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("poolautos")
-                  }
+  return _c("div", { staticClass: "container-fluid h-100" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row flex-grow-1" }, [
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("poolautos") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("poolautos")
                 }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizpoolautos.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(1)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: {
-                  "selected-answer": _vm.isSelectedAnswer("bestelbusjes")
-                },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("bestelbusjes")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizbestelbusjes.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(2)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: {
-                  "selected-answer": _vm.isSelectedAnswer("vrachtwagens")
-                },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("vrachtwagens")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizvrachtwagen.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(3)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("nee") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswerNone("nee")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizneenogniet.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(4)
-              ]
-            )
-          ])
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizpoolautos.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row px-5 py-3" }, [
-        _c(
-          "div",
-          { staticClass: "col-12 pb-3" },
-          [_c("progress-bar", { attrs: { value: 5, max: 7 } })],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 d-flex flex-row justify-content-between" },
-          [
-            _c(
-              "a",
-              {
-                attrs: { href: "#" },
-                on: {
-                  click: function($event) {
-                    return _vm.goBack()
-                  }
-                }
+      _c("div", { staticClass: "col-md-4 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: {
+                "selected-answer": _vm.isSelectedAnswer("bestelbusjes")
               },
-              [_vm._v("<< Terug")]
-            ),
-            _vm._v(" "),
-            _c("span", [
-              _vm.noAnswerSelected
-                ? _c("span", { staticClass: "mx-4" }, [
-                    _c("em", [
-                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                    ])
-                  ])
-                : _vm._e(),
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("bestelbusjes")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizbestelbusjes.png", alt: "" }
+              }),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { disabled: _vm.noAnswerSelected },
-                  on: { click: _vm.submitAnswers }
-                },
-                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
-              )
-            ])
-          ]
-        )
+              _vm._m(2)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: {
+                "selected-answer": _vm.isSelectedAnswer("vrachtwagens")
+              },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("vrachtwagens")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizvrachtwagen.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(3)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("nee") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswerNone("nee")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizneenogniet.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(4)
+            ]
+          )
+        ])
       ])
-    ]
-  )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row px-5 py-3" }, [
+      _c(
+        "div",
+        { staticClass: "col-12 pb-3" },
+        [_c("progress-bar", { attrs: { value: 5, max: 7 } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 d-flex flex-row justify-content-between" },
+        [
+          _c(
+            "a",
+            {
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.goBack()
+                }
+              }
+            },
+            [_vm._v("<< Terug")]
+          ),
+          _vm._v(" "),
+          _c("span", [
+            _vm.noAnswerSelected
+              ? _c("span", { staticClass: "mx-4" }, [
+                  _c("em", [
+                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { disabled: _vm.noAnswerSelected },
+                on: { click: _vm.submitAnswers }
+              },
+              [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -84701,149 +84685,145 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-fluid d-flex flex-column h-100" },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "row flex-grow-1" }, [
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickablem-2",
-                class: {
-                  "selected-answer": _vm.isSelectedAnswer("bedrijventerrein")
-                },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("bedrijventerrein")
-                  }
-                }
+  return _c("div", { staticClass: "container-fluid h-100" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row flex-grow-1" }, [
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickablem-2",
+              class: {
+                "selected-answer": _vm.isSelectedAnswer("bedrijventerrein")
               },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizbedrijventerrein.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(1)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickablem-2",
-                class: {
-                  "selected-answer": _vm.isSelectedAnswer(
-                    "centrum / winkelgebied"
-                  )
-                },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("centrum / winkelgebied")
-                  }
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("bedrijventerrein")
                 }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizcentrumwinkelgebied.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(2)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickablem-2",
-                class: {
-                  "selected-answer": _vm.isSelectedAnswer("recreatiegebied")
-                },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("recreatiegebied")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizrecreatiegebied.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(3)
-              ]
-            )
-          ])
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizbedrijventerrein.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row px-5 py-3" }, [
-        _c(
-          "div",
-          { staticClass: "col-12 pb-3" },
-          [_c("progress-bar", { attrs: { value: 1, max: 7 } })],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 d-flex flex-row justify-content-between" },
-          [
-            _c(
-              "a",
-              {
-                attrs: { href: "#" },
-                on: {
-                  click: function($event) {
-                    return _vm.goBack()
-                  }
-                }
+      _c("div", { staticClass: "col-md-4 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickablem-2",
+              class: {
+                "selected-answer": _vm.isSelectedAnswer(
+                  "centrum / winkelgebied"
+                )
               },
-              [_vm._v("<< Terug")]
-            ),
-            _vm._v(" "),
-            _c("span", [
-              _vm.noAnswerSelected
-                ? _c("span", { staticClass: "mx-4" }, [
-                    _c("em", [
-                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                    ])
-                  ])
-                : _vm._e(),
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("centrum / winkelgebied")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizcentrumwinkelgebied.png", alt: "" }
+              }),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { disabled: _vm.noAnswerSelected },
-                  on: { click: _vm.submitAnswers }
-                },
-                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
-              )
-            ])
-          ]
-        )
+              _vm._m(2)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickablem-2",
+              class: {
+                "selected-answer": _vm.isSelectedAnswer("recreatiegebied")
+              },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("recreatiegebied")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizrecreatiegebied.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(3)
+            ]
+          )
+        ])
       ])
-    ]
-  )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row px-5 py-3" }, [
+      _c(
+        "div",
+        { staticClass: "col-12 pb-3" },
+        [_c("progress-bar", { attrs: { value: 1, max: 7 } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 d-flex flex-row justify-content-between" },
+        [
+          _c(
+            "a",
+            {
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.goBack()
+                }
+              }
+            },
+            [_vm._v("<< Terug")]
+          ),
+          _vm._v(" "),
+          _c("span", [
+            _vm.noAnswerSelected
+              ? _c("span", { staticClass: "mx-4" }, [
+                  _c("em", [
+                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { disabled: _vm.noAnswerSelected },
+                on: { click: _vm.submitAnswers }
+              },
+              [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
