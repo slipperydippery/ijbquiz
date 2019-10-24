@@ -1,8 +1,8 @@
 <template>
-	<div class="container-fluid d-flex flex-column h-100">
+	<div class="container-fluid h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-            <h1 class="pagetitle d-inline px-5"> Rijden jullie al elektrisch? </h1>
+                <h1 class="pagetitle d-inline px-5"> Rijden jullie al elektrisch? </h1>
                 <p class="text-muted"><em> Je kunt meer dan 1 antwoord aanklikken. </em></p>
 	        </div>
 		</div>

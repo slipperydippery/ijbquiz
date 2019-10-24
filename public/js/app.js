@@ -83120,171 +83120,165 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-fluid d-flex flex-column h-100" },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "row flex-grow-1" }, [
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("ebike") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("ebike")
-                  }
+  return _c("div", { staticClass: "container-fluid h-100" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row flex-grow-1" }, [
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("ebike") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("ebike")
                 }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizebike.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(1)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: {
-                  "selected-answer": _vm.isSelectedAnswer("electrischeauto")
-                },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("electrischeauto")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizeauto.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(2)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("poolautos") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("poolautos")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizelectrischepoolautos.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(3)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: {
-                  "selected-answer": _vm.isSelectedAnswer("nognietecht")
-                },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswerNone("nognietecht")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizneenogniet.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(4)
-              ]
-            )
-          ])
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizebike.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row px-5 py-3" }, [
-        _c(
-          "div",
-          { staticClass: "col-12 pb-3" },
-          [_c("progress-bar", { attrs: { value: 6, max: 7 } })],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 d-flex flex-row justify-content-between" },
-          [
-            _c(
-              "a",
-              {
-                attrs: { href: "#" },
-                on: {
-                  click: function($event) {
-                    return _vm.goBack()
-                  }
-                }
+      _c("div", { staticClass: "col-md-4 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: {
+                "selected-answer": _vm.isSelectedAnswer("electrischeauto")
               },
-              [_vm._v("<< Terug")]
-            ),
-            _vm._v(" "),
-            _c("span", [
-              _vm.noAnswerSelected
-                ? _c("span", { staticClass: "mx-4" }, [
-                    _c("em", [
-                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                    ])
-                  ])
-                : _vm._e(),
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("electrischeauto")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizeauto.png", alt: "" }
+              }),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { disabled: _vm.noAnswerSelected },
-                  on: { click: _vm.submitAnswers }
-                },
-                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
-              )
-            ])
-          ]
-        )
+              _vm._m(2)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("poolautos") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("poolautos")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizelectrischepoolautos.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(3)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("nognietecht") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswerNone("nognietecht")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizneenogniet.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(4)
+            ]
+          )
+        ])
       ])
-    ]
-  )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row px-5 py-3" }, [
+      _c(
+        "div",
+        { staticClass: "col-12 pb-3" },
+        [_c("progress-bar", { attrs: { value: 6, max: 7 } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 d-flex flex-row justify-content-between" },
+        [
+          _c(
+            "a",
+            {
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.goBack()
+                }
+              }
+            },
+            [_vm._v("<< Terug")]
+          ),
+          _vm._v(" "),
+          _c("span", [
+            _vm.noAnswerSelected
+              ? _c("span", { staticClass: "mx-4" }, [
+                  _c("em", [
+                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { disabled: _vm.noAnswerSelected },
+                on: { click: _vm.submitAnswers }
+              },
+              [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -84433,200 +84427,196 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container-fluid d-flex flex-column h-100" },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "row flex-grow-1" }, [
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("beverwijk") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("beverwijk")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizbeverwijk.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(1)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("velsen") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("velsen")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizvelsen.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(2)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
-          _c("div", { staticClass: "p-2 h-100" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "answer position-relative h-100 bg-light border clickable m-2",
-                class: { "selected-answer": _vm.isSelectedAnswer("heemskerk") },
-                on: {
-                  click: function($event) {
-                    return _vm.toggleAnswer("heemskerk")
-                  }
-                }
-              },
-              [
-                _c("img", {
-                  staticClass: "img-fluid",
-                  attrs: { src: "/img/quizheemskerk.png", alt: "" }
-                }),
-                _vm._v(" "),
-                _vm._m(3)
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 h-50" }, [
+  return _c("div", { staticClass: "container-fluid h-100" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row " }, [
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
           _c(
             "div",
-            { staticClass: "p-2 h-100" },
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("beverwijk") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("beverwijk")
+                }
+              }
+            },
             [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "answer position-relative h-100 bg-light border m-2",
-                  class: {
-                    "selected-answer": _vm.isSelectedAnswer("buiten de regio"),
-                    clickable: _vm.hasIJmond,
-                    faded: !_vm.hasIJmond
-                  },
-                  attrs: { id: "popover-button-sync" },
-                  on: {
-                    click: function($event) {
-                      return _vm.toggleAnswer("buiten de regio")
-                    }
-                  }
-                },
-                [
-                  _c("img", {
-                    staticClass: "img-fluid",
-                    attrs: { src: "/img/quizbuitenderegio.png", alt: "" }
-                  }),
-                  _vm._v(" "),
-                  _vm._m(4)
-                ]
-              ),
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizbeverwijk.png", alt: "" }
+              }),
               _vm._v(" "),
-              _c(
-                "b-popover",
-                {
-                  attrs: {
-                    title: "Alleen in de IJmond",
-                    disabled: _vm.hasIJmondGETSET,
-                    target: "popover-button-sync",
-                    triggers: "hover focus",
-                    placement: "top"
-                  },
-                  on: {
-                    "update:disabled": function($event) {
-                      _vm.hasIJmondGETSET = $event
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "\n\t\t\t\t        Helaas kunnen we alleen informatie bieden voor bedrijven die gevestigd zijn binnen de IJmond.\n\t\t\t\t\t"
-                  )
-                ]
-              )
-            ],
-            1
+              _vm._m(1)
+            ]
           )
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row px-5 py-3" }, [
+      _c("div", { staticClass: "col-md-4 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("velsen") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("velsen")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizvelsen.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(2)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4 offset-md-2 h-50" }, [
+        _c("div", { staticClass: "p-2 h-100" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "answer position-relative h-100 bg-light border clickable m-2",
+              class: { "selected-answer": _vm.isSelectedAnswer("heemskerk") },
+              on: {
+                click: function($event) {
+                  return _vm.toggleAnswer("heemskerk")
+                }
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "img-fluid",
+                attrs: { src: "/img/quizheemskerk.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _vm._m(3)
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-4 h-50" }, [
         _c(
           "div",
-          { staticClass: "col-12 pb-3" },
-          [_c("progress-bar", { attrs: { value: 0, max: 7 } })],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "col-12 d-flex flex-row justify-content-between" },
+          { staticClass: "p-2 h-100" },
           [
             _c(
-              "a",
+              "div",
               {
-                attrs: { href: "#" },
+                staticClass:
+                  "answer position-relative h-100 bg-light border m-2",
+                class: {
+                  "selected-answer": _vm.isSelectedAnswer("buiten de regio"),
+                  clickable: _vm.hasIJmond,
+                  faded: !_vm.hasIJmond
+                },
+                attrs: { id: "popover-button-sync" },
                 on: {
                   click: function($event) {
-                    return _vm.goBack()
+                    return _vm.toggleAnswer("buiten de regio")
                   }
                 }
               },
-              [_vm._v("<< Terug")]
+              [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: { src: "/img/quizbuitenderegio.png", alt: "" }
+                }),
+                _vm._v(" "),
+                _vm._m(4)
+              ]
             ),
             _vm._v(" "),
-            _c("span", [
-              _vm.noAnswerSelected
-                ? _c("span", { staticClass: "mx-4" }, [
-                    _c("em", [
-                      _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                    ])
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { disabled: _vm.noAnswerSelected },
-                  on: { click: _vm.submitAnswers }
+            _c(
+              "b-popover",
+              {
+                attrs: {
+                  title: "Alleen in de IJmond",
+                  disabled: _vm.hasIJmondGETSET,
+                  target: "popover-button-sync",
+                  triggers: "hover focus",
+                  placement: "top"
                 },
-                [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
-              )
-            ])
-          ]
+                on: {
+                  "update:disabled": function($event) {
+                    _vm.hasIJmondGETSET = $event
+                  }
+                }
+              },
+              [
+                _vm._v(
+                  "\n\t\t\t\t        Helaas kunnen we alleen informatie bieden voor bedrijven die gevestigd zijn binnen de IJmond.\n\t\t\t\t\t"
+                )
+              ]
+            )
+          ],
+          1
         )
       ])
-    ]
-  )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row px-5 py-3" }, [
+      _c(
+        "div",
+        { staticClass: "col-12 pb-3" },
+        [_c("progress-bar", { attrs: { value: 0, max: 7 } })],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 d-flex flex-row justify-content-between" },
+        [
+          _c(
+            "a",
+            {
+              attrs: { href: "#" },
+              on: {
+                click: function($event) {
+                  return _vm.goBack()
+                }
+              }
+            },
+            [_vm._v("<< Terug")]
+          ),
+          _vm._v(" "),
+          _c("span", [
+            _vm.noAnswerSelected
+              ? _c("span", { staticClass: "mx-4" }, [
+                  _c("em", [
+                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
+                  ])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary",
+                attrs: { disabled: _vm.noAnswerSelected },
+                on: { click: _vm.submitAnswers }
+              },
+              [_vm._v("\n\t\t\t\t\t\tVerder\n\t\t\t\t\t")]
+            )
+          ])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {

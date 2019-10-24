@@ -1,12 +1,12 @@
 <template>
-	<div class="container-fluid d-flex flex-column h-100">
+	<div class="container-fluid h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
                 <h1 class="pagetitle d-inline px-5"> Waar is je bedrijf gevestigd? </h1>
                 <p class="text-muted"><em> Zijn er meerdere vestigingen in verschillende gemeenten, dan kun je dat ook aangeven. </em></p>
 	        </div>
 		</div>
-		<div class="row flex-grow-1">
+		<div class="row ">
 			<div class="col-md-4 offset-md-2 h-50">
 				<div class="p-2 h-100">
 					<div
