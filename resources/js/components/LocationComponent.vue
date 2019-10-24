@@ -9,13 +9,13 @@
 		<div class="row flex-grow-1">
 			<div class="col-md-4 offset-md-2 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('beverwijk')"
 						:class="{'selected-answer' : isSelectedAnswer('beverwijk')}"
 					>
-						<img src="/img/quizbeverwijk.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizbeverwijk.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> Gemeente Beverwijk </h3>
 						</div>
 					</div>
@@ -23,13 +23,13 @@
 			</div>
 			<div class="col-md-4 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('velsen')"
 						:class="{'selected-answer' : isSelectedAnswer('velsen')}"
 					>
-						<img src="/img/quizvelsen.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizvelsen.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 							<h3 class=""> Gemeente Velsen </h3>
 						</div>
 					</div>
@@ -37,13 +37,13 @@
 			</div>
 			<div class="col-md-4 offset-md-2 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('heemskerk')"
 						:class="{'selected-answer' : isSelectedAnswer('heemskerk')}"
 					>
-						<img src="/img/quizheemskerk.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizheemskerk.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> Gemeente Heemskerk </h3>
 						</div>
 					</div>
@@ -51,21 +51,21 @@
 			</div>
 			<div class="col-md-4 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border m-2"
 						@click="toggleAnswer('buiten de regio')"
 						:class="{'selected-answer' : isSelectedAnswer('buiten de regio'), 'clickable' : hasIJmond, 'faded' : ! hasIJmond}"
 						id="popover-button-sync"
 					>
-						<img src="/img/quizbuitenderegio.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizbuitenderegio.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 							<h3 class=""> Vestiging(en) buiten de regio </h3>
 						</div>
 					</div>
-					<b-popover 
-						title="Alleen in de IJmond" 
-						:disabled.sync="hasIJmondGETSET" 
-						target="popover-button-sync" 
+					<b-popover
+						title="Alleen in de IJmond"
+						:disabled.sync="hasIJmondGETSET"
+						target="popover-button-sync"
 						triggers="hover focus"
 						placement="top"
 					>
@@ -88,7 +88,7 @@
 
 				<span>
 					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
-					<button 
+					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"
 						@click="submitAnswers"
@@ -121,9 +121,9 @@
 
         computed: {
         	noAnswerSelected() {
-        		return this.selectedAnswers.length == 0 
+        		return this.selectedAnswers.length == 0
         	},
-        	
+
         	hasIJmond() {
         		this.hasIJmondGETSET = this.selectedAnswers.length ? true : false;
         		return this.selectedAnswers.length ? true : false;

@@ -83133,7 +83133,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("ebike") },
                 on: {
                   click: function($event) {
@@ -83143,7 +83143,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizebike.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -83159,7 +83159,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: {
                   "selected-answer": _vm.isSelectedAnswer("electrischeauto")
                 },
@@ -83171,7 +83171,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizeauto.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -83187,7 +83187,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("poolautos") },
                 on: {
                   click: function($event) {
@@ -83197,7 +83197,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizelectrischepoolautos.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -83213,7 +83213,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: {
                   "selected-answer": _vm.isSelectedAnswer("nognietecht")
                 },
@@ -83225,7 +83225,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizneenogniet.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -83309,10 +83309,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
         _c("h3", {}, [
           _vm._v(" Er komen medewerkers op de e-bike, als je dat bedoelt ")
@@ -83326,10 +83323,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Een enkeling heeft een elektrische auto ")])]
     )
   },
@@ -83339,10 +83333,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
         _c("h3", {}, [
           _vm._v(
@@ -83358,10 +83349,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
         _c("h3", {}, [
           _vm._v(" Nog niet echt, maar we willen dat wel meer gaan doen ")
@@ -83682,7 +83670,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("1-10") },
                 on: {
                   click: function($event) {
@@ -83692,7 +83680,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quiznet-een-familie.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -83708,7 +83696,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("11-50") },
                 on: {
                   click: function($event) {
@@ -83718,7 +83706,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizkleinmaarfijn.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -83734,7 +83722,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("51-250") },
                 on: {
                   click: function($event) {
@@ -83744,7 +83732,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizmkb.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -83760,7 +83748,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("250+") },
                 on: {
                   click: function($event) {
@@ -83770,7 +83758,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizveel.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -83850,10 +83838,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Wij zijn net een familie: 1-10 personen ")])]
     )
   },
@@ -83863,10 +83848,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" We zijn klein, maar fijn: 11-50 personen ")])]
     )
   },
@@ -83876,10 +83858,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Wij horen nog bij het MKB: 51-250 personen ")])]
     )
   },
@@ -83889,10 +83868,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" We zijn met veel: > 250 personen ")])]
     )
   }
@@ -84209,7 +84185,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("poolautos") },
                 on: {
                   click: function($event) {
@@ -84219,7 +84195,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizpoolautos.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84235,7 +84211,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: {
                   "selected-answer": _vm.isSelectedAnswer("bestelbusjes")
                 },
@@ -84247,7 +84223,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizbestelbusjes.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84263,7 +84239,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: {
                   "selected-answer": _vm.isSelectedAnswer("vrachtwagens")
                 },
@@ -84275,7 +84251,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizvrachtwagen.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84291,7 +84267,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("nee") },
                 on: {
                   click: function($event) {
@@ -84301,7 +84277,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizneenogniet.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84385,10 +84361,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
         _c("h3", {}, [
           _vm._v(
@@ -84404,10 +84377,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
         _c("h3", {}, [
           _vm._v(
@@ -84423,10 +84393,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
         _c("h3", {}, [
           _vm._v(" We rijden de regio in en uit met vrachtwagens ")
@@ -84440,10 +84407,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Nee, die hebben we nog niet ")])]
     )
   }
@@ -84482,7 +84446,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("beverwijk") },
                 on: {
                   click: function($event) {
@@ -84492,7 +84456,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizbeverwijk.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84508,7 +84472,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("velsen") },
                 on: {
                   click: function($event) {
@@ -84518,7 +84482,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizvelsen.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84534,7 +84498,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickable m-2",
                 class: { "selected-answer": _vm.isSelectedAnswer("heemskerk") },
                 on: {
                   click: function($event) {
@@ -84544,7 +84508,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizheemskerk.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84563,7 +84527,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "answer position-relative h-100 bg-light border d-flex m-2",
+                    "answer position-relative h-100 bg-light border m-2",
                   class: {
                     "selected-answer": _vm.isSelectedAnswer("buiten de regio"),
                     clickable: _vm.hasIJmond,
@@ -84578,7 +84542,7 @@ var render = function() {
                 },
                 [
                   _c("img", {
-                    staticClass: "img-fluid align-self-start",
+                    staticClass: "img-fluid",
                     attrs: { src: "/img/quizbuitenderegio.png", alt: "" }
                   }),
                   _vm._v(" "),
@@ -84691,10 +84655,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Gemeente Beverwijk ")])]
     )
   },
@@ -84704,10 +84665,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Gemeente Velsen ")])]
     )
   },
@@ -84717,10 +84675,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Gemeente Heemskerk ")])]
     )
   },
@@ -84730,10 +84685,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Vestiging(en) buiten de regio ")])]
     )
   }
@@ -84772,7 +84724,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickablem-2",
                 class: {
                   "selected-answer": _vm.isSelectedAnswer("bedrijventerrein")
                 },
@@ -84784,7 +84736,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizbedrijventerrein.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84800,7 +84752,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickablem-2",
                 class: {
                   "selected-answer": _vm.isSelectedAnswer(
                     "centrum / winkelgebied"
@@ -84814,7 +84766,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizcentrumwinkelgebied.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84830,7 +84782,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "answer position-relative h-100 bg-light border clickable d-flex m-2",
+                  "answer position-relative h-100 bg-light border clickablem-2",
                 class: {
                   "selected-answer": _vm.isSelectedAnswer("recreatiegebied")
                 },
@@ -84842,7 +84794,7 @@ var render = function() {
               },
               [
                 _c("img", {
-                  staticClass: "img-fluid align-self-start",
+                  staticClass: "img-fluid",
                   attrs: { src: "/img/quizrecreatiegebied.png", alt: "" }
                 }),
                 _vm._v(" "),
@@ -84926,10 +84878,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Bedrijventerrein ")])]
     )
   },
@@ -84939,10 +84888,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Centrum/winkelgebied ")])]
     )
   },
@@ -84952,10 +84898,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass:
-          "answer-title pt-1 text-center w-100 align-self-end position-absolute"
-      },
+      { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [_c("h3", {}, [_vm._v(" Recreatiegebied ")])]
     )
   }

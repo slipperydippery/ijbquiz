@@ -11166,6 +11166,9 @@ h2.pagetitle {
 
 .answer .answer-title {
   background: #f8f9fa;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .selected-answer {

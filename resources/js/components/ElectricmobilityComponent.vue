@@ -9,13 +9,13 @@
 		<div class="row flex-grow-1">
 			<div class="col-md-4 offset-md-2 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('ebike')"
 						:class="{'selected-answer' : isSelectedAnswer('ebike')}"
 					>
-						<img src="/img/quizebike.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizebike.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> Er komen medewerkers op de e-bike, als je dat bedoelt </h3>
 						</div>
 					</div>
@@ -23,13 +23,13 @@
 			</div>
 			<div class="col-md-4 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('electrischeauto')"
 						:class="{'selected-answer' : isSelectedAnswer('electrischeauto')}"
 					>
-						<img src="/img/quizeauto.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizeauto.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 							<h3 class=""> Een enkeling heeft een elektrische auto </h3>
 						</div>
 					</div>
@@ -37,13 +37,13 @@
 			</div>
 			<div class="col-md-4 offset-md-2 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('poolautos')"
 						:class="{'selected-answer' : isSelectedAnswer('poolautos')}"
 					>
-						<img src="/img/quizelectrischepoolautos.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizelectrischepoolautos.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> Jazeker, we stimuleren dat en ook onze poolauto’s zijn elektrisch </h3>
 						</div>
 					</div>
@@ -51,13 +51,13 @@
 			</div>
 			<div class="col-md-4 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswerNone('nognietecht')"
 						:class="{'selected-answer' : isSelectedAnswer('nognietecht')}"
 					>
-						<img src="/img/quizneenogniet.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizneenogniet.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> Nog niet echt, maar we willen dat wel meer gaan doen </h3>
 						</div>
 					</div>
@@ -78,7 +78,7 @@
 
 				<span>
 					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
-					<button 
+					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"
 						@click="submitAnswers"
@@ -110,7 +110,7 @@
 
         computed: {
         	noAnswerSelected() {
-        		return this.selectedAnswers.length == 0 
+        		return this.selectedAnswers.length == 0
         	},
         },
 

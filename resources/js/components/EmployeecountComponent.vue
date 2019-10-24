@@ -8,13 +8,13 @@
 		<div class="row flex-grow-1">
 			<div class="col-md-4 offset-md-2 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('1-10')"
 						:class="{'selected-answer' : isSelectedAnswer('1-10')}"
 					>
-						<img src="/img/quiznet-een-familie.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quiznet-een-familie.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> Wij zijn net een familie: 1-10 personen </h3>
 						</div>
 					</div>
@@ -22,13 +22,13 @@
 			</div>
 			<div class="col-md-4 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('11-50')"
 						:class="{'selected-answer' : isSelectedAnswer('11-50')}"
 					>
-						<img src="/img/quizkleinmaarfijn.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizkleinmaarfijn.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 							<h3 class=""> We zijn klein, maar fijn: 11-50 personen </h3>
 						</div>
 					</div>
@@ -36,13 +36,13 @@
 			</div>
 			<div class="col-md-4 offset-md-2 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('51-250')"
 						:class="{'selected-answer' : isSelectedAnswer('51-250')}"
 					>
-						<img src="/img/quizmkb.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizmkb.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> Wij horen nog bij het MKB: 51-250 personen </h3>
 						</div>
 					</div>
@@ -50,13 +50,13 @@
 			</div>
 			<div class="col-md-4 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickable m-2"
 						@click="toggleAnswer('250+')"
 						:class="{'selected-answer' : isSelectedAnswer('250+')}"
 					>
-						<img src="/img/quizveel.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizveel.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> We zijn met veel: > 250 personen </h3>
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 
 				<span>
 					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
-					<button 
+					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"
 						@click="submitAnswers"
@@ -109,7 +109,7 @@
 
         computed: {
         	noAnswerSelected() {
-        		return this.selectedAnswers == '' 
+        		return this.selectedAnswers == ''
         	},
         },
 

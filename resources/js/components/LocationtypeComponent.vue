@@ -9,13 +9,13 @@
 		<div class="row flex-grow-1">
 			<div class="col-md-4 offset-md-2 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickablem-2"
 						@click="toggleAnswer('bedrijventerrein')"
 						:class="{'selected-answer' : isSelectedAnswer('bedrijventerrein')}"
 					>
-						<img src="/img/quizbedrijventerrein.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizbedrijventerrein.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> Bedrijventerrein </h3>
 						</div>
 					</div>
@@ -23,13 +23,13 @@
 			</div>
 			<div class="col-md-4 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickablem-2"
 						@click="toggleAnswer('centrum / winkelgebied')"
 						:class="{'selected-answer' : isSelectedAnswer('centrum / winkelgebied')}"
 					>
-						<img src="/img/quizcentrumwinkelgebied.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizcentrumwinkelgebied.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 							<h3 class=""> Centrum/winkelgebied </h3>
 						</div>
 					</div>
@@ -37,13 +37,13 @@
 			</div>
 			<div class="col-md-4 offset-md-2 h-50">
 				<div class="p-2 h-100">
-					<div 
-						class="answer position-relative h-100 bg-light border clickable d-flex m-2" 
+					<div
+						class="answer position-relative h-100 bg-light border clickablem-2"
 						@click="toggleAnswer('recreatiegebied')"
 						:class="{'selected-answer' : isSelectedAnswer('recreatiegebied')}"
 					>
-						<img src="/img/quizrecreatiegebied.png" alt="" class="img-fluid align-self-start">
-						<div class="answer-title pt-1 text-center w-100 align-self-end position-absolute">
+						<img src="/img/quizrecreatiegebied.png" alt="" class="img-fluid">
+						<div class="answer-title pt-1 text-center w-100 position-absolute">
 								<h3 class=""> Recreatiegebied </h3>
 						</div>
 					</div>
@@ -64,7 +64,7 @@
 
 				<span>
 					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
-					<button 
+					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"
 						@click="submitAnswers"
@@ -96,7 +96,7 @@
 
         computed: {
         	noAnswerSelected() {
-        		return this.selectedAnswers.length == 0 
+        		return this.selectedAnswers.length == 0
         	},
         },
 
