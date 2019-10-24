@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3114ee37-cbad-4049-8e79-7c4ffb8d9c3f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ElectricmobilityComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ElectricmobilityComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/EmployeecountComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EmployeecountComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/InhousemobilityComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/InhousemobilityComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/LocationComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LocationComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/LocationtypeComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/LocationtypeComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/partials/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/partials/_cards.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/quiz/start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quiz/start.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/EmployeeOriginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EmployeeOriginComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/EmployeemobilityComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/EmployeemobilityComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/partials/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/partials/_typography.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +159,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571919831889</updated>
-      <workItem from="1571919833422" duration="1036000" />
+      <workItem from="1571919833422" duration="1645000" />
     </task>
     <servers />
   </component>

@@ -83388,7 +83388,7 @@ var render = function() {
       _c("div", { staticClass: "row flex-grow-1" }, [
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2" },
+          { staticClass: "col-8 offset-2 p-2" },
           [
             _vm._m(1),
             _vm._v(" "),
@@ -83418,7 +83418,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2" },
+          { staticClass: "col-8 offset-2 p-2" },
           [
             _vm._m(2),
             _vm._v(" "),
@@ -83448,7 +83448,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2" },
+          { staticClass: "col-8 offset-2 p-2" },
           [
             _vm._m(3),
             _vm._v(" "),
@@ -83478,7 +83478,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2" },
+          { staticClass: "col-8 offset-2 p-2" },
           [
             _vm._m(4),
             _vm._v(" "),
@@ -83508,7 +83508,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2 text-center" },
+          { staticClass: "col-8 offset-2 p-2 text-center" },
           [
             _vm.totalPercentage < 100
               ? _c("b-alert", { attrs: { show: "", variant: "primary" } }, [
@@ -83903,7 +83903,7 @@ var render = function() {
       _c("div", { staticClass: "row flex-grow-1" }, [
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2" },
+          { staticClass: "col-8 offset-2 p-2" },
           [
             _vm._m(1),
             _vm._v(" "),
@@ -83933,7 +83933,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2" },
+          { staticClass: "col-8 offset-2 p-2" },
           [
             _vm._m(2),
             _vm._v(" "),
@@ -83963,7 +83963,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2" },
+          { staticClass: "col-8 offset-2 p-2" },
           [
             _vm._m(3),
             _vm._v(" "),
@@ -83993,7 +83993,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2" },
+          { staticClass: "col-8 offset-2 p-2" },
           [
             _vm._m(4),
             _vm._v(" "),
@@ -84023,7 +84023,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-8 offset-md-2 p-2 text-center" },
+          { staticClass: "col-8 offset-2 p-2 text-center" },
           [
             _vm.totalPercentage < 100
               ? _c("b-alert", { attrs: { show: "", variant: "primary" } }, [

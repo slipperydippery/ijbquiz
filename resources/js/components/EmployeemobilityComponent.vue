@@ -7,28 +7,28 @@
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
-			<div class="col-8 offset-md-2 p-2">
+			<div class="col-8 offset-2 p-2">
 				<label for="range-2"> <h4>Supergezond op de fiets</h4> </label>
 				<div class="range-percentage">{{ percentages.fiets }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.fiets" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div class="col-8 offset-md-2 p-2">
+			<div class="col-8 offset-2 p-2">
 				<label for="range-2"> <h4>Met het openbaar vervoer</h4> </label>
 				<div class="range-percentage">{{ percentages.openbaarvervoer }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.openbaarvervoer" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div class="col-8 offset-md-2 p-2">
+			<div class="col-8 offset-2 p-2">
 				<label for="range-2"> <h4>Met georganiseerd bedrijfsvervoer</h4> </label>
 				<div class="range-percentage">{{ percentages.bedrijfsvervoer }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.bedrijfsvervoer" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div class="col-8 offset-md-2 p-2">
+			<div class="col-8 offset-2 p-2">
 				<label for="range-2"><h4>Met de auto</h4></label>
 				<div class="range-percentage">{{ percentages.auto }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.auto" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div 
-				class="col-8 offset-md-2 p-2 text-center"
+			<div
+				class="col-8 offset-2 p-2 text-center"
 			>
 				<b-alert show
 					variant="primary"
@@ -64,7 +64,7 @@
 
 				<span>
 					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'</em></span>
-					<button 
+					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"
 						@click="submitAnswers"
@@ -108,11 +108,11 @@
         	noAnswerSelected() {
         		return this.totalPercentage != 100;
         	},
-        	
+
         	totalPercentage() {
-        		return parseInt(this.percentages.fiets) + 
-        				parseInt(this.percentages.openbaarvervoer) + 
-        				parseInt(this.percentages.bedrijfsvervoer) + 
+        		return parseInt(this.percentages.fiets) +
+        				parseInt(this.percentages.openbaarvervoer) +
+        				parseInt(this.percentages.bedrijfsvervoer) +
         				parseInt(this.percentages.auto);
         	}
         },

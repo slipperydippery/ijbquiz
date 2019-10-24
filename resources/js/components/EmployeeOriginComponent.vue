@@ -7,28 +7,28 @@
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
-			<div class="col-8 offset-md-2 p-2">
+			<div class="col-8 offset-2 p-2">
 				<label for="range-2"> <h4>Bijna om de hoek: 5-10km </h4> </label>
 				<div class="range-percentage">{{ percentages.uptofive }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.uptofive" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div class="col-8 offset-md-2 p-2">
+			<div class="col-8 offset-2 p-2">
 				<label for="range-2"> <h4>Lekker dichtbij: 5-10km</h4> </label>
 				<div class="range-percentage">{{ percentages.fivetoten }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.fivetoten" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div class="col-8 offset-md-2 p-2">
+			<div class="col-8 offset-2 p-2">
 				<label for="range-2"><h4>Wel wat verder weg: 11-20km</h4></label>
 				<div class="range-percentage">{{ percentages.eleventotwenty }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.eleventotwenty" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div class="col-8 offset-md-2 p-2">
+			<div class="col-8 offset-2 p-2">
 				<label for="range-2"><h4>Een flink eind: >20km</h4></label>
 				<div class="range-percentage">{{ percentages.morethantwenty }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.morethantwenty" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div 
-				class="col-8 offset-md-2 p-2 text-center"
+			<div
+				class="col-8 offset-2 p-2 text-center"
 			>
 				<b-alert show
 					variant="primary"
@@ -64,7 +64,7 @@
 
 				<span>
 					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'</em></span>
-					<button 
+					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"
 						@click="submitAnswers"
@@ -108,11 +108,11 @@
         	noAnswerSelected() {
         		return this.totalPercentage != 100;
         	},
-        	
+
         	totalPercentage() {
-        		return parseInt(this.percentages.uptofive) + 
-        				parseInt(this.percentages.fivetoten) + 
-        				parseInt(this.percentages.eleventotwenty) + 
+        		return parseInt(this.percentages.uptofive) +
+        				parseInt(this.percentages.fivetoten) +
+        				parseInt(this.percentages.eleventotwenty) +
         				parseInt(this.percentages.morethantwenty);
         	}
         },
