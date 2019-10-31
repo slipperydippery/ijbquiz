@@ -12,23 +12,23 @@
 				<div class="range-percentage">{{ percentages.fiets }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.fiets" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div class="col-8 offset-2 p-2">
+			<div class="col-12 col-md-8 offset-md-2 p-2">
 				<label for="range-2"> <h5>Met het openbaar vervoer</h5> </label>
 				<div class="range-percentage">{{ percentages.openbaarvervoer }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.openbaarvervoer" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div class="col-8 offset-2 p-2">
+			<div class="col-12 col-md-8 offset-md-2 p-2">
 				<label for="range-2"> <h5>Met georganiseerd bedrijfsvervoer</h5> </label>
 				<div class="range-percentage">{{ percentages.bedrijfsvervoer }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.bedrijfsvervoer" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
-			<div class="col-8 offset-2 p-2">
+			<div class="col-12 col-md-8 offset-md-2 p-2">
 				<label for="range-2"><h5>Met de auto</h5></label>
 				<div class="range-percentage">{{ percentages.auto }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.auto" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div
-				class="col-8 offset-2 p-2 text-center"
+				class="col-12 col-md-8 offset-md-2 p-2 text-center"
 			>
 				<b-alert show
 					variant="primary"
