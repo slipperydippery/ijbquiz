@@ -11112,24 +11112,24 @@ main {
 }
 
 html {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 @media (min-width: 576px) {
   html {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (min-width: 992px) {
   html {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }
 
