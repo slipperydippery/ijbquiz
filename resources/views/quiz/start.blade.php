@@ -25,6 +25,13 @@
 
 @section('additional-scripts')
 	<script>
+		var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+               navigator.userAgent &&
+               navigator.userAgent.indexOf('CriOS') == -1 &&
+               navigator.userAgent.indexOf('FxiOS') == -1;
+		if (isSafari) {
+			window.location.href="https://ijbquiz.embaudio.com/"
+		}
 		// function isIE() {
 		//   ua = navigator.userAgent;
 		//   /* MSIE used to detect old browsers and Trident used to newer ones*/
