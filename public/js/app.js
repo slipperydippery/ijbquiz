@@ -83465,7 +83465,7 @@ var render = function() {
     _c("div", { staticClass: "row flex-grow-1" }, [
       _c(
         "div",
-        { staticClass: "col-8 offset-2 p-2" },
+        { staticClass: "col-12 col-md-8 offset-md-2 p-2" },
         [
           _vm._m(1),
           _vm._v(" "),
@@ -83974,7 +83974,7 @@ var render = function() {
     _c("div", { staticClass: "row flex-grow-1" }, [
       _c(
         "div",
-        { staticClass: "col-8 offset-2 p-2" },
+        { staticClass: "col-12 col-md-8 offset-md-2 p-2" },
         [
           _vm._m(1),
           _vm._v(" "),

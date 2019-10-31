@@ -7,7 +7,7 @@
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
-			<div class="col-8 offset-2 p-2">
+			<div class="col-12 col-md-8 offset-md-2 p-2">
 				<label for="range-2"> <h5>Supergezond op de fiets</h5> </label>
 				<div class="range-percentage">{{ percentages.fiets }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.fiets" type="range" min="0" max="100" step="10"></b-form-input>
