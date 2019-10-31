@@ -2,7 +2,7 @@
 	<div class="container-fluid h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-                <h1 class="pagetitle d-inline px-5"> Rijden jullie al elektrisch? </h1>
+                <h1 class="pagetitle d-inline"> Rijden jullie al elektrisch? </h1>
                 <p class="text-muted"><em> Je kunt meer dan 1 antwoord aanklikken. </em></p>
 	        </div>
 		</div>
@@ -16,7 +16,7 @@
 					>
 						<img src="/img/quizebike.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> Er komen medewerkers op de e-bike, als je dat bedoelt </h3>
+								<h5 class=""> Er komen medewerkers op de e-bike, als je dat bedoelt </h5>
 						</div>
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 					>
 						<img src="/img/quizeauto.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-							<h3 class=""> Een enkeling heeft een elektrische auto </h3>
+							<h5 class=""> Een enkeling heeft een elektrische auto </h5>
 						</div>
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 					>
 						<img src="/img/quizelectrischepoolautos.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> Jazeker, we stimuleren dat en ook onze poolauto’s zijn elektrisch </h3>
+								<h5 class=""> Jazeker, we stimuleren dat en ook onze poolauto’s zijn elektrisch </h5>
 						</div>
 					</div>
 				</div>
@@ -58,7 +58,7 @@
 					>
 						<img src="/img/quizneenogniet.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> Nog niet echt, maar we willen dat wel meer gaan doen </h3>
+								<h5 class=""> Nog niet echt, maar we willen dat wel meer gaan doen </h5>
 						</div>
 					</div>
 				</div>
@@ -72,12 +72,12 @@
 				>
 				</progress-bar>
 			</div>
+			<div class="col-12 pb-3">
+				<span class="float-right" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
+			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
-
 				<a href="#" @click="goBack()"><< Terug</a>
-
 				<span>
-					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
 					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"

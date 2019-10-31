@@ -2,28 +2,28 @@
 	<div class="container-fluid h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-                <h1 class="pagetitle d-inline px-5"> Hoe komen de medewerkers naar het werk? </h1>
+                <h1 class="pagetitle d-inline"> Hoe komen de medewerkers naar het werk? </h1>
                 <p class="text-muted"><em> Maak in totaal 100%. </em></p>
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
 			<div class="col-8 offset-2 p-2">
-				<label for="range-2"> <h4>Supergezond op de fiets</h4> </label>
+				<label for="range-2"> <h5>Supergezond op de fiets</h5> </label>
 				<div class="range-percentage">{{ percentages.fiets }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.fiets" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div class="col-8 offset-2 p-2">
-				<label for="range-2"> <h4>Met het openbaar vervoer</h4> </label>
+				<label for="range-2"> <h5>Met het openbaar vervoer</h5> </label>
 				<div class="range-percentage">{{ percentages.openbaarvervoer }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.openbaarvervoer" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div class="col-8 offset-2 p-2">
-				<label for="range-2"> <h4>Met georganiseerd bedrijfsvervoer</h4> </label>
+				<label for="range-2"> <h5>Met georganiseerd bedrijfsvervoer</h5> </label>
 				<div class="range-percentage">{{ percentages.bedrijfsvervoer }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.bedrijfsvervoer" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div class="col-8 offset-2 p-2">
-				<label for="range-2"><h4>Met de auto</h4></label>
+				<label for="range-2"><h5>Met de auto</h5></label>
 				<div class="range-percentage">{{ percentages.auto }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.auto" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
@@ -58,12 +58,14 @@
 				>
 				</progress-bar>
 			</div>
+			<div class="col-12 pb-3">
+				<span class="float-right" v-if="noAnswerSelected"><em>Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'</em></span>
+			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
 
 				<a href="#" @click="goBack()"><< Terug</a>
 
 				<span>
-					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'</em></span>
 					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"

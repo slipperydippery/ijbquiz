@@ -2,7 +2,7 @@
 	<div class="container-fluid h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-            <h1 class="pagetitle d-inline px-5"> Hoeveel mensen werken er in dit bedrijf: </h1>
+            <h1 class="pagetitle d-inline"> Hoeveel mensen werken er in dit bedrijf: </h1>
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
@@ -15,7 +15,7 @@
 					>
 						<img src="/img/quiznet-een-familie.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> Wij zijn net een familie: 1-10 personen </h3>
+								<h5 class=""> Wij zijn net een familie: 1-10 personen </h5>
 						</div>
 					</div>
 				</div>
@@ -29,7 +29,7 @@
 					>
 						<img src="/img/quizkleinmaarfijn.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-							<h3 class=""> We zijn klein, maar fijn: 11-50 personen </h3>
+							<h5 class=""> We zijn klein, maar fijn: 11-50 personen </h5>
 						</div>
 					</div>
 				</div>
@@ -43,7 +43,7 @@
 					>
 						<img src="/img/quizmkb.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> Wij horen nog bij het MKB: 51-250 personen </h3>
+								<h5 class=""> Wij horen nog bij het MKB: 51-250 personen </h5>
 						</div>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 					>
 						<img src="/img/quizveel.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> We zijn met veel: > 250 personen </h3>
+								<h5 class=""> We zijn met veel: > 250 personen </h5>
 						</div>
 					</div>
 				</div>
@@ -71,12 +71,12 @@
 				>
 				</progress-bar>
 			</div>
+			<div class="col-12 pb-3">
+				<span class="float-right" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
+			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
-
 				<a href="#" @click="goBack()"><< Terug</a>
-
 				<span>
-					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
 					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"

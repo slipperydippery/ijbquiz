@@ -2,28 +2,28 @@
 	<div class="container-fluid h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-                <h1 class="pagetitle d-inline px-5"> Hoe ver wonen de medewerkers bij het bedrijf vandaan? </h1>
+                <h1 class="pagetitle d-inline"> Hoe ver wonen de medewerkers bij het bedrijf vandaan? </h1>
                 <p class="text-muted"><em> Maak in totaal 100%. </em></p>
 	        </div>
 		</div>
 		<div class="row flex-grow-1">
 			<div class="col-8 offset-2 p-2">
-				<label for="range-2"> <h4>Bijna om de hoek: 5-10km </h4> </label>
+				<label for="range-2"><h5 class="">Bijna om de hoek: 5-10km </h5></label>
 				<div class="range-percentage">{{ percentages.uptofive }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.uptofive" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div class="col-8 offset-2 p-2">
-				<label for="range-2"> <h4>Lekker dichtbij: 5-10km</h4> </label>
+				<label for="range-2"> <h5>Lekker dichtbij: 5-10km</h5> </label>
 				<div class="range-percentage">{{ percentages.fivetoten }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.fivetoten" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div class="col-8 offset-2 p-2">
-				<label for="range-2"><h4>Wel wat verder weg: 11-20km</h4></label>
+				<label for="range-2"><h5>Wel wat verder weg: 11-20km</h5></label>
 				<div class="range-percentage">{{ percentages.eleventotwenty }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.eleventotwenty" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
 			<div class="col-8 offset-2 p-2">
-				<label for="range-2"><h4>Een flink eind: >20km</h4></label>
+				<label for="range-2"><h5>Een flink eind: >20km</h5></label>
 				<div class="range-percentage">{{ percentages.morethantwenty }} %</div>
 			    <b-form-input id="range-2" v-model="percentages.morethantwenty" type="range" min="0" max="100" step="10"></b-form-input>
 			</div>
@@ -58,12 +58,14 @@
 				>
 				</progress-bar>
 			</div>
+			<div class="col-12 pb-3">
+				<span class="float-right" v-if="noAnswerSelected"><em>Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'</em></span>
+			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
 
 				<a href="#" @click="goBack()"><< Terug</a>
 
 				<span>
-					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'</em></span>
 					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"

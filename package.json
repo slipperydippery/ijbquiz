@@ -27,7 +27,7 @@
     "dependencies": {
         "autoprefixer": "^9.6.5",
         "bootstrap-vue": "^2.0.4",
-        "core-js": "^3.3.3",
+        "core-js": "^3.3.5",
         "intersection-observer": "^0.7.0",
         "regenerator-runtime": "^0.13.3"
     }

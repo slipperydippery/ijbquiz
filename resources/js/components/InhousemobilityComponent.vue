@@ -2,7 +2,7 @@
 	<div class="container-fluid h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-                <h1 class="pagetitle d-inline px-5"> Hebben jullie bedrijfsauto’s? </h1>
+                <h1 class="pagetitle d-inline"> Hebben jullie bedrijfsauto’s? </h1>
                 <p class="text-muted"><em> Je kunt meer dan 1 antwoord aanklikken. </em></p>
 	        </div>
 		</div>
@@ -16,7 +16,7 @@
 					>
 						<img src="/img/quizpoolautos.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> We hebben poolauto’s (personenauto’s) om naar afspraken te gaan </h3>
+								<h5 class=""> We hebben poolauto’s (personenauto’s) om naar afspraken te gaan </h5>
 						</div>
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 					>
 						<img src="/img/quizbestelbusjes.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-							<h3 class=""> We hebben bestelbusjes om onze klanten te bezoeken of onze producten mee te bezorgen </h3>
+							<h5 class=""> We hebben bestelbusjes om onze klanten te bezoeken of onze producten mee te bezorgen </h5>
 						</div>
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 					>
 						<img src="/img/quizvrachtwagen.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> We rijden de regio in en uit met vrachtwagens </h3>
+								<h5 class=""> We rijden de regio in en uit met vrachtwagens </h5>
 						</div>
 					</div>
 				</div>
@@ -58,7 +58,7 @@
 					>
 						<img src="/img/quizneenogniet.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> Nee, die hebben we nog niet </h3>
+								<h5 class=""> Nee, die hebben we nog niet </h5>
 						</div>
 					</div>
 				</div>
@@ -72,12 +72,12 @@
 				>
 				</progress-bar>
 			</div>
+			<div class="col-12 pb-3">
+				<span class="float-right" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
+			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
-
 				<a href="#" @click="goBack()"><< Terug</a>
-
 				<span>
-					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
 					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"

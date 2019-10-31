@@ -1,45 +1,33 @@
+html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 }
 
-p {
-	font-size: 1.2vw;
-}
-
 p.text-small{
-	font-size: .8vw;
+	// font-size: .8rem;
 }
 
 h1, h2, h3, h4 {
 	font-family: 'Cabin', sans-serif;
-}
-
-h2 {
-	font-size: 2vw;
-}
-
-h3 {
-	font-size: 1.2vw;
-}
-
-.display-3 {
-	font-size: 3.2vw;
-}
-
-.display-4 {
-	font-size: 3vw;
-}
-
-.display-5 {
-	font-size: 2vw;
-}
-
-h1.pagetitle {
-	font-size: 4vw;
-	// background: rgba($primary, 0.3);
-}
-
-h2.pagetitle {
-	font-size: 2vw;
-	// background: rgba($primary, 0.3);
 }

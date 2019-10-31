@@ -2273,6 +2273,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['session'],
   data: function data() {
@@ -2489,6 +2491,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -2798,6 +2802,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -36934,11 +36939,15 @@ module.exports = (NEGATIVE_ZERO || SLOPPY_METHOD) ? function lastIndexOf(searchE
 
 var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
 var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var V8_VERSION = __webpack_require__(/*! ../internals/v8-version */ "./node_modules/core-js/internals/v8-version.js");
 
 var SPECIES = wellKnownSymbol('species');
 
 module.exports = function (METHOD_NAME) {
-  return !fails(function () {
+  // We can't use this feature detection in V8 since it causes
+  // deoptimization and serious performance degradation
+  // https://github.com/zloirock/core-js/issues/677
+  return V8_VERSION >= 51 || !fails(function () {
     var array = [];
     var constructor = array.constructor = {};
     constructor[SPECIES] = function () {
@@ -38245,14 +38254,21 @@ module.exports = function (KEY, length, exec, sham) {
     // Symbol-named RegExp methods call .exec
     var execCalled = false;
     var re = /a/;
-    re.exec = function () { execCalled = true; return null; };
 
     if (KEY === 'split') {
+      // We can't use real regex here since it causes deoptimization
+      // and serious performance degradation in V8
+      // https://github.com/zloirock/core-js/issues/306
+      re = {};
       // RegExp[@@split] doesn't call the regex's exec method, but first creates
       // a new one. We need to return the patched regex when creating the new one.
       re.constructor = {};
       re.constructor[SPECIES] = function () { return re; };
+      re.flags = '';
+      re[SYMBOL] = /./[SYMBOL];
     }
+
+    re.exec = function () { execCalled = true; return null; };
 
     re[SYMBOL]('');
     return !execCalled;
@@ -40575,7 +40591,7 @@ var store = __webpack_require__(/*! ../internals/shared-store */ "./node_modules
 (module.exports = function (key, value) {
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
-  version: '3.3.3',
+  version: '3.3.5',
   mode: IS_PURE ? 'pure' : 'global',
   copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
 });
@@ -41434,6 +41450,34 @@ module.exports = getBuiltIn('navigator', 'userAgent') || '';
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/v8-version.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/internals/v8-version.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var userAgent = __webpack_require__(/*! ../internals/user-agent */ "./node_modules/core-js/internals/user-agent.js");
+
+var process = global.process;
+var versions = process && process.versions;
+var v8 = versions && versions.v8;
+var match, version;
+
+if (v8) {
+  match = v8.split('.');
+  version = match[0] + match[1];
+} else if (userAgent) {
+  match = userAgent.match(/Chrome\/(\d+)/);
+  if (match) version = match[1];
+}
+
+module.exports = version && +version;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/webkit-string-pad-bug.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/core-js/internals/webkit-string-pad-bug.js ***!
@@ -41616,12 +41660,16 @@ var createProperty = __webpack_require__(/*! ../internals/create-property */ "./
 var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js/internals/array-species-create.js");
 var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js/internals/array-method-has-species-support.js");
 var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var V8_VERSION = __webpack_require__(/*! ../internals/v8-version */ "./node_modules/core-js/internals/v8-version.js");
 
 var IS_CONCAT_SPREADABLE = wellKnownSymbol('isConcatSpreadable');
 var MAX_SAFE_INTEGER = 0x1FFFFFFFFFFFFF;
 var MAXIMUM_ALLOWED_INDEX_EXCEEDED = 'Maximum allowed index exceeded';
 
-var IS_CONCAT_SPREADABLE_SUPPORT = !fails(function () {
+// We can't use this feature detection in V8 since it causes
+// deoptimization and serious performance degradation
+// https://github.com/zloirock/core-js/issues/679
+var IS_CONCAT_SPREADABLE_SUPPORT = V8_VERSION >= 51 || !fails(function () {
   var array = [];
   array[IS_CONCAT_SPREADABLE] = false;
   return array.concat()[0] !== array;
@@ -42257,6 +42305,7 @@ var test = [1, 2];
 // https://bugs.webkit.org/show_bug.cgi?id=188794
 $({ target: 'Array', proto: true, forced: String(test) === String(test.reverse()) }, {
   reverse: function reverse() {
+    // eslint-disable-next-line no-self-assign
     if (isArray(this)) this.length = this.length;
     return nativeReverse.call(this);
   }
@@ -44457,7 +44506,7 @@ if (!IS_PURE && typeof NativePromise == 'function' && !NativePromise.prototype['
 var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
 var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js/internals/is-pure.js");
 var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var path = __webpack_require__(/*! ../internals/path */ "./node_modules/core-js/internals/path.js");
+var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js/internals/get-built-in.js");
 var NativePromise = __webpack_require__(/*! ../internals/native-promise-constructor */ "./node_modules/core-js/internals/native-promise-constructor.js");
 var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
 var redefineAll = __webpack_require__(/*! ../internals/redefine-all */ "./node_modules/core-js/internals/redefine-all.js");
@@ -44476,10 +44525,10 @@ var promiseResolve = __webpack_require__(/*! ../internals/promise-resolve */ "./
 var hostReportErrors = __webpack_require__(/*! ../internals/host-report-errors */ "./node_modules/core-js/internals/host-report-errors.js");
 var newPromiseCapabilityModule = __webpack_require__(/*! ../internals/new-promise-capability */ "./node_modules/core-js/internals/new-promise-capability.js");
 var perform = __webpack_require__(/*! ../internals/perform */ "./node_modules/core-js/internals/perform.js");
-var userAgent = __webpack_require__(/*! ../internals/user-agent */ "./node_modules/core-js/internals/user-agent.js");
 var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
 var isForced = __webpack_require__(/*! ../internals/is-forced */ "./node_modules/core-js/internals/is-forced.js");
 var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var V8_VERSION = __webpack_require__(/*! ../internals/v8-version */ "./node_modules/core-js/internals/v8-version.js");
 
 var SPECIES = wellKnownSymbol('species');
 var PROMISE = 'Promise';
@@ -44490,9 +44539,7 @@ var PromiseConstructor = NativePromise;
 var TypeError = global.TypeError;
 var document = global.document;
 var process = global.process;
-var $fetch = global.fetch;
-var versions = process && process.versions;
-var v8 = versions && versions.v8 || '';
+var $fetch = getBuiltIn('fetch');
 var newPromiseCapability = newPromiseCapabilityModule.f;
 var newGenericPromiseCapability = newPromiseCapability;
 var IS_NODE = classof(process) == 'process';
@@ -44507,21 +44554,26 @@ var UNHANDLED = 2;
 var Internal, OwnPromiseCapability, PromiseWrapper, nativeThen;
 
 var FORCED = isForced(PROMISE, function () {
-  // correct subclassing with @@species support
+  // V8 6.6 (Node 10 and Chrome 66) have a bug with resolving custom thenables
+  // https://bugs.chromium.org/p/chromium/issues/detail?id=830565
+  // We can't detect it synchronously, so just check versions
+  if (V8_VERSION === 66) return true;
+  // Unhandled rejections tracking support, NodeJS Promise without it fails @@species test
+  if (!IS_NODE && typeof PromiseRejectionEvent != 'function') return true;
+  // We need Promise#finally in the pure version for preventing prototype pollution
+  if (IS_PURE && !PromiseConstructor.prototype['finally']) return true;
+  // We can't use @@species feature detection in V8 since it causes
+  // deoptimization and performance degradation
+  // https://github.com/zloirock/core-js/issues/679
+  if (V8_VERSION >= 51 && /native code/.test(PromiseConstructor)) return false;
+  // Detect correctness of subclassing with @@species support
   var promise = PromiseConstructor.resolve(1);
-  var empty = function () { /* empty */ };
-  var FakePromise = (promise.constructor = {})[SPECIES] = function (exec) {
-    exec(empty, empty);
+  var FakePromise = function (exec) {
+    exec(function () { /* empty */ }, function () { /* empty */ });
   };
-  // unhandled rejections tracking support, NodeJS Promise without it fails @@species test
-  return !((IS_NODE || typeof PromiseRejectionEvent == 'function')
-    && (!IS_PURE || promise['finally'])
-    && promise.then(empty) instanceof FakePromise
-    // v8 6.6 (Node 10 and Chrome 66) have a bug with resolving custom thenables
-    // https://bugs.chromium.org/p/chromium/issues/detail?id=830565
-    // we can't detect it synchronously, so just check versions
-    && v8.indexOf('6.6') !== 0
-    && userAgent.indexOf('Chrome/66') === -1);
+  var constructor = promise.constructor = {};
+  constructor[SPECIES] = FakePromise;
+  return !(promise.then(function () { /* empty */ }) instanceof FakePromise);
 });
 
 var INCORRECT_ITERATION = FORCED || !checkCorrectnessOfIteration(function (iterable) {
@@ -44744,7 +44796,7 @@ if (FORCED) {
     // wrap fetch result
     if (typeof $fetch == 'function') $({ global: true, enumerable: true, forced: true }, {
       // eslint-disable-next-line no-unused-vars
-      fetch: function fetch(input) {
+      fetch: function fetch(input /* , init */) {
         return promiseResolve(PromiseConstructor, $fetch.apply(global, arguments));
       }
     });
@@ -44758,7 +44810,7 @@ $({ global: true, wrap: true, forced: FORCED }, {
 setToStringTag(PromiseConstructor, PROMISE, false, true);
 setSpecies(PROMISE);
 
-PromiseWrapper = path[PROMISE];
+PromiseWrapper = getBuiltIn(PROMISE);
 
 // statics
 $({ target: PROMISE, stat: true, forced: FORCED }, {
@@ -48332,6 +48384,7 @@ $({ global: true, bind: true, forced: MSIE }, {
 // TODO: in core-js@4, move /modules/ dependencies to public entries for better optimization by tools like `preset-env`
 __webpack_require__(/*! ../modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
 var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js/internals/get-built-in.js");
 var USE_NATIVE_URL = __webpack_require__(/*! ../internals/native-url */ "./node_modules/core-js/internals/native-url.js");
 var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
 var redefineAll = __webpack_require__(/*! ../internals/redefine-all */ "./node_modules/core-js/internals/redefine-all.js");
@@ -48341,12 +48394,17 @@ var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */
 var anInstance = __webpack_require__(/*! ../internals/an-instance */ "./node_modules/core-js/internals/an-instance.js");
 var hasOwn = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
 var bind = __webpack_require__(/*! ../internals/bind-context */ "./node_modules/core-js/internals/bind-context.js");
+var classof = __webpack_require__(/*! ../internals/classof */ "./node_modules/core-js/internals/classof.js");
 var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
 var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
+var create = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js/internals/object-create.js");
+var createPropertyDescriptor = __webpack_require__(/*! ../internals/create-property-descriptor */ "./node_modules/core-js/internals/create-property-descriptor.js");
 var getIterator = __webpack_require__(/*! ../internals/get-iterator */ "./node_modules/core-js/internals/get-iterator.js");
 var getIteratorMethod = __webpack_require__(/*! ../internals/get-iterator-method */ "./node_modules/core-js/internals/get-iterator-method.js");
 var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
 
+var $fetch = getBuiltIn('fetch');
+var Headers = getBuiltIn('Headers');
 var ITERATOR = wellKnownSymbol('iterator');
 var URL_SEARCH_PARAMS = 'URLSearchParams';
 var URL_SEARCH_PARAMS_ITERATOR = URL_SEARCH_PARAMS + 'Iterator';
@@ -48636,6 +48694,34 @@ setToStringTag(URLSearchParamsConstructor, URL_SEARCH_PARAMS);
 $({ global: true, forced: !USE_NATIVE_URL }, {
   URLSearchParams: URLSearchParamsConstructor
 });
+
+// Wrap `fetch` for correct work with polyfilled `URLSearchParams`
+// https://github.com/zloirock/core-js/issues/674
+if (!USE_NATIVE_URL && typeof $fetch == 'function' && typeof Headers == 'function') {
+  $({ global: true, enumerable: true, forced: true }, {
+    fetch: function fetch(input /* , init */) {
+      var args = [input];
+      var init, body, headers;
+      if (arguments.length > 1) {
+        init = arguments[1];
+        if (isObject(init)) {
+          body = init.body;
+          if (classof(body) === URL_SEARCH_PARAMS) {
+            headers = new Headers(init.headers);
+            if (!headers.has('content-type')) {
+              headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+            }
+            init = create(init, {
+              body: createPropertyDescriptor(0, String(body)),
+              headers: createPropertyDescriptor(0, headers)
+            });
+          }
+        }
+        args.push(init);
+      } return $fetch.apply(this, args);
+    }
+  });
+}
 
 module.exports = {
   URLSearchParams: URLSearchParamsConstructor,
@@ -83239,6 +83325,14 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "col-12 pb-3" }, [
+        _vm.noAnswerSelected
+          ? _c("span", { staticClass: "float-right" }, [
+              _c("em", [_vm._v("Geef eerst antwoord en klik dan op ‘verder'")])
+            ])
+          : _vm._e()
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-12 d-flex flex-row justify-content-between" },
@@ -83257,14 +83351,6 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", [
-            _vm.noAnswerSelected
-              ? _c("span", { staticClass: "mx-4" }, [
-                  _c("em", [
-                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
             _c(
               "button",
               {
@@ -83287,7 +83373,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
-        _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
+        _c("h1", { staticClass: "pagetitle d-inline" }, [
           _vm._v(" Rijden jullie al elektrisch? ")
         ]),
         _vm._v(" "),
@@ -83305,7 +83391,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
-        _c("h3", {}, [
+        _c("h5", {}, [
           _vm._v(" Er komen medewerkers op de e-bike, als je dat bedoelt ")
         ])
       ]
@@ -83318,7 +83404,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Een enkeling heeft een elektrische auto ")])]
+      [_c("h5", {}, [_vm._v(" Een enkeling heeft een elektrische auto ")])]
     )
   },
   function() {
@@ -83329,7 +83415,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
-        _c("h3", {}, [
+        _c("h5", {}, [
           _vm._v(
             " Jazeker, we stimuleren dat en ook onze poolauto’s zijn elektrisch "
           )
@@ -83345,7 +83431,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
-        _c("h3", {}, [
+        _c("h5", {}, [
           _vm._v(" Nog niet echt, maar we willen dat wel meer gaan doen ")
         ])
       ]
@@ -83533,6 +83619,18 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "col-12 pb-3" }, [
+        _vm.noAnswerSelected
+          ? _c("span", { staticClass: "float-right" }, [
+              _c("em", [
+                _vm._v(
+                  "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
+                )
+              ])
+            ])
+          : _vm._e()
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-12 d-flex flex-row justify-content-between" },
@@ -83551,16 +83649,6 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", [
-            _vm.noAnswerSelected
-              ? _c("span", { staticClass: "mx-4" }, [
-                  _c("em", [
-                    _vm._v(
-                      "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
-                    )
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
             _c(
               "button",
               {
@@ -83583,7 +83671,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
-        _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
+        _c("h1", { staticClass: "pagetitle d-inline" }, [
           _vm._v(" Hoe ver wonen de medewerkers bij het bedrijf vandaan? ")
         ]),
         _vm._v(" "),
@@ -83598,7 +83686,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Bijna om de hoek: 5-10km ")])
+      _c("h5", {}, [_vm._v("Bijna om de hoek: 5-10km ")])
     ])
   },
   function() {
@@ -83606,7 +83694,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Lekker dichtbij: 5-10km")])
+      _c("h5", [_vm._v("Lekker dichtbij: 5-10km")])
     ])
   },
   function() {
@@ -83614,7 +83702,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Wel wat verder weg: 11-20km")])
+      _c("h5", [_vm._v("Wel wat verder weg: 11-20km")])
     ])
   },
   function() {
@@ -83622,7 +83710,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Een flink eind: >20km")])
+      _c("h5", [_vm._v("Een flink eind: >20km")])
     ])
   }
 ]
@@ -83764,6 +83852,14 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "col-12 pb-3" }, [
+        _vm.noAnswerSelected
+          ? _c("span", { staticClass: "float-right" }, [
+              _c("em", [_vm._v("Geef eerst antwoord en klik dan op ‘verder'")])
+            ])
+          : _vm._e()
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-12 d-flex flex-row justify-content-between" },
@@ -83782,14 +83878,6 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", [
-            _vm.noAnswerSelected
-              ? _c("span", { staticClass: "mx-4" }, [
-                  _c("em", [
-                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
             _c(
               "button",
               {
@@ -83812,7 +83900,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
-        _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
+        _c("h1", { staticClass: "pagetitle d-inline" }, [
           _vm._v(" Hoeveel mensen werken er in dit bedrijf: ")
         ])
       ])
@@ -83825,7 +83913,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Wij zijn net een familie: 1-10 personen ")])]
+      [_c("h5", {}, [_vm._v(" Wij zijn net een familie: 1-10 personen ")])]
     )
   },
   function() {
@@ -83835,7 +83923,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" We zijn klein, maar fijn: 11-50 personen ")])]
+      [_c("h5", {}, [_vm._v(" We zijn klein, maar fijn: 11-50 personen ")])]
     )
   },
   function() {
@@ -83845,7 +83933,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Wij horen nog bij het MKB: 51-250 personen ")])]
+      [_c("h5", {}, [_vm._v(" Wij horen nog bij het MKB: 51-250 personen ")])]
     )
   },
   function() {
@@ -83855,7 +83943,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" We zijn met veel: > 250 personen ")])]
+      [_c("h5", {}, [_vm._v(" We zijn met veel: > 250 personen ")])]
     )
   }
 ]
@@ -84040,6 +84128,18 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "col-12 pb-3" }, [
+        _vm.noAnswerSelected
+          ? _c("span", { staticClass: "float-right" }, [
+              _c("em", [
+                _vm._v(
+                  "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
+                )
+              ])
+            ])
+          : _vm._e()
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-12 d-flex flex-row justify-content-between" },
@@ -84058,16 +84158,6 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", [
-            _vm.noAnswerSelected
-              ? _c("span", { staticClass: "mx-4" }, [
-                  _c("em", [
-                    _vm._v(
-                      "Geef eerst antwoord (totaal 100%) en klik dan op ‘verder'"
-                    )
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
             _c(
               "button",
               {
@@ -84090,7 +84180,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
-        _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
+        _c("h1", { staticClass: "pagetitle d-inline" }, [
           _vm._v(" Hoe komen de medewerkers naar het werk? ")
         ]),
         _vm._v(" "),
@@ -84105,7 +84195,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Supergezond op de fiets")])
+      _c("h5", [_vm._v("Supergezond op de fiets")])
     ])
   },
   function() {
@@ -84113,7 +84203,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Met het openbaar vervoer")])
+      _c("h5", [_vm._v("Met het openbaar vervoer")])
     ])
   },
   function() {
@@ -84121,7 +84211,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Met georganiseerd bedrijfsvervoer")])
+      _c("h5", [_vm._v("Met georganiseerd bedrijfsvervoer")])
     ])
   },
   function() {
@@ -84129,7 +84219,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("label", { attrs: { for: "range-2" } }, [
-      _c("h4", [_vm._v("Met de auto")])
+      _c("h5", [_vm._v("Met de auto")])
     ])
   }
 ]
@@ -84275,6 +84365,14 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "col-12 pb-3" }, [
+        _vm.noAnswerSelected
+          ? _c("span", { staticClass: "float-right" }, [
+              _c("em", [_vm._v("Geef eerst antwoord en klik dan op ‘verder'")])
+            ])
+          : _vm._e()
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-12 d-flex flex-row justify-content-between" },
@@ -84293,14 +84391,6 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", [
-            _vm.noAnswerSelected
-              ? _c("span", { staticClass: "mx-4" }, [
-                  _c("em", [
-                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
             _c(
               "button",
               {
@@ -84323,7 +84413,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
-        _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
+        _c("h1", { staticClass: "pagetitle d-inline" }, [
           _vm._v(" Hebben jullie bedrijfsauto’s? ")
         ]),
         _vm._v(" "),
@@ -84341,7 +84431,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
-        _c("h3", {}, [
+        _c("h5", {}, [
           _vm._v(
             " We hebben poolauto’s (personenauto’s) om naar afspraken te gaan "
           )
@@ -84357,7 +84447,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
-        _c("h3", {}, [
+        _c("h5", {}, [
           _vm._v(
             " We hebben bestelbusjes om onze klanten te bezoeken of onze producten mee te bezorgen "
           )
@@ -84373,7 +84463,7 @@ var staticRenderFns = [
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
       [
-        _c("h3", {}, [
+        _c("h5", {}, [
           _vm._v(" We rijden de regio in en uit met vrachtwagens ")
         ])
       ]
@@ -84386,7 +84476,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Nee, die hebben we nog niet ")])]
+      [_c("h5", {}, [_vm._v(" Nee, die hebben we nog niet ")])]
     )
   }
 ]
@@ -84561,6 +84651,14 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "col-12 pb-3" }, [
+        _vm.noAnswerSelected
+          ? _c("span", { staticClass: "float-right" }, [
+              _c("em", [_vm._v("Geef eerst antwoord en klik dan op ‘verder'")])
+            ])
+          : _vm._e()
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-12 d-flex flex-row justify-content-between" },
@@ -84579,14 +84677,6 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", [
-            _vm.noAnswerSelected
-              ? _c("span", { staticClass: "mx-4" }, [
-                  _c("em", [
-                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
             _c(
               "button",
               {
@@ -84609,7 +84699,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
-        _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
+        _c("h1", { staticClass: "pagetitle d-inline" }, [
           _vm._v(" Waar is je bedrijf gevestigd? ")
         ]),
         _vm._v(" "),
@@ -84630,7 +84720,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Gemeente Beverwijk ")])]
+      [_c("h5", {}, [_vm._v(" Gemeente Beverwijk ")])]
     )
   },
   function() {
@@ -84640,7 +84730,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Gemeente Velsen ")])]
+      [_c("h5", {}, [_vm._v(" Gemeente Velsen ")])]
     )
   },
   function() {
@@ -84650,7 +84740,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Gemeente Heemskerk ")])]
+      [_c("h5", {}, [_vm._v(" Gemeente Heemskerk ")])]
     )
   },
   function() {
@@ -84660,7 +84750,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Vestiging(en) buiten de regio ")])]
+      [_c("h5", {}, [_vm._v(" Vestiging(en) buiten de regio ")])]
     )
   }
 ]
@@ -84784,6 +84874,14 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "col-12 pb-3" }, [
+        _vm.noAnswerSelected
+          ? _c("span", { staticClass: "float-right" }, [
+              _c("em", [_vm._v("Geef eerst antwoord en klik dan op ‘verder'")])
+            ])
+          : _vm._e()
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "col-12 d-flex flex-row justify-content-between" },
@@ -84802,14 +84900,6 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("span", [
-            _vm.noAnswerSelected
-              ? _c("span", { staticClass: "mx-4" }, [
-                  _c("em", [
-                    _vm._v("Geef eerst antwoord en klik dan op ‘verder'")
-                  ])
-                ])
-              : _vm._e(),
-            _vm._v(" "),
             _c(
               "button",
               {
@@ -84832,7 +84922,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 text-center w-100" }, [
-        _c("h1", { staticClass: "pagetitle d-inline px-5" }, [
+        _c("h1", { staticClass: "pagetitle d-inline" }, [
           _vm._v(" Is het bedrijf gevestigd op of in een: ")
         ]),
         _vm._v(" "),
@@ -84849,7 +84939,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Bedrijventerrein ")])]
+      [_c("h5", {}, [_vm._v(" Bedrijventerrein ")])]
     )
   },
   function() {
@@ -84859,7 +84949,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Centrum/winkelgebied ")])]
+      [_c("h5", {}, [_vm._v(" Centrum/winkelgebied ")])]
     )
   },
   function() {
@@ -84869,7 +84959,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "answer-title pt-1 text-center w-100 position-absolute" },
-      [_c("h3", {}, [_vm._v(" Recreatiegebied ")])]
+      [_c("h5", {}, [_vm._v(" Recreatiegebied ")])]
     )
   }
 ]
@@ -97982,8 +98072,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\zeronothingzero\Code\ijbquiz\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\zeronothingzero\Code\ijbquiz\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/silvernitrate/Code/ijbquiz/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/silvernitrate/Code/ijbquiz/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

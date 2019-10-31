@@ -2,7 +2,7 @@
 	<div class="container-fluid h-100">
 		<div class="row">
 	        <div class="col-md-12 text-center w-100">
-                <h1 class="pagetitle d-inline px-5"> Waar is je bedrijf gevestigd? </h1>
+                <h1 class="pagetitle d-inline"> Waar is je bedrijf gevestigd? </h1>
                 <p class="text-muted"><em> Zijn er meerdere vestigingen in verschillende gemeenten, dan kun je dat ook aangeven. </em></p>
 	        </div>
 		</div>
@@ -16,7 +16,7 @@
 					>
 						<img src="/img/quizbeverwijk.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> Gemeente Beverwijk </h3>
+								<h5 class=""> Gemeente Beverwijk </h5>
 						</div>
 					</div>
 				</div>
@@ -30,7 +30,7 @@
 					>
 						<img src="/img/quizvelsen.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-							<h3 class=""> Gemeente Velsen </h3>
+							<h5 class=""> Gemeente Velsen </h5>
 						</div>
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 					>
 						<img src="/img/quizheemskerk.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-								<h3 class=""> Gemeente Heemskerk </h3>
+								<h5 class=""> Gemeente Heemskerk </h5>
 						</div>
 					</div>
 				</div>
@@ -59,7 +59,7 @@
 					>
 						<img src="/img/quizbuitenderegio.png" alt="" class="img-fluid">
 						<div class="answer-title pt-1 text-center w-100 position-absolute">
-							<h3 class=""> Vestiging(en) buiten de regio </h3>
+							<h5 class=""> Vestiging(en) buiten de regio </h5>
 						</div>
 					</div>
 					<b-popover
@@ -82,12 +82,13 @@
 				>
 				</progress-bar>
 			</div>
+			<div class="col-12 pb-3">
+				<span class="float-right" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
+			</div>
 			<div class="col-12 d-flex flex-row justify-content-between">
-
 				<a href="#" @click="goBack()"><< Terug</a>
 
 				<span>
-					<span class="mx-4" v-if="noAnswerSelected"><em>Geef eerst antwoord en klik dan op ‘verder'</em></span>
 					<button
 						class="btn btn-primary"
 						:disabled="noAnswerSelected"
