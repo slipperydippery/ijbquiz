@@ -11155,7 +11155,7 @@ h4 {
 }
 
 .answer .answer-title {
-  background: rgba(248, 249, 250, 0.5);
+  background: rgba(248, 249, 250, 0.6);
   bottom: 0;
   left: 0;
   right: 0;
@@ -11168,7 +11168,7 @@ h4 {
 }
 
 .selected-answer .answer-title {
-  background: rgba(168, 211, 127, 0.5);
+  background: rgba(168, 211, 127, 0.6);
 }
 
 .faded {
